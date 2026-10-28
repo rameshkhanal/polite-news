@@ -1,0 +1,56 @@
+/**
+ * About page styling for Polite News.
+ */
+.polite-news-about-wrap {
+	max-width: 1080px;
+	margin: 25px 20px 0 0;
+}
+
+.polite-news-about-header {
+	padding: 30px;
+	background-color: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+}
+
+.polite-news-about-header h1 {
+	margin: 0 0 10px;
+	font-size: 26px;
+}
+
+.polite-news-about-columns {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(3, 1fr);
+	margin-top: 20px;
+}
+
+.polite-news-about-box {
+	padding: 25px;
+	background-color: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+}
+
+.polite-news-about-box h2 {
+	margin-top: 0;
+	font-size: 18px;
+}
+
+.polite-news-about-box ul {
+	list-style: disc;
+	padding-left: 18px;
+}
+
+@media only screen and (max-width: 782px) {
+	.polite-news-about-columns {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Short line under a recommended plugin button. */
+.polite-news-plugin-note {
+	margin: 6px 0 18px;
+	color: #50575e;
+	font-size: 13px;
+}

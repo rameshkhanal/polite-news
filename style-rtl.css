@@ -1,0 +1,195 @@
+/*
+Polite News RTL styles.
+
+The layout is grid and flexbox based, so most of the theme mirrors
+automatically. Only the rules with a physical direction are flipped here.
+This file replaces style.css on right to left locales, so it imports the
+main stylesheet first.
+*/
+@import url("style.css");
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+ul, ol {
+	padding-left: 0;
+	padding-right: 22px;
+}
+
+blockquote {
+	border-left: 0;
+	border-right: 4px solid var(--ts-primary);
+}
+
+.alignleft {
+	float: right;
+	margin: 5px 0 22px 28px;
+}
+
+.alignright {
+	float: left;
+	margin: 5px 28px 22px 0;
+}
+
+.main-navigation ul ul {
+	left: auto;
+	right: 0;
+}
+
+.main-navigation ul ul ul {
+	left: auto;
+	right: 100%;
+}
+
+.ts-post-media .ts-cat-badge {
+	left: auto;
+	right: 16px;
+}
+
+.ts-section-title::after,
+.widget-title::after {
+	left: auto;
+	right: 0;
+}
+
+.comment-list .children {
+	margin: 0 54px 0 0;
+}
+
+.ts-post-navigation .nav-next {
+	text-align: left;
+}
+
+.entry-meta i {
+	margin-right: 0;
+	margin-left: 6px;
+}
+
+.more-link i {
+	margin-left: 0;
+	margin-right: 6px;
+	transform: scaleX(-1);
+}
+
+#toTop {
+	right: auto;
+	left: 26px;
+}
+
+/* The header advert plate hugs the opposite edge. */
+.ts-header-widget img {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+@media only screen and (max-width: 991px) {
+
+	.ts-header-widget img {
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+/* Mirror of the dropdown edge fit, so the last item opens inwards. */
+@media only screen and (min-width: 768px) {
+
+	.main-navigation > div > ul > li:last-child > ul {
+		right: auto;
+		left: 0;
+	}
+
+	.main-navigation > div > ul > li:last-child ul ul {
+		right: auto;
+		left: calc(100% + 14px);
+	}
+
+	.main-navigation > div > ul > li:last-child ul ul::before {
+		right: auto;
+		left: -24px;
+	}
+}
+
+/*
+ * Submenu carets and the accordion button. Both are placed against a physical
+ * edge, and the nesting indent is a physical padding, so none of the three
+ * mirror on their own.
+ */
+@media only screen and (min-width: 768px) {
+
+	/* The flyout caret belongs on the trailing edge, pointing the way out. */
+	.main-navigation ul ul .menu-item-has-children > a,
+	.main-navigation ul ul .page_item_has_children > a {
+		padding-left: 34px;
+		padding-right: 14px;
+	}
+
+	.main-navigation ul ul .menu-item-has-children > a::after,
+	.main-navigation ul ul .page_item_has_children > a::after {
+		content: "\f104";
+		right: auto;
+		left: 14px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+
+	.main-navigation a {
+		padding-left: 52px;
+		padding-right: 2px;
+	}
+
+	.ts-submenu-toggle {
+		right: auto;
+		left: 0;
+	}
+
+	/* Without this the nesting is invisible: the indent lands on the far side. */
+	.main-navigation ul ul {
+		padding-left: 0;
+		padding-right: 14px;
+	}
+
+	.main-navigation ul ul .menu-item-has-children > a,
+	.main-navigation ul ul .page_item_has_children > a {
+		padding-left: 52px;
+		padding-right: 2px;
+	}
+}
+
+/* The drawer layout carries its own copy of the accordion. */
+.ts-header-drawer .main-navigation a {
+	padding-left: 56px;
+	padding-right: 2px;
+}
+
+.ts-header-drawer .ts-submenu-toggle {
+	right: auto;
+	left: 0;
+}
+
+.ts-header-drawer .main-navigation ul ul {
+	padding-left: 0;
+	padding-right: 18px;
+}
+
+.ts-header-drawer .main-navigation ul ul .menu-item-has-children > a,
+.ts-header-drawer .main-navigation ul ul .page_item_has_children > a {
+	padding-left: 56px;
+	padding-right: 2px;
+}
+
+/*
+ * The hero panel is pinned to one edge and the slide content fills whatever is
+ * left over, so mirrored they both claimed the right hand side and the
+ * headline vanished behind the panel. Below 992px the panel stacks and stops
+ * being positioned at all, which is why this only applies above it.
+ */
+@media only screen and (min-width: 992px) {
+
+	.ts-hero-panel {
+		right: auto;
+		left: 34px;
+	}
+}

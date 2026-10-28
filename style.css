@@ -1,0 +1,5039 @@
+/*
+Theme Name: Polite News
+Theme URI: https://templatesell.com/downloads/polite-news-magazine-wordpress-theme/
+Author: templatesell
+Author URI: https://www.templatesell.com/
+Description: Polite News is a fast, clean and fully responsive news and magazine WordPress theme with a modern card based layout. It ships with a built in dark mode, a breaking news ticker, featured post section, editor pick cards, rounded card grids, multiple blog layouts, header and footer options, sidebar options and a one click primary colour option. Besides that, it comes with custom widgets for popular posts, tags and categories, contact details, a call to action, a banner, author information, recent posts and social icons, plus breadcrumbs, social sharing, related posts, a sticky sidebar and ajax load more. Every font and icon is served from the theme folder, so the theme makes no external requests. Perfect for newspaper, magazine, editorial, blog and personal news websites. More Details: https://templatesell.com/downloads/polite-news-magazine-wordpress-theme/
+Version: 1.0.1
+Requires at least: 5.0
+Tested up to: 7.1
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: polite-news
+Tags: news, blog, custom-background, custom-header, custom-logo, custom-menu, one-column, two-columns, three-columns, grid-layout, right-sidebar, left-sidebar, featured-images, threaded-comments, translation-ready, block-styles, block-patterns, wide-blocks, footer-widgets, theme-options, custom-colors, editor-style, sticky-post, rtl-language-support
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you have learned with others.
+
+Polite News is free WordPress theme by, Template Sell.
+Polite News is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+
+*/
+
+/**
+ * Table of Contents
+ *
+ * 1.0 - Design tokens and resets
+ * 2.0 - General styles (body, headings, links, margins)
+ * 3.0 - Accessibility
+ * 4.0 - Alignments and WordPress core classes
+ * 5.0 - Buttons, badges and pills
+ * 6.0 - Top header bar
+ * 7.0 - Main header and branding
+ * 8.0 - Navigation
+ * 9.0 - Dark mode toggle
+ * 10.0 - Breaking news ticker
+ * 11.0 - Featured section
+ * 12.0 - Editor pick cards
+ * 13.0 - Post cards and archives
+ * 14.0 - Single post
+ * 15.0 - Comments
+ * 16.0 - Sidebar and widgets
+ * 17.0 - Pagination
+ * 18.0 - Footer
+ * 19.0 - Dark mode palette
+ * 20.0 - Responsive
+ */
+
+/**
+ * 1.0 - Design tokens and resets
+ * -------------------------------------------------------------
+ */
+:root {
+	/* Brand */
+	--ts-primary: #4f46e5;
+	--ts-primary-hover: #4338ca;
+	--ts-primary-soft: #eef2ff;
+	--ts-secondary: #0d9488;
+
+	/* Neutral scale */
+	--ts-neutral-50: #f9fafb;
+	--ts-neutral-100: #f3f4f6;
+	--ts-neutral-200: #e5e7eb;
+	--ts-neutral-300: #d1d5db;
+	--ts-neutral-400: #9ca3af;
+	--ts-neutral-500: #6b7280;
+	--ts-neutral-600: #4b5563;
+	--ts-neutral-700: #374151;
+	--ts-neutral-800: #1f2937;
+	--ts-neutral-900: #111827;
+
+	/* Applied roles */
+	--ts-bg: #ffffff;
+	--ts-bg-soft: var(--ts-neutral-50);
+	--ts-surface: #ffffff;
+	--ts-heading: var(--ts-neutral-900);
+	--ts-body: var(--ts-neutral-700);
+	--ts-muted: var(--ts-neutral-500);
+	--ts-border: var(--ts-neutral-200);
+
+	/* Radius scale, rounded card idiom */
+	--ts-radius-sm: 8px;
+	--ts-radius: 16px;
+	--ts-radius-lg: 24px;
+	--ts-radius-full: 9999px;
+
+	/* Shadow */
+	--ts-shadow: 0 2px 8px rgba(17, 24, 39, 0.06);
+	--ts-shadow-lg: 0 12px 32px rgba(17, 24, 39, 0.1);
+
+	/* Type */
+	--ts-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+	--ts-font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	scroll-behavior: smooth;
+}
+
+/**
+ * 2.0 - General styles
+ * -------------------------------------------------------------
+ */
+body {
+	margin: 0;
+	font-family: var(--ts-font-body);
+	font-size: 16px;
+	line-height: 1.75;
+	color: var(--ts-body);
+	background-color: var(--ts-bg);
+	word-wrap: break-word;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	font-kerning: normal;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--ts-font-heading);
+	color: var(--ts-heading);
+	line-height: 1.25;
+	margin: 0 0 16px;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	text-wrap: balance;
+}
+
+h1, h2 {
+	letter-spacing: -0.02em;
+}
+
+h1 { font-size: 36px; }
+h2 { font-size: 30px; }
+h3 { font-size: 24px; }
+h4 { font-size: 20px; }
+h5 { font-size: 17px; }
+h6 { font-size: 15px; }
+
+p {
+	margin: 0 0 20px;
+	text-wrap: pretty;
+}
+
+::selection {
+	color: #ffffff;
+	background-color: var(--ts-primary);
+}
+
+a {
+	color: var(--ts-primary);
+	text-decoration: none;
+	transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover {
+	color: var(--ts-primary-hover);
+}
+
+a:focus-visible {
+	outline: 2px solid var(--ts-primary);
+	outline-offset: 2px;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+figure {
+	margin: 0 0 20px;
+}
+
+ul, ol {
+	margin: 0 0 20px;
+	padding-left: 22px;
+}
+
+blockquote {
+	margin: 28px 0;
+	padding: 4px 0 4px 24px;
+	border-left: 2px solid var(--ts-primary);
+	font-size: 18px;
+	font-style: italic;
+	color: var(--ts-body);
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+code, kbd, pre, samp {
+	font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+	font-size: 14px;
+}
+
+pre {
+	padding: 20px;
+	overflow: auto;
+	background-color: var(--ts-neutral-900);
+	color: var(--ts-neutral-100);
+	border-radius: var(--ts-radius);
+}
+
+code {
+	padding: 2px 7px;
+	background-color: var(--ts-bg-soft);
+	border-radius: var(--ts-radius-sm);
+}
+
+pre code {
+	padding: 0;
+	background: none;
+	color: inherit;
+}
+
+table {
+	width: 100%;
+	margin-bottom: 28px;
+	border-collapse: collapse;
+}
+
+table th,
+table td {
+	padding: 12px 16px;
+	border-bottom: 1px solid var(--ts-border);
+	text-align: left;
+}
+
+table th {
+	color: var(--ts-heading);
+	font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+	background-color: var(--ts-bg-soft);
+}
+
+hr {
+	height: 1px;
+	margin: 34px 0;
+	border: 0;
+	background-color: var(--ts-border);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+textarea,
+select {
+	width: 100%;
+	max-width: 100%;
+	padding: 12px 18px;
+	font-family: inherit;
+	font-size: 15px;
+	color: var(--ts-heading);
+	background-color: var(--ts-surface);
+	border: 1px solid var(--ts-border);
+	border-radius: var(--ts-radius-full);
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+textarea {
+	min-height: 160px;
+	border-radius: var(--ts-radius);
+}
+
+select {
+	border-radius: var(--ts-radius-full);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+	border-color: var(--ts-primary);
+	outline: 0;
+	box-shadow: 0 0 0 3px var(--ts-primary-soft);
+}
+
+/**
+ * 3.0 - Accessibility
+ * -------------------------------------------------------------
+ */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+	background-color: var(--ts-surface);
+	border-radius: var(--ts-radius-sm);
+	box-shadow: var(--ts-shadow-lg);
+	clip: auto !important;
+	clip-path: none;
+	color: var(--ts-primary);
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+
+.skip-link:focus {
+	position: absolute !important;
+}
+
+/**
+ * 4.0 - Alignments and WordPress core classes
+ * -------------------------------------------------------------
+ */
+.alignleft {
+	float: left;
+	margin: 5px 28px 22px 0;
+}
+
+.alignright {
+	float: right;
+	margin: 5px 0 22px 28px;
+}
+
+.aligncenter {
+	display: block;
+	margin: 5px auto 22px;
+}
+
+.alignwide {
+	margin-left: -60px;
+	margin-right: -60px;
+	max-width: calc(100% + 120px);
+}
+
+.alignfull {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	max-width: 100vw;
+}
+
+.wp-caption {
+	max-width: 100%;
+	margin-bottom: 22px;
+}
+
+.wp-caption img,
+.wp-block-image img {
+	border-radius: var(--ts-radius);
+}
+
+.wp-caption-text,
+.wp-block-image figcaption {
+	margin-top: 10px;
+	font-size: 14px;
+	color: var(--ts-muted);
+	text-align: center;
+}
+
+.sticky .ts-post-title::before {
+	content: "\f08d";
+	font-family: 'FontAwesome';
+	margin-right: 8px;
+	color: var(--ts-primary);
+}
+
+.bypostauthor > .comment-body .fn::after {
+	content: "\f005";
+	font-family: 'FontAwesome';
+	margin-left: 6px;
+	color: var(--ts-primary);
+	font-size: 11px;
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -6px 22px;
+}
+
+.gallery-item {
+	margin: 0 0 12px;
+	padding: 0 6px;
+	text-align: center;
+}
+
+.gallery-item img {
+	border-radius: var(--ts-radius-sm);
+}
+
+.gallery-columns-2 .gallery-item { width: 50%; }
+.gallery-columns-3 .gallery-item { width: 33.3333%; }
+.gallery-columns-4 .gallery-item { width: 25%; }
+.gallery-columns-5 .gallery-item { width: 20%; }
+.gallery-columns-6 .gallery-item { width: 16.6666%; }
+
+.page-links {
+	clear: both;
+	margin: 22px 0;
+	font-weight: 600;
+}
+
+.page-links a {
+	display: inline-block;
+	padding: 4px 12px;
+	margin: 0 4px;
+	background-color: var(--ts-bg-soft);
+	border-radius: var(--ts-radius-full);
+}
+
+/**
+ * 5.0 - Buttons, badges and pills
+ * -------------------------------------------------------------
+ */
+button,
+input[type="submit"],
+input[type="button"],
+.ts-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	padding: 12px 26px;
+	font-family: var(--ts-font-body);
+	font-size: 14px;
+	font-weight: 500;
+	color: #ffffff;
+	background-color: var(--ts-primary);
+	border: 0;
+	border-radius: var(--ts-radius-full);
+	cursor: pointer;
+	transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover,
+input[type="submit"]:hover,
+.ts-button:hover {
+	background-color: var(--ts-primary-hover);
+	color: #ffffff;
+}
+
+.ts-button-ghost {
+	color: var(--ts-heading);
+	background-color: var(--ts-bg-soft);
+}
+
+.ts-button-ghost:hover {
+	background-color: var(--ts-neutral-200);
+	color: var(--ts-heading);
+}
+
+/* Category pill badge */
+.ts-cat-badge {
+	display: inline-block;
+	padding: 4px 13px;
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 1.6;
+	color: var(--ts-primary);
+	background-color: var(--ts-primary-soft);
+	border-radius: var(--ts-radius-full);
+}
+
+.ts-cat-badge:hover {
+	color: #ffffff;
+	background-color: var(--ts-primary);
+}
+
+.ts-cat-badge-solid {
+	color: #ffffff;
+	background-color: var(--ts-primary);
+}
+
+.ts-cat-badge-solid:hover {
+	background-color: var(--ts-primary-hover);
+	color: #ffffff;
+}
+
+/* Round icon button */
+.ts-icon-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	font-size: 15px;
+	color: var(--ts-heading);
+	background-color: var(--ts-bg-soft);
+	border-radius: var(--ts-radius-full);
+}
+
+.ts-icon-button:hover {
+	color: var(--ts-primary);
+	background-color: var(--ts-primary-soft);
+}
+
+/**
+ * 6.0 - Top header bar
+ * -------------------------------------------------------------
+ */
+.ts-top-header {
+	border-bottom: 1px solid var(--ts-border);
+	font-size: 13px;
+	color: var(--ts-muted);
+}
+
+.ts-top-header .ts-top-inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 46px;
+	gap: 16px;
+}
+
+.ts-top-date {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.ts-top-date i {
+	color: var(--ts-primary);
+}
+
+.ts-top-menu ul,
+.ts-social-icons ul {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	gap: 20px;
+}
+
+.ts-top-menu a {
+	color: var(--ts-muted);
+}
+
+.ts-top-menu a:hover {
+	color: var(--ts-primary);
+}
+
+.ts-social-icons ul {
+	gap: 6px;
+}
+
+.ts-social-icons a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	color: var(--ts-muted);
+	border-radius: var(--ts-radius-full);
+	font-size: 13px;
+}
+
+.ts-social-icons a:hover {
+	color: var(--ts-primary);
+	background-color: var(--ts-primary-soft);
+}
+
+/*
+ * The icon carries the meaning visually and is aria-hidden, so this label is
+ * the link's only accessible name. display:none would take it out of the
+ * accessibility tree as well and leave the social links nameless; clip it out
+ * of sight instead, exactly as .screen-reader-text does.
+ */
+.ts-social-icons a span {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+/**
+ * 7.0 - Main header and branding
+ * -------------------------------------------------------------
+ */
+.ts-main-header {
+	padding: 30px 0;
+}
+
+.ts-header-inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+}
+
+.site-title {
+	margin: 0;
+	font-size: 38px;
+	line-height: 1.1;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+}
+
+.site-title a {
+	color: var(--ts-heading);
+}
+
+.site-title a:hover {
+	color: var(--ts-primary);
+}
+
+.site-description {
+	margin: 6px 0 0;
+	font-size: 14px;
+	color: var(--ts-muted);
+}
+
+.custom-logo-link img {
+	max-height: 90px;
+	width: auto;
+}
+
+.ts-header-widget {
+	max-width: 728px;
+}
+
+/**
+ * 8.0 - Navigation
+ * -------------------------------------------------------------
+ */
+.ts-nav-wrap {
+	position: relative;
+	border-top: 1px solid var(--ts-border);
+	border-bottom: 1px solid var(--ts-border);
+	background-color: var(--ts-bg);
+}
+
+.ts-sticky-nav.is-stuck {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	box-shadow: 0 6px 24px rgba(15, 23, 42, 0.08);
+	animation: ts-slide-down 0.25s ease;
+}
+
+.admin-bar .ts-sticky-nav.is-stuck {
+	top: 32px;
+}
+
+@keyframes ts-slide-down {
+	from {
+		transform: translateY(-100%);
+	}
+
+	to {
+		transform: translateY(0);
+	}
+}
+
+@media (max-width: 782px) {
+	.admin-bar .ts-sticky-nav.is-stuck {
+		top: 46px;
+	}
+}
+
+@media (max-width: 600px) {
+	.admin-bar .ts-sticky-nav.is-stuck {
+		top: 0;
+	}
+}
+
+.ts-nav-inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+}
+
+.main-navigation ul {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.main-navigation li {
+	position: relative;
+}
+
+.main-navigation a {
+	display: block;
+	padding: 16px 16px;
+	font-size: 15px;
+	font-weight: 500;
+	color: var(--ts-heading);
+}
+
+.main-navigation > div > ul > li > a:hover,
+.main-navigation > div > ul > li.current-menu-item > a,
+.main-navigation > div > ul > li.current_page_item > a {
+	color: var(--ts-primary);
+}
+
+.main-navigation ul ul {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	display: block;
+	min-width: 230px;
+	padding: 10px;
+	background-color: var(--ts-surface);
+	border: 1px solid var(--ts-border);
+	border-radius: var(--ts-radius);
+	box-shadow: var(--ts-shadow-lg);
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(10px);
+	transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+	z-index: 99;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.main-navigation ul ul ul {
+	top: -10px;
+	left: calc(100% + 14px);
+}
+
+/* Invisible strip over the gap so the flyout stays open on the way across. */
+.main-navigation ul ul ul::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: -24px;
+	width: 24px;
+}
+
+.main-navigation ul ul li {
+	width: 100%;
+}
+
+.main-navigation ul ul a {
+	padding: 9px 14px;
+	font-size: 14px;
+	border-radius: var(--ts-radius-sm);
+}
+
+.main-navigation ul ul a:hover {
+	color: var(--ts-primary);
+	background-color: var(--ts-bg-soft);
+}
+
+.menu-toggle {
+	display: none;
+	padding: 10px 18px;
+	font-size: 14px;
+	color: var(--ts-heading);
+	background-color: var(--ts-bg-soft);
+}
+
+.menu-toggle:hover {
+	background-color: var(--ts-neutral-200);
+	color: var(--ts-heading);
+}
+
+.ts-nav-actions {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.ts-search-box {
+	display: none;
+	padding: 22px 0;
+	border-bottom: 1px solid var(--ts-border);
+}
+
+.ts-search-box.is-open {
+	display: block;
+}
+
+/**
+ * 9.0 - Dark mode toggle
+ * -------------------------------------------------------------
+ */
+.ts-dark-toggle .ts-icon-sun {
+	display: none;
+}
+
+body.ts-dark-mode .ts-dark-toggle .ts-icon-sun {
+	display: inline-block;
+}
+
+body.ts-dark-mode .ts-dark-toggle .ts-icon-moon {
+	display: none;
+}
+
+/**
+ * 10.0 - Breaking news ticker
+ * -------------------------------------------------------------
+ */
+.ts-ticker-wrap {
+	padding: 16px 0;
+}
+
+.ts-ticker {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	padding: 10px 18px;
+	background-color: var(--ts-bg-soft);
+	border-radius: var(--ts-radius-full);
+	overflow: hidden;
+}
+
+.ts-ticker-label {
+	flex: 0 0 auto;
+	padding: 5px 15px;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 0.4px;
+	text-transform: uppercase;
+	color: #ffffff;
+	background-color: var(--ts-primary);
+	border-radius: var(--ts-radius-full);
+}
+
+.ts-ticker-items {
+	position: relative;
+	flex: 1 1 auto;
+	overflow: hidden;
+	height: 28px;
+}
+
+.ts-ticker-items .ts-ticker-item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	opacity: 0;
+	transform: translateY(8px);
+	transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.ts-ticker-items .ts-ticker-item.is-active {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.ts-ticker-item a {
+	color: var(--ts-heading);
+	font-weight: 500;
+	font-size: 15px;
+}
+
+.ts-ticker-item a:hover {
+	color: var(--ts-primary);
+}
+
+/**
+ * 11.0 - Featured section
+ * -------------------------------------------------------------
+ */
+.ts-slider-wrap {
+	padding: 20px 0 0;
+}
+
+.ts-slide {
+	position: relative;
+	overflow: hidden;
+	border-radius: var(--ts-radius-lg);
+}
+
+.ts-slide-media {
+	position: relative;
+	padding-top: 56.25%;
+	background-color: var(--ts-neutral-800);
+}
+
+.ts-slide-media img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.ts-slide-overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(to top, rgba(17, 24, 39, 0.88) 0%, rgba(17, 24, 39, 0.3) 55%, rgba(17, 24, 39, 0) 100%);
+}
+
+.ts-slide-content {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 36px;
+	color: #ffffff;
+}
+
+.ts-slide-content .ts-post-title {
+	margin: 14px 0;
+	font-size: 30px;
+	color: #ffffff;
+}
+
+/*
+ * The slide overlay sits on a photograph, so its text is always white. The
+ * :not() carries no meaning here beyond weight: the generic meta colours later
+ * in this file score the same as a plain descendant selector and would
+ * otherwise win on order, painting the byline dark ink on a dark picture.
+ */
+.ts-slide-content .ts-post-title a,
+.ts-slide-content .entry-meta,
+.ts-slide-content .entry-meta a:not(.ts-cat-badge) {
+	color: #ffffff;
+}
+
+.ts-slide-content .ts-post-title a:hover,
+.ts-slide-content .entry-meta a:not(.ts-cat-badge):hover {
+	opacity: 0.85;
+	color: #ffffff;
+}
+
+.ts-slide-content .entry-meta i {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+/**
+ * 12.0 - Editor pick cards
+ * -------------------------------------------------------------
+ */
+.ts-boxes-wrap {
+	padding: 28px 0 0;
+}
+
+.ts-boxes-grid {
+	display: grid;
+	gap: 26px;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.ts-boxes-grid.ts-boxes-1 { grid-template-columns: 1fr; }
+.ts-boxes-grid.ts-boxes-2 { grid-template-columns: repeat(2, 1fr); }
+.ts-boxes-grid.ts-boxes-4 { grid-template-columns: repeat(4, 1fr); }
+
+.ts-box {
+	position: relative;
+	overflow: hidden;
+	border-radius: var(--ts-radius-lg);
+}
+
+.ts-box-media {
+	position: relative;
+	padding-top: 75%;
+	background-color: var(--ts-neutral-800);
+}
+
+.ts-box-media img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.6s ease;
+}
+
+.ts-box:hover .ts-box-media img {
+	transform: scale(1.07);
+}
+
+.ts-box-content {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 22px;
+	background: linear-gradient(to top, rgba(17, 24, 39, 0.9) 0%, rgba(17, 24, 39, 0) 100%);
+}
+
+.ts-box-content .ts-post-title {
+	margin: 10px 0 0;
+	font-size: 18px;
+	color: #ffffff;
+}
+
+.ts-box-content .ts-post-title a {
+	color: #ffffff;
+}
+
+.ts-box-content .ts-post-title a:hover {
+	opacity: 0.85;
+	color: #ffffff;
+}
+
+/**
+ * 13.0 - Post cards and archives
+ * -------------------------------------------------------------
+ */
+.site-content {
+	padding: 44px 0 60px;
+}
+
+.ts-section-title {
+	margin-bottom: 26px;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+article.hentry {
+	margin-bottom: 40px;
+}
+
+.ts-grid article.hentry {
+	margin-bottom: 0;
+}
+
+.ts-posts-wrap.ts-one-column article.hentry {
+	padding-bottom: 40px;
+	border-bottom: 1px solid var(--ts-border);
+}
+
+.ts-posts-wrap.ts-one-column article.hentry:last-child {
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+
+.ts-post-media {
+	position: relative;
+	margin-bottom: 20px;
+	overflow: hidden;
+	border-radius: var(--ts-radius-lg);
+	background-color: var(--ts-bg-soft);
+}
+
+.ts-post-media img {
+	width: 100%;
+	transition: transform 0.6s ease;
+}
+
+.ts-post-media:hover img {
+	transform: scale(1.05);
+}
+
+.ts-post-media .ts-cat-badge {
+	position: absolute;
+	top: 16px;
+	left: 16px;
+	z-index: 2;
+}
+
+.ts-post-title {
+	margin: 0 0 14px;
+	font-size: 22px;
+}
+
+.ts-post-title a {
+	color: var(--ts-heading);
+}
+
+.ts-post-title a:hover {
+	color: var(--ts-primary);
+}
+
+.entry-meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 18px;
+	margin-bottom: 14px;
+	font-size: 13px;
+	color: var(--ts-muted);
+}
+
+/**
+ * Meta links, but never the category badge. The badge paints its own
+ * background, and these selectors are more specific than .ts-cat-badge, so
+ * without the guard the badge text takes the meta colour and lands on top of
+ * its own indigo background on hover.
+ */
+.entry-meta a:not(.ts-cat-badge) {
+	color: var(--ts-muted);
+}
+
+.entry-meta a:not(.ts-cat-badge):hover {
+	color: var(--ts-primary);
+}
+
+.entry-meta i {
+	margin-right: 6px;
+	color: var(--ts-neutral-400);
+}
+
+.ts-meta-author {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.ts-meta-author img {
+	border-radius: var(--ts-radius-full);
+}
+
+.ts-post-excerpt {
+	margin-bottom: 16px;
+}
+
+.more-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	/* A finger needs 24px; the type alone came to 23. */
+	min-height: 24px;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.ts-grid {
+	display: grid;
+	gap: 34px;
+}
+
+.ts-grid.ts-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.ts-grid.ts-grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+.ts-grid .ts-post-title {
+	font-size: 18px;
+}
+
+.ts-grid-3 .ts-post-title {
+	font-size: 18px;
+}
+
+/* Image beside text */
+.ts-post-wrap.ts-list-image {
+	display: flex;
+	gap: 28px;
+	align-items: flex-start;
+}
+
+.ts-list-image .ts-post-media {
+	flex: 0 0 300px;
+	max-width: 300px;
+	margin-bottom: 0;
+}
+
+.ts-list-image .ts-post-content {
+	flex: 1 1 auto;
+}
+
+/* Social sharing */
+.ts-post-share {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+	margin: 28px 0;
+}
+
+.ts-post-share .ts-share-label {
+	font-size: 13px;
+	font-weight: 500;
+	color: var(--ts-muted);
+}
+
+.ts-post-share a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 38px;
+	height: 38px;
+	color: var(--ts-heading);
+	background-color: var(--ts-bg-soft);
+	border-radius: var(--ts-radius-full);
+	font-size: 14px;
+}
+
+.ts-post-share a:hover {
+	color: #ffffff;
+	background-color: var(--ts-primary);
+}
+
+/* Breadcrumbs */
+.ts-breadcrumb-wrap {
+	padding: 16px 0;
+	font-size: 13px;
+	color: var(--ts-muted);
+}
+
+.ts-breadcrumb-wrap a {
+	color: var(--ts-muted);
+}
+
+.ts-breadcrumb-wrap a:hover {
+	color: var(--ts-primary);
+}
+
+.ts-breadcrumb-wrap .separator {
+	margin: 0 8px;
+	color: var(--ts-neutral-300);
+}
+
+/* Archive header */
+.page-header {
+	margin-bottom: 34px;
+	padding: 34px;
+	background-color: var(--ts-bg-soft);
+	border-radius: var(--ts-radius-lg);
+}
+
+.page-title {
+	margin: 0;
+	font-size: 28px;
+}
+
+.archive-description {
+	margin-top: 10px;
+	margin-bottom: 0;
+	color: var(--ts-muted);
+}
+
+/**
+ * 14.0 - Single post
+ * -------------------------------------------------------------
+ */
+.single .entry-header .ts-post-title,
+.page .entry-header .ts-post-title {
+	font-size: 34px;
+}
+
+.entry-content > *:last-child {
+	margin-bottom: 0;
+}
+
+.ts-entry-footer {
+	margin: 28px 0;
+	font-size: 14px;
+}
+
+.ts-tags a {
+	display: inline-block;
+	margin: 0 6px 8px 0;
+	padding: 5px 14px;
+	font-size: 13px;
+	color: var(--ts-body);
+	background-color: var(--ts-bg-soft);
+	border-radius: var(--ts-radius-full);
+}
+
+.ts-tags a:hover {
+	color: #ffffff;
+	background-color: var(--ts-primary);
+}
+
+.ts-author-box {
+	display: flex;
+	gap: 22px;
+	margin: 40px 0;
+	padding: 30px;
+	background-color: var(--ts-bg-soft);
+	border-radius: var(--ts-radius-lg);
+}
+
+.ts-author-box img {
+	flex: 0 0 auto;
+	border-radius: var(--ts-radius-full);
+}
+
+.ts-author-box .ts-author-name {
+	margin: 0 0 8px;
+	font-size: 19px;
+}
+
+.ts-author-box p:last-child {
+	margin-bottom: 0;
+}
+
+.ts-related-posts {
+	margin: 46px 0;
+}
+
+.ts-post-navigation {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 22px;
+	margin: 40px 0;
+}
+
+.ts-post-navigation .nav-previous,
+.ts-post-navigation .nav-next {
+	flex: 1 1 45%;
+	padding: 22px 26px;
+	background-color: var(--ts-bg-soft);
+	border-radius: var(--ts-radius);
+}
+
+.ts-post-navigation .nav-next {
+	text-align: right;
+}
+
+.ts-post-navigation .ts-nav-label {
+	display: block;
+	margin-bottom: 6px;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	color: var(--ts-muted);
+}
+
+.ts-post-navigation a {
+	font-family: var(--ts-font-heading);
+	font-size: 17px;
+	font-weight: 600;
+	color: var(--ts-heading);
+}
+
+.ts-post-navigation a:hover {
+	color: var(--ts-primary);
+}
+
+/**
+ * 15.0 - Comments
+ * -------------------------------------------------------------
+ */
+.comments-area {
+	margin-top: 46px;
+}
+
+.comments-title,
+.comment-reply-title {
+	margin-bottom: 28px;
+	font-size: 20px;
+}
+
+.comment-list {
+	margin: 0 0 40px;
+	padding: 0;
+	list-style: none;
+}
+
+.comment-list .children {
+	margin: 0 0 0 54px;
+	padding: 0;
+	list-style: none;
+}
+
+.comment-body {
+	margin-bottom: 22px;
+	padding: 24px 26px;
+	background-color: var(--ts-bg-soft);
+	border-radius: var(--ts-radius);
+}
+
+.comment-meta {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	margin-bottom: 14px;
+}
+
+.comment-author img {
+	border-radius: var(--ts-radius-full);
+}
+
+.comment-author .fn {
+	font-weight: 600;
+	font-style: normal;
+	color: var(--ts-heading);
+}
+
+.comment-metadata {
+	font-size: 13px;
+	color: var(--ts-muted);
+}
+
+.comment-metadata a {
+	color: var(--ts-muted);
+}
+
+.reply {
+	font-size: 13px;
+	font-weight: 500;
+}
+
+.comment-form label {
+	display: block;
+	margin-bottom: 8px;
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--ts-heading);
+}
+
+.comment-form p {
+	margin-bottom: 20px;
+}
+
+.comment-form-cookies-consent label {
+	display: inline;
+	font-weight: 400;
+}
+
+/*
+ * The browser default is 13px, a poor target on a phone. It sits alone in
+ * its own paragraph, so the spacing exception to the 24px minimum applies
+ * and it does not have to be full size to be comfortably reachable.
+ */
+.comment-form-cookies-consent input {
+	width: 18px;
+	height: 18px;
+	margin-right: 8px;
+	vertical-align: middle;
+}
+
+/**
+ * 16.0 - Sidebar and widgets
+ * -------------------------------------------------------------
+ */
+.widget {
+	margin-bottom: 34px;
+	padding: 28px;
+	background-color: var(--ts-bg-soft);
+	border-radius: var(--ts-radius-lg);
+}
+
+.widget:last-child {
+	margin-bottom: 0;
+}
+
+.widget-title {
+	margin-bottom: 20px;
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+}
+
+.widget ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.widget ul li {
+	padding: 9px 0;
+	border-bottom: 1px solid var(--ts-border);
+}
+
+.widget ul li:first-child {
+	padding-top: 0;
+}
+
+.widget ul li:last-child {
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+
+.widget ul li a {
+	color: var(--ts-body);
+}
+
+.widget ul li a:hover {
+	color: var(--ts-primary);
+}
+
+.widget ul ul {
+	margin-top: 9px;
+	padding-left: 16px;
+	border-top: 1px solid var(--ts-border);
+}
+
+.widget select,
+.widget input[type="search"],
+.widget input[type="text"] {
+	background-color: var(--ts-surface);
+}
+
+/* Recent posts widget */
+.ts-widget-post {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+	padding: 13px 0;
+	border-bottom: 1px solid var(--ts-border);
+}
+
+.ts-widget-post:first-child {
+	padding-top: 0;
+}
+
+.ts-widget-post:last-child {
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+
+.ts-widget-post .ts-widget-thumb {
+	flex: 0 0 72px;
+	max-width: 72px;
+	overflow: hidden;
+	border-radius: var(--ts-radius);
+}
+
+.ts-widget-post .ts-widget-title {
+	margin: 0 0 5px;
+	font-size: 15px;
+	line-height: 1.45;
+}
+
+.ts-widget-post .ts-widget-date {
+	font-size: 12px;
+	color: var(--ts-muted);
+}
+
+/* Author widget */
+.ts-author-widget {
+	text-align: center;
+}
+
+.ts-author-widget img {
+	margin-bottom: 14px;
+	border-radius: var(--ts-radius-full);
+}
+
+.ts-author-widget .ts-author-name {
+	margin-bottom: 8px;
+	font-size: 18px;
+}
+
+/* Social widget */
+.ts-social-widget ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.ts-social-widget ul li {
+	padding: 0;
+	border: 0;
+}
+
+/**
+ * The widget class is repeated on purpose. A social link is still a link in a
+ * widget list, and .widget ul li a:hover is the more specific selector, so
+ * without it the icon takes the plain link colour and disappears into the
+ * circle it just painted underneath itself.
+ */
+.widget.ts-social-widget a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	color: var(--ts-heading);
+	background-color: var(--ts-surface);
+	border-radius: var(--ts-radius-full);
+}
+
+.widget.ts-social-widget a:hover {
+	color: #ffffff;
+	background-color: var(--ts-primary);
+}
+
+/* The link text stays for screen readers, the circle shows only the icon. */
+.ts-social-widget a span {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+/* Search form */
+.search-form {
+	display: flex;
+	gap: 10px;
+}
+
+.search-form label {
+	flex: 1 1 auto;
+	margin: 0;
+}
+
+.search-form .search-submit {
+	flex: 0 0 auto;
+}
+
+/* Calendar */
+.wp-calendar-table {
+	font-size: 14px;
+}
+
+.wp-calendar-table caption {
+	padding-bottom: 8px;
+	font-weight: 500;
+}
+
+.wp-calendar-nav {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 8px;
+	font-size: 13px;
+}
+
+/**
+ * 17.0 - Pagination
+ * -------------------------------------------------------------
+ */
+.ts-pagination {
+	margin: 40px 0 0;
+}
+
+.ts-pagination .nav-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.ts-pagination .page-numbers {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 44px;
+	height: 44px;
+	padding: 0 14px;
+	font-size: 15px;
+	font-weight: 500;
+	color: var(--ts-heading);
+	background-color: var(--ts-bg-soft);
+	border-radius: var(--ts-radius-full);
+}
+
+.ts-pagination .page-numbers:hover,
+.ts-pagination .page-numbers.current {
+	color: #ffffff;
+	background-color: var(--ts-primary);
+}
+
+.ts-load-more {
+	margin-top: 34px;
+	text-align: center;
+}
+
+/**
+ * 18.0 - Footer
+ * -------------------------------------------------------------
+ */
+.ts-footer-widgets {
+	padding: 60px 0 30px;
+	border-top: 1px solid var(--ts-border);
+}
+
+.ts-footer-widgets .widget {
+	padding: 0;
+	background-color: transparent;
+}
+
+.ts-footer-columns {
+	display: grid;
+	gap: 34px;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.ts-footer-columns.ts-footer-cols-1 { grid-template-columns: 1fr; }
+.ts-footer-columns.ts-footer-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.ts-footer-columns.ts-footer-cols-3 { grid-template-columns: repeat(3, 1fr); }
+
+.site-footer {
+	border-top: 1px solid var(--ts-border);
+	font-size: 14px;
+	color: var(--ts-muted);
+}
+
+.ts-footer-nav {
+	padding: 18px 0;
+	border-bottom: 1px solid var(--ts-border);
+}
+
+.ts-footer-nav .footer-menu {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 6px 26px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.ts-footer-inner {
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+	align-items: center;
+	gap: 16px;
+	padding: 26px 0;
+}
+
+.ts-footer-brand a {
+	font-family: var(--ts-font-heading);
+	font-size: 22px;
+	font-weight: 700;
+	color: var(--ts-heading);
+}
+
+.ts-footer-brand a:hover {
+	color: var(--ts-primary);
+}
+
+.ts-footer-social {
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+}
+
+.ts-footer-social a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 38px;
+	height: 38px;
+	font-size: 14px;
+	color: var(--ts-heading);
+	background-color: var(--ts-bg-soft);
+	border-radius: var(--ts-radius-full);
+}
+
+.ts-footer-social a:hover {
+	color: #ffffff;
+	background-color: var(--ts-primary);
+}
+
+.ts-footer-social a span {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	word-wrap: normal;
+}
+
+.site-footer a {
+	color: var(--ts-muted);
+}
+
+.site-footer a:hover {
+	color: var(--ts-primary);
+}
+
+#toTop {
+	position: fixed;
+	right: 26px;
+	bottom: 26px;
+	z-index: 999;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	width: 46px;
+	height: 46px;
+	padding: 0;
+	color: #ffffff;
+	background-color: var(--ts-primary);
+	border-radius: var(--ts-radius-full);
+	box-shadow: var(--ts-shadow-lg);
+}
+
+#toTop.is-visible {
+	display: flex;
+}
+
+/**
+ * 19.0 - Dark mode palette
+ * -------------------------------------------------------------
+ */
+body.ts-dark-mode {
+	--ts-bg: var(--ts-neutral-900);
+	--ts-bg-soft: #171f2e;
+	--ts-surface: var(--ts-neutral-800);
+	--ts-heading: var(--ts-neutral-100);
+	--ts-body: var(--ts-neutral-300);
+	--ts-muted: var(--ts-neutral-400);
+	--ts-border: #2b3648;
+	--ts-primary-soft: rgba(79, 70, 229, 0.16);
+	--ts-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+	--ts-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+body.ts-dark-mode .ts-cat-badge {
+	color: #a5b4fc;
+}
+
+body.ts-dark-mode .ts-cat-badge:hover,
+body.ts-dark-mode .ts-cat-badge-solid {
+	color: #ffffff;
+}
+
+body.ts-dark-mode .ts-button-ghost:hover,
+body.ts-dark-mode .menu-toggle:hover {
+	background-color: var(--ts-neutral-700);
+}
+
+body.ts-dark-mode pre {
+	background-color: #0b1020;
+}
+
+body.ts-dark-mode .entry-meta i {
+	color: var(--ts-neutral-500);
+}
+
+/**
+ * 20.0 - Responsive
+ * -------------------------------------------------------------
+ */
+@media only screen and (max-width: 991px) {
+
+	.ts-grid.ts-grid-3,
+	.ts-boxes-grid,
+	.ts-boxes-grid.ts-boxes-4 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.ts-footer-columns,
+	.ts-footer-columns.ts-footer-cols-3,
+	.ts-footer-columns.ts-footer-cols-4 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.site-title {
+		font-size: 32px;
+	}
+
+	.single .entry-header .ts-post-title,
+	.page .entry-header .ts-post-title {
+		font-size: 32px;
+	}
+
+	.ts-slide-content .ts-post-title {
+		font-size: 26px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+
+	body {
+		font-size: 15px;
+	}
+
+	h1 { font-size: 30px; }
+	h2 { font-size: 26px; }
+	h3 { font-size: 22px; }
+
+	.ts-header-inner,
+	.ts-top-header .ts-top-inner {
+		justify-content: center;
+		text-align: center;
+	}
+
+	.menu-toggle {
+		display: inline-flex;
+	}
+
+	.ts-nav-inner {
+		flex-wrap: wrap;
+		padding: 10px 0;
+	}
+
+	.main-navigation .menu-wrapper {
+		display: none;
+		width: 100%;
+		padding-bottom: 10px;
+	}
+
+	.main-navigation.toggled .menu-wrapper {
+		display: block;
+	}
+
+	.main-navigation ul {
+		display: block;
+	}
+
+	.main-navigation ul ul {
+		position: static;
+		opacity: 1;
+		visibility: visible;
+		transform: none;
+		box-shadow: none;
+		border: 0;
+		padding: 0 0 0 18px;
+		background-color: transparent;
+	}
+
+	.main-navigation a {
+		padding: 11px 0;
+	}
+
+	.ts-grid.ts-grid-2,
+	.ts-grid.ts-grid-3,
+	.ts-boxes-grid,
+	.ts-boxes-grid.ts-boxes-2,
+	.ts-boxes-grid.ts-boxes-3,
+	.ts-boxes-grid.ts-boxes-4 {
+		grid-template-columns: 1fr;
+	}
+
+	.ts-post-wrap.ts-list-image {
+		display: block;
+	}
+
+	.ts-list-image .ts-post-media {
+		max-width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.ts-slide-content {
+		padding: 22px;
+	}
+
+	.ts-slide-content .ts-post-title {
+		font-size: 20px;
+	}
+
+	.ts-ticker {
+		border-radius: var(--ts-radius);
+	}
+
+	.ts-footer-columns,
+	.ts-footer-columns.ts-footer-cols-2,
+	.ts-footer-columns.ts-footer-cols-3,
+	.ts-footer-columns.ts-footer-cols-4 {
+		grid-template-columns: 1fr;
+	}
+
+	.ts-author-box {
+		display: block;
+		text-align: center;
+	}
+
+	.ts-author-box img {
+		margin-bottom: 16px;
+	}
+
+	.comment-list .children {
+		margin-left: 20px;
+	}
+
+	.ts-post-navigation .nav-previous,
+	.ts-post-navigation .nav-next {
+		flex: 1 1 100%;
+		text-align: left;
+	}
+
+	.page-header {
+		padding: 24px;
+	}
+
+	.alignleft,
+	.alignright {
+		float: none;
+		display: block;
+		margin: 5px auto 22px;
+	}
+}
+
+.gallery-caption {
+	margin-top: 8px;
+	font-size: 14px;
+	color: var(--ts-muted);
+}
+
+/**
+ * 21.0 - Header layouts
+ * -------------------------------------------------------------
+ *
+ * ts-header-one is the default classic layout and needs no extra rules.
+ */
+
+/* Header two: logo left, centered menu, dark switch and search right. */
+.ts-header-inline {
+	padding: 14px 0;
+	border-bottom: 1px solid var(--ts-border);
+	background-color: var(--ts-bg);
+}
+
+.ts-header-inline .ts-header-inner {
+	flex-wrap: nowrap;
+	gap: 28px;
+}
+
+.ts-header-two .site-branding {
+	flex: 1 1 0;
+}
+
+.ts-header-two .site-title {
+	font-size: 26px;
+	white-space: nowrap;
+}
+
+.ts-header-two .custom-logo-link img {
+	max-height: 48px;
+}
+
+.ts-header-two .main-navigation {
+	/* Shrinkable, so a long menu wraps instead of widening the page. */
+	flex: 0 1 auto;
+	min-width: 0;
+}
+
+/*
+ * Below this the navigation is only the toggle, and a box that can shrink
+ * collapses under its own button: at 320px the 44px toggle hung 8px over the
+ * actions beside it. The shrink above is for the width where the menu is in
+ * the row; here the toggle sets the width.
+ */
+@media only screen and (max-width: 767px) {
+
+	.ts-header-two .main-navigation {
+		flex: 0 0 auto;
+		min-width: auto;
+	}
+}
+
+.ts-header-two .main-navigation a {
+	padding: 10px 13px;
+	text-transform: none;
+	letter-spacing: 0;
+	font-size: 15px;
+}
+
+.ts-header-two .main-navigation ul ul a {
+	padding: 9px 14px;
+}
+
+.ts-header-two .ts-nav-actions {
+	flex: 1 1 0;
+	justify-content: flex-end;
+	gap: 14px;
+}
+
+/* Header three: centered branding, centered menu. */
+.ts-header-three .ts-header-inner {
+	justify-content: center;
+	text-align: center;
+}
+
+.ts-header-three .ts-nav-inner {
+	position: relative;
+	justify-content: center;
+}
+
+.ts-header-three .ts-nav-actions {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+}
+
+/* Header four: branding row with a search field, navigation bar below. */
+.ts-header-band {
+	flex-wrap: nowrap;
+	align-items: center;
+}
+
+.ts-header-four .site-branding {
+	flex: 0 1 auto;
+}
+
+.ts-header-search {
+	flex: 0 1 400px;
+	min-width: 0;
+}
+
+.ts-header-search .search-form {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px;
+	background-color: var(--ts-bg-soft);
+	border: 1px solid var(--ts-border);
+	border-radius: var(--ts-radius-full);
+}
+
+.ts-header-search .search-form label {
+	flex: 1 1 auto;
+	min-width: 0;
+	margin: 0;
+}
+
+.ts-header-search .search-field {
+	width: 100%;
+	padding: 8px 14px;
+	border: 0;
+	background: none;
+}
+
+/* The field already sits in a bordered pill, so it must not draw a second one. */
+.ts-header-search .search-field:focus {
+	outline: 0;
+	box-shadow: none;
+}
+
+.ts-header-search .search-submit {
+	flex: 0 0 auto;
+	padding: 10px 20px;
+}
+
+/* Header five: centred branding over a bar filled with the brand colour. */
+.ts-header-stacked {
+	justify-content: center;
+	text-align: center;
+}
+
+.ts-nav-filled {
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+	background-color: var(--ts-primary);
+}
+
+.ts-nav-filled .ts-nav-inner {
+	position: relative;
+	justify-content: center;
+}
+
+.ts-nav-filled .ts-nav-actions {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+}
+
+/*
+ * Header three and header five lift the actions out of the flow so the menu
+ * centres on the whole bar rather than on the space beside them. Nothing then
+ * stops a long menu reaching them: at 768px the last item sat 26px underneath
+ * the dark mode button, close enough to steal its taps. Reserving the actions'
+ * width on both sides keeps the centring exact and puts the menu out of range
+ * at every width and every menu length.
+ */
+@media only screen and (min-width: 768px) {
+
+	.ts-header-three .ts-nav-inner,
+	.ts-nav-filled .ts-nav-inner {
+		padding-left: 96px;
+		padding-right: 96px;
+	}
+}
+
+/* The reservation costs a tablet its last item, so the links give it back. */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+	.ts-header-three .main-navigation > div > ul > li > a,
+	.ts-nav-filled .main-navigation > div > ul > li > a {
+		padding-left: 9px;
+		padding-right: 9px;
+	}
+}
+
+/*
+ * The bar is a solid block of brand colour, so everything on it is white.
+ * These selectors match the shape of the generic nav rules rather than merely
+ * their weight: the plain colour and the current item rule further up the file
+ * would otherwise be a tie or a win on document order.
+ */
+.ts-nav-filled .main-navigation a {
+	color: #ffffff;
+}
+
+.ts-nav-filled .main-navigation > div > ul > li > a:hover,
+.ts-nav-filled .main-navigation > div > ul > li.current-menu-item > a,
+.ts-nav-filled .main-navigation > div > ul > li.current_page_item > a {
+	color: #ffffff;
+	opacity: 0.75;
+}
+
+.ts-nav-filled .ts-icon-button,
+.ts-nav-filled .menu-toggle {
+	color: #ffffff;
+	background-color: rgba(255, 255, 255, 0.16);
+}
+
+.ts-nav-filled .ts-icon-button:hover,
+.ts-nav-filled .menu-toggle:hover {
+	color: #ffffff;
+	background-color: rgba(255, 255, 255, 0.28);
+}
+
+/* The dropdown drops off the coloured bar onto the page, so it reverts. */
+.ts-nav-filled .main-navigation ul ul a {
+	color: var(--ts-heading);
+}
+
+.ts-nav-filled .main-navigation ul ul a:hover {
+	color: var(--ts-primary);
+	opacity: 1;
+}
+
+/**
+ * Header five paints the navigation bar in the brand colour and turns
+ * everything on it white. On a phone the menu is not on the bar any more: the
+ * bar keeps a toggle, and the menu itself is a panel below it painted in the
+ * page's own background. The white text followed the links into that panel and
+ * the whole menu disappeared — white on white, dividers and carets and nothing
+ * else.
+ *
+ * These selectors have the shape of the ones they overrule rather than merely
+ * their weight. The current item's rule counts four elements, so a shorter
+ * selector with the same number of classes loses to it however specific it
+ * looks.
+ */
+@media only screen and (max-width: 767px) {
+
+	.ts-nav-filled .main-navigation .menu-wrapper a {
+		color: var(--ts-heading);
+	}
+
+	.ts-nav-filled .main-navigation .menu-wrapper > ul > li > a:hover,
+	.ts-nav-filled .main-navigation .menu-wrapper > ul > li.current-menu-item > a,
+	.ts-nav-filled .main-navigation .menu-wrapper > ul > li.current_page_item > a {
+		color: var(--ts-primary);
+		opacity: 1;
+	}
+
+	.ts-nav-filled .main-navigation .menu-wrapper .ts-submenu-toggle {
+		color: var(--ts-heading);
+	}
+}
+
+/*
+ * Header six: the menu is a drawer at every width, so the toggle never hides
+ * and the panel hangs off the header rather than sitting in the row.
+ */
+.ts-header-six .ts-main-header {
+	position: relative;
+}
+
+.ts-header-drawer {
+	flex-wrap: nowrap;
+	gap: 16px;
+}
+
+.ts-header-drawer .main-navigation {
+	position: static;
+	flex: 0 0 auto;
+}
+
+.ts-header-drawer .site-branding {
+	flex: 1 1 auto;
+}
+
+.ts-header-six .site-title {
+	font-size: 26px;
+	white-space: nowrap;
+}
+
+.ts-header-six .custom-logo-link img {
+	max-height: 48px;
+}
+
+.ts-header-drawer .menu-toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.ts-header-drawer .menu-wrapper {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	max-height: calc(100vh - 140px);
+	padding: 12px 24px 24px;
+	overflow-y: auto;
+	background-color: var(--ts-bg);
+	border-top: 1px solid var(--ts-border);
+	box-shadow: var(--ts-shadow-lg);
+}
+
+.ts-header-drawer .main-navigation.toggled .menu-wrapper {
+	display: block;
+}
+
+.ts-header-drawer .main-navigation ul {
+	display: block;
+}
+
+.ts-header-drawer .main-navigation .menu-item {
+	border-bottom: 1px solid var(--ts-border);
+}
+
+.ts-header-drawer .main-navigation .menu-wrapper > ul > .menu-item:last-child {
+	border-bottom: 0;
+}
+
+/*
+ * No hover to open a submenu in a drawer, so the accordion buttons show. The
+ * positioning below repeats the small screen rules rather than sharing them:
+ * those live inside a max-width media query and this layout needs them at every
+ * width, and a caret drawn for a hover dropdown would sit beside the button.
+ */
+.ts-header-drawer .main-navigation .menu-item-has-children {
+	position: relative;
+}
+
+.ts-header-drawer .main-navigation .menu-item-has-children > a::after {
+	content: none;
+}
+
+.ts-header-drawer .main-navigation a {
+	padding: 13px 56px 13px 2px;
+}
+
+.ts-header-drawer .ts-submenu-toggle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 48px;
+	height: 48px;
+	padding: 0;
+	border: 0;
+	border-radius: var(--ts-radius-sm);
+	background: none;
+	color: var(--ts-heading);
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.ts-header-drawer .ts-submenu-toggle i {
+	transition: transform 0.2s ease;
+}
+
+.ts-header-drawer .menu-item-has-children.is-open > .ts-submenu-toggle i {
+	transform: rotate(180deg);
+}
+
+.ts-header-drawer .main-navigation ul ul {
+	position: static;
+	display: none;
+	min-width: 0;
+	padding: 0 0 0 18px;
+	opacity: 1;
+	visibility: visible;
+	transform: none;
+	border: 0;
+	box-shadow: none;
+	background-color: transparent;
+}
+
+.ts-header-drawer .main-navigation .menu-item.is-open > ul {
+	display: block;
+}
+
+@media only screen and (max-width: 991px) {
+
+	.ts-header-inline .ts-header-inner {
+		flex-wrap: wrap;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+
+	.ts-header-inline .ts-header-inner {
+		justify-content: space-between;
+		text-align: left;
+	}
+
+	/* Inline header keeps one row on a phone: logo, then toggle and actions. */
+	.ts-header-inline .ts-header-inner {
+		flex-wrap: nowrap;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.ts-header-two .site-branding {
+		flex: 1 1 auto;
+		min-width: 0;
+	}
+
+	.ts-header-two .main-navigation {
+		/* Order only: the flex is set per band by the rules above. */
+		order: 2;
+	}
+
+	.ts-header-two .ts-nav-actions {
+		order: 3;
+		flex: 0 0 auto;
+		gap: 6px;
+	}
+
+	.ts-header-three .ts-nav-actions {
+		position: static;
+		transform: none;
+	}
+}
+
+/**
+ * 22.0 - Hero layouts
+ * -------------------------------------------------------------
+ *
+ * ts-hero-one is the default overlay slide styled in section 11.
+ */
+
+/* Shared hero meta line: avatar, author and date. */
+.ts-hero-meta {
+	display: flex;
+	align-items: center;
+	gap: 9px;
+	font-size: 13px;
+	color: var(--ts-muted);
+}
+
+.ts-hero-meta img {
+	border-radius: var(--ts-radius-full);
+}
+
+.ts-hero-meta .ts-hero-author {
+	font-weight: 600;
+	color: var(--ts-heading);
+}
+
+.ts-hero-meta .ts-hero-author:hover {
+	color: var(--ts-primary);
+}
+
+.ts-hero-excerpt {
+	margin: 0 0 14px;
+	color: var(--ts-muted);
+}
+
+/* Hero two: magazine split. */
+.ts-hero-mag {
+	display: grid;
+	gap: 48px;
+	grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+	align-items: start;
+}
+
+.ts-hero-main .ts-hero-media {
+	margin-bottom: 22px;
+	overflow: hidden;
+	border-radius: var(--ts-radius-lg);
+	background-color: var(--ts-bg-soft);
+}
+
+.ts-hero-main .ts-hero-media img {
+	width: 100%;
+	transition: transform 0.6s ease;
+}
+
+.ts-hero-main .ts-hero-media:hover img {
+	transform: scale(1.04);
+}
+
+.ts-hero-main .ts-post-title {
+	margin-bottom: 12px;
+	font-size: 29px;
+}
+
+.ts-hero-side {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.ts-hero-side-item {
+	display: flex;
+	gap: 24px;
+	align-items: flex-start;
+}
+
+.ts-hero-side-item .ts-hero-content {
+	flex: 1 1 auto;
+}
+
+.ts-hero-side-item .ts-post-title {
+	margin-bottom: 8px;
+	font-size: 18px;
+}
+
+.ts-hero-side-item .ts-hero-excerpt {
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+
+.ts-hero-side-item .ts-hero-thumb {
+	flex: 0 0 128px;
+	max-width: 128px;
+	overflow: hidden;
+	border-radius: var(--ts-radius);
+	background-color: var(--ts-bg-soft);
+}
+
+.ts-hero-side-item .ts-hero-thumb img {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	transition: transform 0.5s ease;
+}
+
+.ts-hero-side-item .ts-hero-thumb:hover img {
+	transform: scale(1.06);
+}
+
+/* Hero three: overlay story with a floating headline panel. */
+.ts-hero-overlay {
+	position: relative;
+}
+
+.ts-hero-overlay .ts-slide-content {
+	max-width: 52%;
+}
+
+.ts-hero-overlay .ts-hero-excerpt {
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.ts-hero-overlay .ts-slide-content .ts-hero-meta,
+.ts-hero-overlay .ts-slide-content .ts-hero-meta .ts-hero-author {
+	color: #ffffff;
+}
+
+.ts-hero-panel {
+	position: absolute;
+	top: 34px;
+	right: 34px;
+	bottom: 34px;
+	z-index: 5;
+	display: flex;
+	flex-direction: column;
+	/**
+	 * Centred rather than spread. The panel is a fixed height box, and
+	 * space-between dumped all the slack between the stories, so a one line
+	 * headline left a hole above it and every rule sat tight under the text
+	 * it belonged to instead of halfway between two. Centring keeps the
+	 * spacing even and leaves equal air top and bottom.
+	 */
+	justify-content: center;
+	gap: 18px;
+	width: 380px;
+	padding: 28px;
+	overflow: hidden;
+	background-color: rgba(255, 255, 255, 0.88);
+	backdrop-filter: blur(10px);
+	border-radius: var(--ts-radius-lg);
+}
+
+.ts-hero-panel-item {
+	padding-bottom: 18px;
+	border-bottom: 1px solid rgba(17, 24, 39, 0.12);
+}
+
+.ts-hero-panel-item:last-child {
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+
+.ts-hero-panel-item .ts-post-title {
+	margin-bottom: 8px;
+	font-size: 16px;
+	line-height: 1.45;
+}
+
+body.ts-dark-mode .ts-hero-panel {
+	background-color: rgba(17, 24, 39, 0.82);
+}
+
+body.ts-dark-mode .ts-hero-panel-item {
+	border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+@media only screen and (max-width: 991px) {
+
+	.ts-hero-mag {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.ts-hero-overlay .ts-slide-content {
+		max-width: 100%;
+	}
+
+	.ts-hero-panel {
+		position: static;
+		width: 100%;
+		margin-top: 20px;
+		background-color: var(--ts-bg-soft);
+		backdrop-filter: none;
+	}
+
+	body.ts-dark-mode .ts-hero-panel {
+		background-color: var(--ts-bg-soft);
+	}
+}
+
+@media only screen and (max-width: 767px) {
+
+	.ts-hero-side-item {
+		gap: 16px;
+	}
+
+	.ts-hero-side-item .ts-hero-thumb {
+		flex-basis: 96px;
+		max-width: 96px;
+	}
+
+	.ts-hero-main .ts-post-title {
+		font-size: 23px;
+	}
+}
+
+/* Keep the modified date in the markup for schema, show only the published date. */
+.posted-on .updated:not(.published) {
+	display: none;
+}
+
+/* Dropdown indicators for menu items with children. */
+.main-navigation .menu-item-has-children > a::after,
+.main-navigation .page_item_has_children > a::after {
+	content: "\f107";
+	font-family: 'FontAwesome';
+	margin-left: 7px;
+	font-size: 12px;
+	color: var(--ts-muted);
+}
+
+.main-navigation ul ul .menu-item-has-children > a,
+.main-navigation ul ul .page_item_has_children > a {
+	position: relative;
+	padding-right: 34px;
+}
+
+.main-navigation ul ul .menu-item-has-children > a::after,
+.main-navigation ul ul .page_item_has_children > a::after {
+	content: "\f105";
+	position: absolute;
+	top: 50%;
+	right: 14px;
+	margin-left: 0;
+	transform: translateY(-50%);
+}
+
+/**
+ * 23.0 - Featured slider controls
+ * -------------------------------------------------------------
+ */
+.ts-carousel {
+	position: relative;
+}
+
+.ts-carousel-track {
+	position: relative;
+}
+
+.ts-carousel .ts-slide {
+	display: none;
+}
+
+.ts-carousel .ts-slide.is-active {
+	display: block;
+	animation: ts-slide-fade 0.6s ease;
+}
+
+@keyframes ts-slide-fade {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+.ts-carousel-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 5;
+	width: 46px;
+	height: 46px;
+	padding: 0;
+	font-size: 20px;
+	color: #ffffff;
+	background-color: rgba(17, 24, 39, 0.45);
+	border-radius: var(--ts-radius-full);
+	backdrop-filter: blur(4px);
+}
+
+.ts-carousel-arrow:hover {
+	background-color: var(--ts-primary);
+}
+
+.ts-carousel-prev { left: 18px; }
+.ts-carousel-next { right: 18px; }
+
+.ts-carousel-dots {
+	position: absolute;
+	right: 30px;
+	bottom: 26px;
+	z-index: 5;
+	display: flex;
+	/* The targets below carry their own spacing in a transparent border. */
+	gap: 0;
+}
+
+/*
+ * A dot is a small thing to look at and a large thing to press. The border is
+ * transparent and the background stops at the content box, so the target is
+ * 24px square while the dot stays the size it should be.
+ */
+.ts-carousel-dot {
+	width: 24px;
+	height: 24px;
+	padding: 0;
+	border: 6px solid transparent;
+	background-color: rgba(255, 255, 255, 0.45);
+	background-clip: content-box;
+	border-radius: var(--ts-radius-full);
+}
+
+.ts-carousel-dot.is-active,
+.ts-carousel-dot:hover {
+	background-color: #ffffff;
+}
+
+/**
+ * 24.0 - Editor picks styles
+ * -------------------------------------------------------------
+ */
+/*
+ * White here was for a card style that put the date on a picture, and that
+ * style stopped using this class. The two card styles below set their own
+ * colour and looked right; the category columns, which also use it, had nine
+ * dates a page the colour of the page.
+ */
+.ts-box-date {
+	display: block;
+	margin-top: 8px;
+	font-size: 13px;
+	color: var(--ts-muted);
+}
+
+/**
+ * Style two: clean cards, content below the image.
+ *
+ * The cards sit in one grid row, so the column stretches every card to
+ * the tallest. Laying the card out as a flex column and pushing the date
+ * down with an auto margin puts every date on the same line, however
+ * many lines the headline above it runs to.
+ */
+.ts-boxes-two .ts-box {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	background-color: var(--ts-surface);
+	border: 1px solid var(--ts-border);
+	border-radius: var(--ts-radius-lg);
+}
+
+.ts-boxes-two .ts-box-media {
+	overflow: hidden;
+	border-radius: 0;
+}
+
+.ts-boxes-two .ts-box-content {
+	position: static;
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 16px 18px 18px;
+	background: none;
+}
+
+.ts-boxes-two .ts-box-content .ts-post-title {
+	display: -webkit-box;
+	margin: 10px 0 0;
+	overflow: hidden;
+	color: var(--ts-heading);
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+
+.ts-boxes-two .ts-box-content .ts-post-title a {
+	color: var(--ts-heading);
+}
+
+.ts-boxes-two .ts-box-content .ts-post-title a:hover {
+	opacity: 1;
+	color: var(--ts-primary);
+}
+
+.ts-boxes-two .ts-box-date {
+	margin-top: auto;
+	padding-top: 10px;
+	color: var(--ts-muted);
+}
+
+/* Style three: a numbered row of stories. */
+.ts-box-numbered {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 12px 14px;
+	padding: 18px;
+	overflow: visible;
+	border: 1px solid var(--ts-border);
+	border-radius: var(--ts-radius);
+	background-color: var(--ts-bg);
+}
+
+.ts-box-number {
+	order: 1;
+	font-family: var(--ts-font-heading);
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 1;
+	color: var(--ts-primary);
+	opacity: 0.4;
+}
+
+.ts-box-numbered .ts-box-thumb {
+	order: 2;
+	flex-shrink: 0;
+	margin-left: auto;
+}
+
+.ts-box-thumb img {
+	width: 56px;
+	height: 56px;
+	object-fit: cover;
+	border-radius: var(--ts-radius-sm);
+}
+
+.ts-box-numbered .ts-box-content {
+	order: 3;
+	position: static;
+	flex: 1 1 100%;
+	padding: 0;
+	background: none;
+}
+
+.ts-box-numbered .ts-box-content .ts-cat-badge-solid {
+	padding: 4px 12px;
+	font-size: 11px;
+}
+
+.ts-box-numbered .ts-box-content .ts-post-title {
+	margin: 8px 0 0;
+	font-size: 16px;
+	line-height: 1.45;
+	color: var(--ts-heading);
+}
+
+.ts-box-numbered .ts-box-content .ts-post-title a {
+	color: var(--ts-heading);
+}
+
+.ts-box-numbered .ts-box-content .ts-post-title a:hover {
+	opacity: 1;
+	color: var(--ts-primary);
+}
+
+.ts-box-numbered .ts-box-date {
+	margin-top: 6px;
+	font-size: 12px;
+	color: var(--ts-muted);
+}
+
+/**
+ * 25.0 - Home page styles
+ * -------------------------------------------------------------
+ */
+/* Style two: rows with the image on the right. */
+.ts-home-list .ts-post-wrap.ts-list-image {
+	flex-direction: row-reverse;
+	align-items: center;
+	padding-bottom: 34px;
+	border-bottom: 1px solid var(--ts-border);
+}
+
+.ts-home-list article:last-of-type .ts-post-wrap.ts-list-image {
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+
+.ts-home-list .ts-post-media {
+	flex: 0 0 280px;
+	max-width: 280px;
+}
+
+.ts-home-list .ts-post-title {
+	font-size: 22px;
+}
+
+/* Style three: the first story large, the rest in the grid. */
+.ts-home-mag article:first-child {
+	grid-column: 1 / -1;
+}
+
+.ts-home-mag article:first-child .ts-post-title {
+	font-size: 28px;
+}
+
+/**
+ * 26.0 - Reduced motion
+ * -------------------------------------------------------------
+ */
+@media (prefers-reduced-motion: reduce) {
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/**
+ * 27.0 - Curated posts sections
+ * -------------------------------------------------------------
+ */
+.ts-curated-wrap {
+	padding: 34px 0 6px;
+}
+
+.ts-curated-head {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 18px;
+	margin-bottom: 26px;
+}
+
+.ts-curated-kicker {
+	display: block;
+	margin-bottom: 6px;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--ts-muted);
+}
+
+.ts-curated-title {
+	position: relative;
+	margin: 0;
+	padding-bottom: 12px;
+	font-size: 22px;
+}
+
+.ts-curated-title::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 38px;
+	height: 3px;
+	border-radius: var(--ts-radius-full);
+	background-color: var(--ts-primary);
+}
+
+.ts-curated-more {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--ts-heading);
+}
+
+.ts-curated-more:hover {
+	color: var(--ts-primary);
+}
+
+.ts-curated-more .fa {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 26px;
+	height: 26px;
+	font-size: 13px;
+	border: 1px solid var(--ts-border);
+	border-radius: var(--ts-radius-full);
+}
+
+.ts-curated-grid {
+	display: grid;
+	gap: 24px;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.ts-curated-card {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	padding: 20px;
+	border-radius: var(--ts-radius);
+	background-color: var(--ts-bg-soft);
+}
+
+.ts-curated-media {
+	flex: 0 0 190px;
+	max-width: 190px;
+}
+
+.ts-curated-media img {
+	width: 100%;
+	height: 190px;
+	object-fit: cover;
+	border-radius: var(--ts-radius);
+}
+
+.ts-curated-content {
+	flex: 1 1 auto;
+}
+
+.ts-curated-content .ts-post-title {
+	margin: 12px 0 0;
+	font-size: 19px;
+	line-height: 1.4;
+}
+
+.ts-curated-meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 14px;
+	margin-top: 12px;
+	font-size: 13px;
+	color: var(--ts-muted);
+}
+
+.ts-curated-meta a {
+	font-weight: 500;
+	color: var(--ts-heading);
+}
+
+.ts-curated-meta a:hover {
+	color: var(--ts-primary);
+}
+
+/*
+ * Classic: one big story per row. The separator between stories belongs to
+ * .ts-posts-wrap.ts-one-column article.hentry, which this style also carries;
+ * repeating it on the inner wrapper drew two rules a padding gap apart.
+ */
+.ts-home-classic .ts-post-title {
+	font-size: 28px;
+}
+
+/* Large thumbnail: taller image, roomy content. */
+.ts-home-large .ts-post-media img {
+	max-height: 460px;
+	object-fit: cover;
+}
+
+.ts-home-large .ts-post-title {
+	font-size: 30px;
+}
+
+/* Masonry: natural image heights flowing down columns. */
+.ts-masonry {
+	display: block;
+	columns: 2;
+	column-gap: 30px;
+}
+
+.ts-masonry-3 {
+	columns: 3;
+}
+
+.ts-masonry article {
+	break-inside: avoid;
+	margin-bottom: 30px;
+}
+
+.ts-masonry-feature article:first-child {
+	column-span: all;
+}
+
+.ts-masonry-feature article:first-child .ts-post-title {
+	font-size: 28px;
+}
+
+/**
+ * 28.0 - Footer layouts
+ * -------------------------------------------------------------
+ */
+/* Footer two: everything centered. */
+.site-footer.ts-footer-two .ts-footer-inner {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	gap: 16px;
+}
+
+.site-footer.ts-footer-two .ts-footer-social {
+	justify-content: center;
+}
+
+.site-footer.ts-footer-two .ts-footer-nav .footer-menu {
+	justify-content: center;
+}
+
+/**
+ * Centred layout. Only the masthead is centred; the widget columns keep
+ * their normal alignment, because centred text beside a thumbnail or a row
+ * of chips reads as ragged rather than as deliberate.
+ */
+.ts-footer-masthead {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 14px;
+	padding-bottom: 34px;
+	margin-bottom: 40px;
+	border-bottom: 1px solid var(--ts-border);
+	text-align: center;
+}
+
+.ts-footer-masthead-brand a {
+	font-family: var(--ts-font-heading);
+	font-size: 26px;
+	font-weight: 700;
+	color: var(--ts-heading);
+}
+
+.ts-footer-masthead-brand .custom-logo-link img {
+	max-width: 210px;
+	height: auto;
+}
+
+.ts-footer-masthead-tagline {
+	max-width: 520px;
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.7;
+	color: var(--ts-muted);
+}
+
+.ts-footer-masthead-social ul {
+	justify-content: center;
+}
+
+/* The columns below sit tighter, since the masthead carries the branding. */
+.ts-footer-widgets.ts-footer-two .ts-footer-columns {
+	gap: 40px;
+}
+
+/*
+ * Footer four: the branding takes the first column and the widgets share what
+ * is left. The brand column is wider than a widget column because a logo and a
+ * sentence of description need the room; the numbers below are the widget
+ * count plus that one extra track.
+ */
+.ts-footer-widgets.ts-footer-four .ts-footer-columns {
+	gap: 40px;
+}
+
+/*
+ * With all four widget areas filled there is no width left to give the brand a
+ * track of its own: five columns squeezes every headline down to one word per
+ * line. It takes the whole first row instead and the widgets keep their four
+ * equal columns underneath.
+ */
+.ts-footer-widgets.ts-footer-four .ts-footer-brand {
+	grid-column: 1 / -1;
+	padding-bottom: 30px;
+	border-bottom: 1px solid var(--ts-border);
+}
+
+.ts-footer-widgets.ts-footer-four .ts-footer-columns.ts-footer-cols-1 {
+	grid-template-columns: 1.5fr 1fr;
+}
+
+.ts-footer-widgets.ts-footer-four .ts-footer-columns.ts-footer-cols-2 {
+	grid-template-columns: 1.5fr repeat(2, 1fr);
+}
+
+.ts-footer-widgets.ts-footer-four .ts-footer-columns.ts-footer-cols-3 {
+	grid-template-columns: 1.5fr repeat(3, 1fr);
+}
+
+.ts-footer-widgets.ts-footer-four .ts-footer-columns.ts-footer-cols-1 .ts-footer-brand,
+.ts-footer-widgets.ts-footer-four .ts-footer-columns.ts-footer-cols-2 .ts-footer-brand,
+.ts-footer-widgets.ts-footer-four .ts-footer-columns.ts-footer-cols-3 .ts-footer-brand {
+	grid-column: auto;
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+
+.ts-footer-brand {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 16px;
+}
+
+.ts-footer-brand-mark a {
+	font-family: var(--ts-font-heading);
+	font-size: 24px;
+	font-weight: 700;
+	color: var(--ts-heading);
+}
+
+.ts-footer-brand-mark .custom-logo-link img {
+	max-width: 210px;
+	height: auto;
+}
+
+.ts-footer-brand-text {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.7;
+	color: var(--ts-muted);
+}
+
+.ts-footer-brand-social ul {
+	margin-left: -6px;
+}
+/**
+ * Footer three: the dark palette, in either colour mode.
+ *
+ * The palette is swapped by REDEFINING THE TOKENS rather than by recolouring
+ * each element. Patching colours one by one leaves anything that paints its
+ * own surface behind - a chip keeps its pale pill, a call to action keeps its
+ * near white panel, and a widget title stays ink on ink. Remapping the tokens
+ * fixes every component at once, including any added later.
+ */
+.ts-footer-widgets.ts-footer-three,
+.site-footer.ts-footer-three {
+	--ts-bg: var(--ts-neutral-900);
+	--ts-bg-soft: #171f2e;
+	--ts-surface: var(--ts-neutral-800);
+	--ts-heading: var(--ts-neutral-100);
+	--ts-body: var(--ts-neutral-300);
+	--ts-muted: #9aa5b8;
+	--ts-border: #2b3648;
+	--ts-primary-soft: rgba(129, 140, 248, 0.18);
+	background-color: var(--ts-neutral-900);
+	border-color: rgba(255, 255, 255, 0.08);
+	color: var(--ts-body);
+}
+
+.ts-footer-widgets.ts-footer-three,
+.site-footer.ts-footer-three {
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ts-footer-widgets.ts-footer-three .widget-title,
+.ts-footer-widgets.ts-footer-three h2,
+.ts-footer-widgets.ts-footer-three h3,
+.site-footer.ts-footer-three .copyright {
+	color: var(--ts-heading);
+}
+
+.ts-footer-widgets.ts-footer-three p,
+.site-footer.ts-footer-three .site-info {
+	color: var(--ts-body);
+}
+
+/* Bare links only. Anything with a class paints itself and is handled below. */
+.ts-footer-widgets.ts-footer-three a:not([class]),
+.site-footer.ts-footer-three a:not([class]) {
+	color: var(--ts-neutral-200);
+}
+
+.ts-footer-widgets.ts-footer-three a:not([class]):hover,
+.site-footer.ts-footer-three a:not([class]):hover {
+	color: #ffffff;
+}
+
+/* Indigo is too dark to sit on the dark panel, so the accents lighten. */
+.ts-footer-three .ts-widget-cat,
+.ts-footer-three .ts-contact-list i {
+	color: #a5b4fc;
+}
+
+.ts-footer-three .ts-widget-cat:hover {
+	color: #c7d2fe;
+}
+
+.ts-footer-three .ts-chip-filled .ts-chip {
+	color: #c7d2fe;
+}
+
+.ts-footer-three .ts-chip-outline .ts-chip {
+	color: var(--ts-body);
+	border-color: var(--ts-border);
+}
+
+.ts-footer-three .ts-chip:hover {
+	color: #ffffff;
+}
+
+/* The button keeps its solid fill, so its label stays white. */
+.ts-footer-three .ts-cta-button,
+.ts-footer-three .ts-cta-button:hover {
+	color: #ffffff;
+}
+
+/**
+ * 29.0 - Boxed page layout
+ * -------------------------------------------------------------
+ */
+body.ts-boxed {
+	background-color: var(--ts-bg-soft);
+}
+
+body.ts-boxed #page {
+	max-width: 1320px;
+	margin: 0 auto;
+	background-color: var(--ts-bg);
+	box-shadow: 0 0 44px rgba(15, 23, 42, 0.08);
+}
+
+body.ts-boxed .ts-sticky-nav.is-stuck {
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	max-width: 1320px;
+}
+
+/*
+ * Framed is boxed with air around it: the container lifts off the window edge
+ * on all four sides and rounds its corners, so the page reads as a card laid
+ * on the background rather than a column butted against the top of the screen.
+ */
+body.ts-layout-framed #page {
+	margin: 28px auto;
+	border-radius: var(--ts-radius-lg);
+	overflow: hidden;
+}
+
+body.ts-layout-framed .ts-sticky-nav.is-stuck {
+	/* The bar is fixed, so it cannot inherit the container's rounding or inset. */
+	top: 28px;
+	border-radius: var(--ts-radius);
+}
+
+@media only screen and (max-width: 767px) {
+
+	/* A gutter that size eats a phone screen; keep the corners, drop the inset. */
+	body.ts-layout-framed #page {
+		margin: 0;
+		border-radius: 0;
+	}
+
+	body.ts-layout-framed .ts-sticky-nav.is-stuck {
+		top: 0;
+		border-radius: 0;
+	}
+}
+
+/**
+ * 30.0 - Clean up pass
+ * -------------------------------------------------------------
+ */
+.ts-footer-widgets {
+	padding: 64px 0 34px;
+}
+
+.ts-footer-widgets .widget-title {
+	margin-bottom: 20px;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+@media only screen and (max-width: 991px) {
+
+	.ts-masonry-3 {
+		columns: 2;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+
+	.ts-carousel-arrow {
+		display: none;
+	}
+
+	.ts-curated-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.ts-curated-card {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.ts-curated-media {
+		flex: 1 1 auto;
+		max-width: 100%;
+	}
+
+	.ts-curated-media img {
+		height: 210px;
+	}
+
+	.ts-home-list .ts-post-wrap.ts-list-image {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.ts-home-list .ts-post-media {
+		flex: 1 1 auto;
+		max-width: 100%;
+	}
+
+	.ts-masonry,
+	.ts-masonry-3 {
+		columns: 1;
+	}
+
+	.ts-footer-inner {
+		grid-template-columns: 1fr;
+		justify-items: center;
+		text-align: center;
+		gap: 14px;
+	}
+
+	.ts-footer-social {
+		justify-content: center;
+	}
+}
+
+@media (max-width: 600px) {
+
+	.ts-container {
+		padding: 0 20px;
+	}
+}
+
+/**
+ * 31.0 - Ticker styles
+ * -------------------------------------------------------------
+ */
+/* Style two: solid bar in the primary colour. */
+.ts-ticker.ts-ticker-two {
+	background-color: var(--ts-primary);
+}
+
+.ts-ticker.ts-ticker-two .ts-ticker-label {
+	color: var(--ts-primary);
+	background-color: #ffffff;
+}
+
+.ts-ticker.ts-ticker-two .ts-ticker-item a {
+	color: #ffffff;
+}
+
+.ts-ticker.ts-ticker-two .ts-ticker-item a:hover {
+	opacity: 0.85;
+	color: #ffffff;
+}
+
+/* Style three: a plain line with a live dot. */
+.ts-ticker.ts-ticker-three {
+	padding: 12px 4px;
+	background: none;
+	border-radius: 0;
+	border-top: 1px solid var(--ts-border);
+	border-bottom: 1px solid var(--ts-border);
+}
+
+.ts-ticker.ts-ticker-three .ts-ticker-label {
+	position: relative;
+	padding: 0 0 0 18px;
+	color: var(--ts-primary);
+	background: none;
+	border-radius: 0;
+	font-weight: 600;
+}
+
+.ts-ticker.ts-ticker-three .ts-ticker-label::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 9px;
+	height: 9px;
+	transform: translateY(-50%);
+	border-radius: var(--ts-radius-full);
+	background-color: #ef4444;
+	animation: ts-live-pulse 1.6s ease infinite;
+}
+
+@keyframes ts-live-pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.35;
+	}
+}
+
+/**
+ * 32.0 - Typography refinement
+ * -------------------------------------------------------------
+ */
+/* Comfortable measure on single posts and pages. */
+.single .entry-content,
+.page .entry-content {
+	font-size: 17px;
+	line-height: 1.8;
+}
+
+/* Steady rhythm on every card title. */
+.ts-post-title {
+	line-height: 1.35;
+}
+
+.ts-post-title a {
+	transition: color 0.2s ease;
+}
+
+/* Meta lines stay small but never faint. */
+.entry-meta,
+.ts-hero-meta,
+.ts-curated-meta {
+	font-size: 13px;
+	letter-spacing: 0.01em;
+}
+
+/* No label below twelve pixels. */
+.ts-box-numbered .ts-box-content .ts-cat-badge-solid {
+	font-size: 12px;
+}
+
+/* Excerpts read a touch quieter than full text. */
+.ts-post-excerpt,
+.ts-hero-excerpt {
+	line-height: 1.7;
+}
+
+/* Content rhythm inside posts and pages. */
+.entry-content h2 {
+	margin-top: 40px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid var(--ts-border);
+}
+
+.entry-content h3,
+.entry-content h4 {
+	margin-top: 32px;
+}
+
+.entry-content li + li {
+	margin-top: 8px;
+}
+
+.entry-content code {
+	font-size: 0.875em;
+	font-weight: 500;
+}
+
+/**
+ * 33.0 - Motion and polish
+ * -------------------------------------------------------------
+ */
+/* Frosted glass on the stuck navigation. */
+.ts-sticky-nav.is-stuck {
+	background-color: var(--ts-bg);
+	background-color: color-mix(in srgb, var(--ts-bg) 82%, transparent);
+	-webkit-backdrop-filter: blur(14px);
+	backdrop-filter: blur(14px);
+}
+
+/* Menu items underline in from the left. */
+.main-navigation > div > ul > li > a {
+	position: relative;
+}
+
+.main-navigation > div > ul > li > a::before {
+	content: "";
+	position: absolute;
+	left: 16px;
+	right: 16px;
+	bottom: 10px;
+	height: 2px;
+	border-radius: var(--ts-radius-full);
+	background-color: var(--ts-primary);
+	transform: scaleX(0);
+	transform-origin: left center;
+	transition: transform 0.25s ease;
+}
+
+.main-navigation > div > ul > li > a:hover::before,
+.main-navigation > div > ul > li.current-menu-item > a::before {
+	transform: scaleX(1);
+}
+
+/* Cards lift a little under the pointer. */
+.ts-box,
+.ts-curated-card,
+.ts-hero-side-item,
+.ts-box-numbered {
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ts-box:hover,
+.ts-curated-card:hover,
+.ts-box-numbered:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--ts-shadow-lg);
+}
+
+/* Every card image drifts on hover, same speed everywhere. */
+.ts-curated-media {
+	overflow: hidden;
+	border-radius: var(--ts-radius);
+}
+
+.ts-curated-media img {
+	border-radius: 0;
+}
+
+.ts-post-media img,
+.ts-curated-media img,
+.ts-hero-media img {
+	transition: transform 0.6s ease;
+}
+
+article:hover .ts-post-media img,
+.ts-curated-card:hover .ts-curated-media img,
+.ts-hero-main:hover .ts-hero-media img {
+	transform: scale(1.05);
+}
+
+/* The read more arrow leans forward. */
+.more-link .fa,
+.ts-curated-more .fa {
+	transition: transform 0.25s ease;
+}
+
+.more-link:hover .fa {
+	transform: translateX(4px);
+}
+
+.ts-curated-more:hover .fa {
+	transform: translateX(2px);
+}
+
+/* Gradient accent under the section headings. */
+.ts-curated-title::after {
+	background: linear-gradient(90deg, var(--ts-primary), var(--ts-secondary));
+}
+
+/* Cards fade up as they enter the view. */
+.ts-reveal {
+	opacity: 0;
+	transform: translateY(16px);
+	transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.ts-reveal.is-revealed {
+	opacity: 1;
+	transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.ts-reveal {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+/**
+ * 34.0 - Clean type treatment
+ * -------------------------------------------------------------
+ */
+/* Compact uppercase category badges. */
+.ts-cat-badge {
+	padding: 4px 12px;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+/* Meta lines: small caps with room to breathe. */
+.entry-meta,
+.ts-curated-meta,
+.ts-box-date {
+	font-size: 11.5px;
+	font-weight: 500;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.entry-meta a:not(.ts-cat-badge),
+.ts-curated-meta a:not(.ts-cat-badge) {
+	color: var(--ts-heading);
+}
+
+.entry-meta a:not(.ts-cat-badge):hover,
+.ts-curated-meta a:not(.ts-cat-badge):hover {
+	color: var(--ts-primary);
+}
+
+.ts-hero-meta {
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+/* The tagline whispers. */
+.site-description {
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+/* Read more: quiet but firm. */
+.more-link {
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+/**
+ * 35.0 - Category columns
+ * -------------------------------------------------------------
+ */
+.ts-catcols-wrap {
+	padding: 34px 0 6px;
+}
+
+.ts-catcols {
+	display: grid;
+	gap: 34px;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.ts-catcol-title {
+	position: relative;
+	margin: 0 0 22px;
+	padding-bottom: 12px;
+	font-size: 18px;
+}
+
+.ts-catcol-title a {
+	color: var(--ts-heading);
+}
+
+.ts-catcol-title a:hover {
+	color: var(--ts-primary);
+}
+
+.ts-catcol-title::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 38px;
+	height: 3px;
+	border-radius: var(--ts-radius-full);
+	background: linear-gradient(90deg, var(--ts-primary), var(--ts-secondary));
+}
+
+.ts-catcol-media {
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 16px;
+	border-radius: var(--ts-radius);
+	background-color: var(--ts-bg-soft);
+}
+
+.ts-catcol-media img {
+	width: 100%;
+	transition: transform 0.6s ease;
+}
+
+.ts-catcol-lead:hover .ts-catcol-media img {
+	transform: scale(1.05);
+}
+
+.ts-catcol-media .ts-cat-badge {
+	position: absolute;
+	top: 14px;
+	left: 14px;
+}
+
+.ts-catcol-lead .ts-post-title {
+	margin: 0 0 8px;
+	font-size: 18px;
+}
+
+.ts-catcol-list {
+	margin-top: 22px;
+	display: grid;
+	gap: 18px;
+}
+
+.ts-catcol-item {
+	display: flex;
+	gap: 14px;
+	align-items: center;
+	padding-top: 18px;
+	border-top: 1px solid var(--ts-border);
+}
+
+.ts-catcol-thumb {
+	flex: 0 0 64px;
+}
+
+.ts-catcol-thumb img {
+	width: 64px;
+	height: 64px;
+	object-fit: cover;
+	border-radius: var(--ts-radius-sm);
+}
+
+.ts-catcol-content .ts-post-title {
+	margin: 0 0 4px;
+	font-size: 15px;
+	line-height: 1.4;
+}
+
+@media only screen and (max-width: 991px) {
+
+	.ts-catcols {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Section headers: a single gradient spine instead of the underline. */
+.ts-curated-heading {
+	position: relative;
+	padding-left: 18px;
+}
+
+.ts-curated-heading::before {
+	content: "";
+	position: absolute;
+	top: 3px;
+	bottom: 3px;
+	left: 0;
+	width: 4px;
+	border-radius: var(--ts-radius-full);
+	background: linear-gradient(180deg, var(--ts-primary), var(--ts-secondary));
+}
+
+.ts-curated-title {
+	padding-bottom: 0;
+}
+
+.ts-curated-title::after {
+	display: none;
+}
+
+.ts-catcol-title {
+	padding-bottom: 0;
+	padding-left: 16px;
+}
+
+.ts-catcol-title::after {
+	top: 2px;
+	bottom: 2px;
+	left: 0;
+	width: 4px;
+	height: auto;
+	background: linear-gradient(180deg, var(--ts-primary), var(--ts-secondary));
+}
+
+/* Headings inside pattern containers keep no section divider. */
+.entry-content .wp-block-cover h2,
+.entry-content .wp-block-column h2,
+.entry-content .wp-block-group h2 {
+	margin-top: 0;
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+36.0 Dark mode logo
+--------------------------------------------------------------*/
+
+/* Both logos ship in the markup; only the one that suits the mode shows. */
+.custom-logo-link .ts-dark-logo {
+	display: none;
+}
+
+body.ts-dark-mode .custom-logo-link .custom-logo {
+	display: none;
+}
+
+body.ts-dark-mode .custom-logo-link .ts-dark-logo {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+37.0 Focus visibility
+--------------------------------------------------------------*/
+
+/**
+ * A two-tone focus ring. The halo sits in the outline offset gap, so the
+ * indicator stays visible whatever the element sits on: the page, a filled
+ * pill, or a photo. A single-colour ring in the brand indigo disappeared
+ * entirely on indigo badges.
+ */
+:root {
+	--ts-focus-ring: var(--ts-heading);
+	--ts-focus-halo: var(--ts-bg);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+	outline: 2px solid var(--ts-focus-ring);
+	outline-offset: 2px;
+	box-shadow: 0 0 0 2px var(--ts-focus-halo);
+}
+
+/* Focus must never recolour text towards its own background. */
+.ts-cat-badge:focus-visible,
+.ts-cat-badge-solid:focus-visible {
+	color: #ffffff;
+	background-color: var(--ts-primary);
+}
+
+body.ts-dark-mode .ts-cat-badge:focus-visible,
+body.ts-dark-mode .ts-cat-badge-solid:focus-visible {
+	color: #ffffff;
+}
+
+/* The skip link is the first stop for keyboard users; keep it unmissable. */
+.skip-link:focus,
+.skip-link:focus-visible {
+	outline: 2px solid var(--ts-focus-ring);
+	outline-offset: 2px;
+	box-shadow: 0 0 0 2px var(--ts-focus-halo);
+}
+
+/*--------------------------------------------------------------
+38.0 Mobile header refinements
+--------------------------------------------------------------*/
+
+@media only screen and (max-width: 767px) {
+
+	/**
+	 * The centred desktop nav leaves the toggle and the actions huddled in
+	 * the middle of the bar on a phone. Push them to the edges instead, the
+	 * arrangement people expect from a mobile header.
+	 */
+	.ts-header-three .ts-nav-inner,
+	.ts-nav-inner {
+		justify-content: space-between;
+		gap: 12px;
+	}
+
+	.ts-nav-actions {
+		gap: 8px;
+	}
+
+	/* Icon only, matching the dark and search buttons beside it. */
+	.menu-toggle {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 44px;
+		height: 44px;
+		min-height: 44px;
+		padding: 0;
+		font-size: 16px;
+		border-radius: var(--ts-radius-full);
+	}
+
+	.ts-icon-button {
+		width: 44px;
+		height: 44px;
+	}
+
+	/* Top bar: a tidy stack rather than two cramped centred rows. */
+	.ts-top-header {
+		font-size: 12px;
+	}
+
+	/* Date and links share the first row; the icons take their own below. */
+	.ts-top-header .ts-top-inner {
+		min-height: 0;
+		justify-content: space-between;
+		gap: 2px 14px;
+		padding: 7px 0;
+	}
+
+	.ts-top-header .ts-social-icons {
+		flex: 1 1 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.ts-top-menu ul {
+		gap: 4px 16px;
+		justify-content: flex-end;
+	}
+
+	.ts-top-menu a,
+	.ts-top-date {
+		display: inline-flex;
+		padding: 5px 0;
+	}
+
+	.ts-social-icons a {
+		width: 38px;
+		height: 38px;
+		font-size: 14px;
+	}
+}
+
+@media only screen and (max-width: 520px) {
+
+	/**
+	 * Narrow enough that the date and the links each take their own row,
+	 * so centre every row instead of leaving the date hanging on the left.
+	 */
+	.ts-top-header .ts-top-inner {
+		justify-content: center;
+		text-align: center;
+	}
+
+	.ts-top-date,
+	.ts-top-menu {
+		flex: 1 1 100%;
+		justify-content: center;
+	}
+
+	.ts-top-menu ul {
+		gap: 2px 14px;
+		justify-content: center;
+	}
+}
+
+/*--------------------------------------------------------------
+39.0 Mobile editor picks
+--------------------------------------------------------------*/
+
+@media only screen and (max-width: 767px) {
+
+	/**
+	 * Full width pushes the number and the thumbnail to opposite edges and
+	 * leaves an empty band across the card. Read it as one row instead:
+	 * number, story, thumbnail.
+	 */
+	.ts-box-numbered {
+		align-items: center;
+		gap: 10px 12px;
+	}
+
+	.ts-box-numbered .ts-box-number {
+		order: 1;
+		font-size: 26px;
+	}
+
+	.ts-box-numbered .ts-box-content {
+		order: 2;
+		flex: 1 1 0;
+		min-width: 0;
+	}
+
+	.ts-box-numbered .ts-box-thumb {
+		order: 3;
+		margin-left: 0;
+	}
+}
+
+/*--------------------------------------------------------------
+40.0 Mobile menu panel
+--------------------------------------------------------------*/
+
+/* Desktop keeps hover dropdowns, so the accordion buttons stay hidden. */
+.ts-submenu-toggle {
+	display: none;
+}
+
+@media only screen and (max-width: 767px) {
+
+	/**
+	 * The open menu sits inside a sticky bar, so it has to paint its own
+	 * solid background: without one the page showed straight through the
+	 * links. It also scrolls, so a long menu can never run off the screen.
+	 */
+	.main-navigation.toggled .menu-wrapper {
+		background-color: var(--ts-bg);
+		border-top: 1px solid var(--ts-border);
+		max-height: calc(100vh - 130px);
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		padding-bottom: 0;
+	}
+
+	.ts-sticky-nav.is-stuck {
+		background-color: var(--ts-bg);
+	}
+
+	.main-navigation .menu-item {
+		position: relative;
+		border-bottom: 1px solid var(--ts-border);
+	}
+
+	.main-navigation .menu-wrapper > ul > .menu-item:last-child {
+		border-bottom: 0;
+	}
+
+	.main-navigation a {
+		display: block;
+		padding: 13px 52px 13px 2px;
+		font-size: 15px;
+	}
+
+	/* The CSS caret belongs to the hover dropdowns; the button replaces it. */
+	.main-navigation .menu-item-has-children > a::after {
+		content: none;
+	}
+
+	/*
+	 * A second level parent gets a right pointing caret from the flyout rules,
+	 * which carry one class more than the rule above and so are not covered by
+	 * it. Left alone it sits beside the accordion button pointing sideways at
+	 * a flyout that never opens on a phone.
+	 */
+	.main-navigation ul ul .menu-item-has-children > a::after,
+	.main-navigation ul ul .page_item_has_children > a::after {
+		content: none;
+	}
+
+	/* Clear of the 48px button, which the flyout's 34px does not manage. */
+	.main-navigation ul ul .menu-item-has-children > a,
+	.main-navigation ul ul .page_item_has_children > a {
+		padding-right: 52px;
+	}
+
+	.ts-submenu-toggle {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 48px;
+		height: 48px;
+		padding: 0;
+		border: 0;
+		border-radius: var(--ts-radius-sm);
+		background: none;
+		color: var(--ts-heading);
+		font-size: 16px;
+		cursor: pointer;
+	}
+
+	.ts-submenu-toggle i {
+		transition: transform 0.2s ease;
+	}
+
+	.menu-item-has-children.is-open > .ts-submenu-toggle i {
+		transform: rotate(180deg);
+	}
+
+	/* Collapsed by default; the toggle opens one section at a time. */
+	.main-navigation ul ul {
+		display: none;
+		padding: 0 0 6px 14px;
+		background-color: var(--ts-bg-soft);
+	}
+
+	.main-navigation .menu-item-has-children.is-open > ul {
+		display: block;
+	}
+
+	.main-navigation ul ul .menu-item {
+		border-bottom: 0;
+	}
+
+	.main-navigation ul ul a {
+		padding: 10px 52px 10px 2px;
+		font-size: 14px;
+		color: var(--ts-body);
+	}
+}
+
+@media only screen and (max-width: 767px) {
+
+	/* Drop the panel full width below the bar, not just under the toggle. */
+	.ts-main-header,
+	.ts-nav-wrap {
+		position: relative;
+	}
+
+	.main-navigation {
+		position: static;
+	}
+
+	.main-navigation.toggled .menu-wrapper {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1000;
+		height: 100%;
+		max-height: none;
+		padding: 0 20px 40px;
+		border-top: 0;
+		box-shadow: none;
+	}
+
+	.admin-bar .main-navigation.toggled .menu-wrapper {
+		top: 46px;
+	}
+
+	/* Only the panel scrolls while it is open. */
+	body.ts-menu-open {
+		overflow: hidden;
+	}
+
+	.ts-menu-head {
+		position: sticky;
+		top: 0;
+		z-index: 2;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 14px;
+		padding: 12px 0;
+		margin-bottom: 4px;
+		border-bottom: 1px solid var(--ts-border);
+		background-color: var(--ts-bg);
+	}
+
+	.ts-menu-brand img {
+		max-width: 190px;
+		height: auto;
+	}
+
+	.ts-menu-brand {
+		font-family: var(--ts-font-heading);
+		font-size: 18px;
+		font-weight: 700;
+		color: var(--ts-heading);
+	}
+
+	.ts-menu-close {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex: none;
+		width: 44px;
+		height: 44px;
+		padding: 0;
+		font-size: 18px;
+		color: var(--ts-heading);
+		border: 1px solid var(--ts-border);
+		border-radius: var(--ts-radius-full);
+		background-color: var(--ts-bg);
+		cursor: pointer;
+	}
+
+	/* The generic button:hover paints text white, which hid the icon. */
+	.ts-menu-close:hover,
+	.ts-menu-close:focus {
+		color: var(--ts-heading);
+		background-color: var(--ts-neutral-200);
+		border-color: var(--ts-neutral-300);
+	}
+
+	.ts-submenu-toggle:hover,
+	.ts-submenu-toggle:focus {
+		color: var(--ts-primary);
+		background-color: var(--ts-primary-soft);
+	}
+}
+
+/* The panel header only exists for the mobile menu. */
+@media only screen and (min-width: 768px) {
+
+	.ts-menu-head {
+		display: none;
+	}
+}
+
+/*--------------------------------------------------------------
+41.0 Mobile menu over the sticky bar
+--------------------------------------------------------------*/
+
+/**
+ * The stuck bar uses backdrop-filter for its frosted look, and any
+ * backdrop-filter ancestor becomes the containing block for position:fixed
+ * children. That collapsed the open menu panel to the height of the bar.
+ * While the menu is open the bar is covered anyway, so drop the effect and
+ * let the panel measure against the viewport again.
+ */
+body.ts-menu-open .ts-sticky-nav.is-stuck {
+	-webkit-backdrop-filter: none;
+	backdrop-filter: none;
+	background-color: var(--ts-bg);
+	animation: none;
+}
+
+/*--------------------------------------------------------------
+42.0 Spacing rhythm
+--------------------------------------------------------------*/
+
+/**
+ * Home sections were opening with 20px, 28px and 34px of space and the card
+ * grids used 24px, 26px and 34px gaps. One token each keeps the vertical
+ * rhythm even as sections are turned on and off.
+ */
+:root {
+	--ts-section-space: 34px;
+	--ts-grid-gap: 26px;
+}
+
+.ts-slider-wrap,
+.ts-boxes-wrap,
+.ts-curated-wrap,
+.ts-catcols-wrap {
+	padding-top: var(--ts-section-space);
+}
+
+.ts-boxes-grid,
+.ts-curated-grid {
+	gap: var(--ts-grid-gap);
+}
+
+/*--------------------------------------------------------------
+43.0 Slim scrollbars
+--------------------------------------------------------------*/
+
+/* Thin, themed scrollbars instead of the chunky platform default. */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--ts-neutral-300) transparent;
+}
+
+::-webkit-scrollbar {
+	width: 7px;
+	height: 7px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: var(--ts-radius-full);
+	background-color: var(--ts-neutral-300);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: var(--ts-muted);
+}
+
+body.ts-dark-mode {
+	scrollbar-color: #3b465c transparent;
+}
+
+body.ts-dark-mode ::-webkit-scrollbar-thumb {
+	background-color: #3b465c;
+}
+
+@media only screen and (max-width: 767px) {
+
+	/**
+	 * The sliding underline suits the horizontal desktop bar; in the vertical
+	 * panel it drew a full width rule across each row on hover.
+	 */
+	.main-navigation > div > ul > li > a::before {
+		content: none;
+	}
+}
+
+/*--------------------------------------------------------------
+44.0 Compact search form
+--------------------------------------------------------------*/
+
+/* The pill field and its button were oversized beside the body text. */
+.search-form .search-field {
+	padding: 9px 16px;
+	font-size: 14px;
+}
+
+.search-form .search-submit {
+	padding: 9px 20px;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.ts-search-box .search-form .search-field,
+.ts-search-box .search-form .search-submit {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+
+	/**
+	 * On a narrow phone the number and thumbnail squeezed the headline into
+	 * a four line column, so shrink both and let the title have the width.
+	 */
+	.ts-box-numbered {
+		gap: 8px 10px;
+		padding: 14px;
+	}
+
+	.ts-box-numbered .ts-box-number {
+		font-size: 21px;
+	}
+
+	.ts-box-numbered .ts-box-thumb img {
+		width: 48px;
+		height: 48px;
+	}
+
+	.ts-box-numbered .ts-box-content .ts-post-title {
+		font-size: 15px;
+		line-height: 1.4;
+	}
+
+	.ts-box-numbered .ts-box-date {
+		font-size: 11px;
+	}
+}
+
+/*--------------------------------------------------------------
+45.0 Hero slide fit on small screens
+--------------------------------------------------------------*/
+
+@media only screen and (max-width: 767px) {
+
+	/**
+	 * The slide frame is a fixed 16:9 box with the caption absolutely placed
+	 * inside it. On a phone that box is short enough that the headline
+	 * overflowed the top and was clipped, so give it a taller frame and a
+	 * caption sized to match.
+	 */
+	.ts-slide-media {
+		padding-top: 82%;
+	}
+
+	.ts-slide-content .ts-post-title {
+		margin: 8px 0;
+		font-size: 21px;
+		line-height: 1.3;
+	}
+
+	.ts-slide-content .entry-meta {
+		font-size: 11px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+
+	.ts-slide-media {
+		padding-top: 100%;
+	}
+
+	.ts-slide-content {
+		padding: 18px;
+	}
+
+	.ts-slide-content .ts-post-title {
+		font-size: 19px;
+	}
+}
+
+/*--------------------------------------------------------------
+46.0 Section heads on small screens
+--------------------------------------------------------------*/
+
+@media only screen and (max-width: 600px) {
+
+	/**
+	 * The heading and the More link were both wrapping to two lines and
+	 * fighting for the same row. Keep the link on one line and let the
+	 * heading take whatever width is left.
+	 */
+	.ts-curated-head {
+		gap: 12px;
+		align-items: center;
+	}
+
+	.ts-curated-title {
+		font-size: 20px;
+	}
+
+	.ts-curated-more {
+		flex: none;
+		gap: 6px;
+		font-size: 12.5px;
+		white-space: nowrap;
+	}
+
+	.ts-curated-more .fa {
+		width: 24px;
+		height: 24px;
+		font-size: 12px;
+	}
+
+	.ts-curated-kicker {
+		font-size: 10.5px;
+	}
+}
+
+/*--------------------------------------------------------------
+47.0 Header banner
+--------------------------------------------------------------*/
+
+/**
+ * The classic header keeps a widget area beside the logo. Left empty it
+ * reads as dead space, so give whatever sits there room to breathe and
+ * style the shipped promo banner.
+ */
+.ts-header-widget {
+	max-width: 728px;
+}
+
+.ts-header-widget .widget {
+	margin: 0;
+	padding: 0;
+	background: none;
+}
+
+.ts-header-widget .widget-title,
+.ts-header-widget .widgettitle {
+	display: none;
+}
+
+/**
+ * Advert plates are the usual occupant here. Keep one flush to its box,
+ * let it shrink with the header and never let a tall upload push the
+ * branding row out of shape.
+ */
+.ts-header-widget img {
+	display: block;
+	width: auto;
+	max-width: 100%;
+	max-height: 100px;
+	height: auto;
+	margin-left: auto;
+	border-radius: var(--ts-radius);
+}
+
+.ts-header-widget .wp-block-image,
+.ts-header-widget figure {
+	margin: 0;
+}
+
+.ts-header-widget a {
+	display: block;
+}
+
+.ts-header-widget a img {
+	transition: opacity 0.2s ease;
+}
+
+.ts-header-widget a:hover img {
+	opacity: 0.9;
+}
+
+.ts-header-banner {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	padding: 14px 22px;
+	border: 1px solid var(--ts-border);
+	border-radius: var(--ts-radius);
+	background-color: var(--ts-bg-soft);
+	text-align: left;
+}
+
+.ts-header-banner:hover {
+	border-color: var(--ts-primary);
+}
+
+.ts-header-banner-kicker {
+	font-size: 10.5px;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--ts-primary);
+}
+
+.ts-header-banner-title {
+	font-family: var(--ts-font-heading);
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--ts-heading);
+}
+
+.ts-header-banner-cta {
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--ts-body);
+}
+
+@media only screen and (min-width: 992px) {
+
+	/**
+	 * A full width advert plate plus the branding overruns the container by
+	 * a few pixels and drops to its own line. Hold both on one row and let
+	 * the plate give up the difference instead.
+	 */
+	.ts-header-classic {
+		flex-wrap: nowrap;
+	}
+
+	.ts-header-classic .site-branding,
+	.ts-header-classic .ts-header-widget {
+		min-width: 0;
+	}
+
+	.ts-header-classic .site-branding {
+		flex: 0 0 auto;
+	}
+
+	.ts-header-classic .ts-header-widget {
+		flex: 0 1 auto;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+
+	.ts-header-widget {
+		max-width: 100%;
+		width: 100%;
+		margin-top: 16px;
+	}
+
+	.ts-header-widget img {
+		margin-right: auto;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+
+	.ts-header-widget img {
+		max-height: none;
+		width: 100%;
+	}
+}
+
+/*--------------------------------------------------------------
+48.0 Dropdown edge fit
+--------------------------------------------------------------*/
+
+/**
+ * The dropdown belonging to the last menu item runs past the right edge of
+ * the viewport on narrow desktops, and the flyout it opens runs further
+ * still. Both stay hidden, but a hidden absolute box still widens the
+ * document, so the page gains a horizontal scrollbar. Anchor them to the
+ * right edge and send the flyout back inwards.
+ */
+@media only screen and (min-width: 768px) {
+
+	.main-navigation > div > ul > li:last-child > ul {
+		right: 0;
+		left: auto;
+	}
+
+	.main-navigation > div > ul > li:last-child ul ul {
+		right: calc(100% + 14px);
+		left: auto;
+	}
+
+	.main-navigation > div > ul > li:last-child ul ul::before {
+		right: -24px;
+		left: auto;
+	}
+}
+
+/*--------------------------------------------------------------
+49.0 Footer boundary
+--------------------------------------------------------------*/
+
+/**
+ * The footer opens with a hairline rule. The home page sections end in a 6px
+ * tail, which left that rule almost touching the last thumbnail while 64px of
+ * padding sat below it, so the divider read as part of the section above
+ * rather than as the join between the two. Give whichever section runs into
+ * the footer the same air the rest of the page uses. Templates that end in
+ * .site-content already carry 60px of their own, so they are left alone.
+ */
+.ts-slider-wrap:has(+ .ts-footer-widgets),
+.ts-boxes-wrap:has(+ .ts-footer-widgets),
+.ts-curated-wrap:has(+ .ts-footer-widgets),
+.ts-catcols-wrap:has(+ .ts-footer-widgets),
+.ts-posts-wrap:has(+ .ts-footer-widgets) {
+	padding-bottom: var(--ts-section-space);
+}
+
+.ts-footer-widgets {
+	padding-top: 48px;
+}
+
+/*--------------------------------------------------------------
+50.0 Custom widgets
+--------------------------------------------------------------*/
+
+/* Popular posts: thumbnail, kicker, headline, byline. */
+.ts-widget-popular {
+	position: relative;
+	align-items: flex-start;
+	padding-bottom: 16px;
+	margin-bottom: 16px;
+	border-bottom: 1px solid var(--ts-border);
+}
+
+.ts-widget-popular:last-child {
+	padding-bottom: 0;
+	margin-bottom: 0;
+	border-bottom: 0;
+}
+
+.ts-widget-cat {
+	display: block;
+	margin-bottom: 4px;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--ts-primary);
+}
+
+.ts-widget-cat:hover {
+	color: var(--ts-primary-hover);
+}
+
+.ts-widget-byline {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px 12px;
+	margin-top: 6px;
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--ts-muted);
+}
+
+.ts-widget-byline i {
+	margin-right: 5px;
+}
+
+/**
+ * The rank sits behind the story rather than beside it, so a long headline
+ * keeps the full width of the column instead of being squeezed by a number.
+ */
+.ts-widget-ranked {
+	padding-right: 34px;
+}
+
+.ts-widget-rank {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	font-family: var(--ts-font-heading);
+	font-size: 34px;
+	font-weight: 700;
+	line-height: 1;
+	color: var(--ts-border);
+	pointer-events: none;
+}
+
+/* Tag and category chips. */
+.ts-chip-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/**
+ * The widget class is repeated because .widget ul li carries a padding and a
+ * bottom rule, and it is the more specific selector. Without it every chip
+ * and every contact line inherits a divider it was never meant to have.
+ */
+.widget .ts-chip-list li {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.ts-chip {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 7px 12px;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	line-height: 1;
+}
+
+.ts-chip-outline .ts-chip {
+	color: var(--ts-heading);
+	border: 1px solid var(--ts-border);
+	border-radius: var(--ts-radius-sm);
+	background-color: transparent;
+}
+
+.ts-chip-outline .ts-chip:hover {
+	color: #ffffff;
+	border-color: var(--ts-primary);
+	background-color: var(--ts-primary);
+}
+
+.ts-chip-filled .ts-chip {
+	color: var(--ts-primary);
+	border: 1px solid transparent;
+	border-radius: var(--ts-radius-full);
+	background-color: var(--ts-primary-soft);
+}
+
+.ts-chip-filled .ts-chip:hover {
+	color: #ffffff;
+	background-color: var(--ts-primary);
+}
+
+.ts-chip-count {
+	font-size: 10px;
+	opacity: 0.75;
+}
+
+/* Contact details. */
+.ts-contact-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.widget .ts-contact-list li {
+	display: flex;
+	gap: 12px;
+	padding: 0 0 12px;
+	margin: 0;
+	border: 0;
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+.widget .ts-contact-list li:last-child {
+	padding-bottom: 0;
+}
+
+.ts-contact-list i {
+	flex: 0 0 16px;
+	margin-top: 4px;
+	color: var(--ts-primary);
+	text-align: center;
+}
+
+/* Call to action. */
+.ts-cta-box {
+	padding: 20px;
+	border: 1px solid var(--ts-border);
+	border-radius: var(--ts-radius);
+	background-color: var(--ts-bg-soft);
+	text-align: center;
+}
+
+.ts-cta-text {
+	margin: 0 0 14px;
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+.ts-cta-button {
+	display: inline-block;
+	padding: 10px 22px;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	color: #ffffff;
+	background-color: var(--ts-primary);
+	border-radius: var(--ts-radius-full);
+}
+
+.ts-cta-button:hover {
+	color: #ffffff;
+	background-color: var(--ts-primary-hover);
+}
+
+/* Banner. */
+.ts-banner-widget .ts-banner-link {
+	display: block;
+}
+
+.ts-banner-image {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: var(--ts-radius);
+}
+
+.ts-banner-widget .ts-banner-link:hover .ts-banner-image {
+	opacity: 0.92;
+}
+
+.ts-banner-label {
+	display: block;
+	margin-top: 8px;
+	font-size: 10.5px;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--ts-muted);
+	text-align: center;
+}
+
+body.ts-dark-mode .ts-widget-rank {
+	color: var(--ts-neutral-700);
+}
+
+body.ts-dark-mode .ts-chip-outline .ts-chip {
+	color: var(--ts-heading);
+	border-color: var(--ts-neutral-700);
+}
+
+/*--------------------------------------------------------------
+51.0 Footer bottom bar
+--------------------------------------------------------------*/
+
+/**
+ * Branding on the left, the credit line centred, social on the right. The
+ * middle column is the auto track, so the credit stays optically centred in
+ * the bar however wide the two ends get.
+ */
+.ts-footer-brand {
+	justify-self: start;
+}
+
+.ts-footer-brand .custom-logo-link img {
+	max-width: 170px;
+	height: auto;
+}
+
+.ts-footer-left {
+	justify-self: center;
+	text-align: center;
+}
+
+.ts-footer-inner .ts-footer-social {
+	justify-self: end;
+}
+
+/* Outlined circles read as quieter than the filled ones up in the widgets. */
+.ts-footer-social a {
+	color: var(--ts-body);
+	background-color: transparent;
+	border: 1px solid var(--ts-border);
+}
+
+.ts-footer-social a:hover {
+	color: #ffffff;
+	background-color: var(--ts-primary);
+	border-color: var(--ts-primary);
+}
+
+@media only screen and (max-width: 767px) {
+
+	.ts-footer-inner {
+		grid-template-columns: minmax(0, 1fr);
+		justify-items: center;
+		text-align: center;
+	}
+
+	.ts-footer-brand,
+	.ts-footer-left,
+	.ts-footer-inner .ts-footer-social {
+		justify-self: center;
+	}
+}

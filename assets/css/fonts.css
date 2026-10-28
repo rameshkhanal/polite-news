@@ -1,0 +1,58 @@
+/**
+ * Locally hosted theme fonts.
+ *
+ * Poppins is used for headings and Inter for body copy. Both are licensed
+ * under the SIL Open Font License 1.1 and are bundled inside assets/fonts.
+ * If a face is missing the browser falls back to the system stack declared
+ * in style.css, so the theme still renders correctly.
+ */
+
+/* Inter - body */
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('../fonts/inter-regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url('../fonts/inter-medium.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url('../fonts/inter-semibold.woff2') format('woff2');
+}
+
+/* Poppins - headings */
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url('../fonts/poppins-medium.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url('../fonts/poppins-semibold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url('../fonts/poppins-bold.woff2') format('woff2');
+}

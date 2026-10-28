@@ -1,0 +1,77 @@
+/**
+ * Grid helpers for Polite News
+ *
+ * A light container and column system used by the theme templates.
+ */
+.ts-container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.ts-content-wrap {
+	display: grid;
+	gap: 40px;
+	grid-template-columns: minmax(0, 1fr) 340px;
+	align-items: start;
+}
+
+body.ts-left-sidebar .ts-content-wrap,
+body.ts-single-left-sidebar .ts-content-wrap {
+	grid-template-columns: 340px minmax(0, 1fr);
+}
+
+body.ts-left-sidebar #primary,
+body.ts-single-left-sidebar #primary {
+	order: 2;
+}
+
+body.ts-left-sidebar #secondary,
+body.ts-single-left-sidebar #secondary {
+	order: 1;
+}
+
+body.ts-no-sidebar .ts-content-wrap,
+body.ts-single-no-sidebar .ts-content-wrap,
+body.ts-sidebar-inactive .ts-content-wrap {
+	grid-template-columns: minmax(0, 1fr);
+}
+
+body.ts-middle-column .ts-content-wrap,
+body.ts-single-middle-column .ts-content-wrap {
+	grid-template-columns: minmax(0, 1fr);
+	max-width: 860px;
+	margin: 0 auto;
+}
+
+@media only screen and (max-width: 991px) {
+
+	.ts-content-wrap,
+	body.ts-left-sidebar .ts-content-wrap,
+	body.ts-single-left-sidebar .ts-content-wrap {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	body.ts-left-sidebar #primary,
+	body.ts-single-left-sidebar #primary,
+	body.ts-left-sidebar #secondary,
+	body.ts-single-left-sidebar #secondary {
+		order: 0;
+	}
+}
+
+/**
+ * Sticky sidebar.
+ *
+ * The column is moved by assets/js/custom.js, which offsets it inside this
+ * grid so it settles against the top or the bottom of the screen depending on
+ * which way the reader is going. Only the paint hint lives here; with no
+ * script the sidebar stays exactly where the grid put it.
+ */
+@media only screen and (min-width: 992px) {
+
+	body.ts-sticky-sidebar #secondary {
+		will-change: transform;
+	}
+}

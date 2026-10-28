@@ -1,0 +1,24 @@
+Font Awesome 4.7.0
+by Dave Gandy - http://fontawesome.io
+
+This theme bundles the Font Awesome icon font files (fontawesome-webfont.eot,
+.svg, .ttf, .woff, .woff2 and FontAwesome.otf) and the Font Awesome stylesheet
+(assets/css/font-awesome.css and font-awesome.min.css).
+
+Licensing, as stated by the project for version 4.7.0:
+
+- The Font Awesome font is licensed under the SIL OFL 1.1:
+  http://scripts.sil.org/OFL
+- Font Awesome CSS, LESS, and Sass files are licensed under the MIT License:
+  https://opensource.org/licenses/mit-license.html
+- The Font Awesome documentation is licensed under the CC BY 3.0 License:
+  http://creativecommons.org/licenses/by/3.0/
+- Attribution is no longer required as of Font Awesome 3.0, but much
+  appreciated: `Font Awesome by Dave Gandy - http://fontawesome.io`
+- Full details: http://fontawesome.io/license/
+
+Both the SIL Open Font License 1.1 and the MIT License are GPL compatible.
+
+The full text of the SIL Open Font License 1.1 is included alongside this file
+in inter-LICENSE.txt and poppins-LICENSE.txt, and is available with a FAQ at
+https://scripts.sil.org/OFL

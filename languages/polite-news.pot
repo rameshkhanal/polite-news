@@ -1,0 +1,1889 @@
+# Copyright (C) 2026 templatesell
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Polite News 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/polite-news\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-08-31T07:44:48+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: polite-news\n"
+
+#. Theme Name of the theme
+#: style.css
+#: templatesell/block-editor.php:62
+msgid "Polite News"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://templatesell.com/downloads/polite-news-magazine-wordpress-theme/"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Polite News is a fast, clean and fully responsive news and magazine WordPress theme with a modern card based layout. It ships with a built in dark mode, a breaking news ticker, featured post section, editor pick cards, rounded card grids, multiple blog layouts, header and footer options, sidebar options and a one click primary colour option. Besides that, it comes with custom widgets for popular posts, tags and categories, contact details, a call to action, a banner, author information, recent posts and social icons, plus breadcrumbs, social sharing, related posts, a sticky sidebar and ajax load more. Every font and icon is served from the theme folder, so the theme makes no external requests. Perfect for newspaper, magazine, editorial, blog and personal news websites. More Details: https://templatesell.com/downloads/polite-news-magazine-wordpress-theme/"
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "templatesell"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://www.templatesell.com/"
+msgstr ""
+
+#: 404.php:19
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:23
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr ""
+
+#. translators: 1: title.
+#: comments.php:36
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#. translators: 1: comment count number, 2: title.
+#: comments.php:42
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:70
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:26
+msgid "More stories"
+msgstr ""
+
+#: footer.php:41
+msgid "Stories by category"
+msgstr ""
+
+#: footer.php:56
+msgid "Footer widgets"
+msgstr ""
+
+#: footer.php:87
+msgid "Footer brand social links"
+msgstr ""
+
+#: footer.php:141
+msgid "Footer column social links"
+msgstr ""
+
+#: footer.php:181
+msgid "Footer menu"
+msgstr ""
+
+#: footer.php:216
+msgid "https://wordpress.org/"
+msgstr ""
+
+#. translators: %s: CMS name, i.e. WordPress.
+#: footer.php:219
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#. translators: 1: Theme name, 2: Theme author.
+#: footer.php:225
+#, php-format
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: footer.php:231
+msgid "Footer social links"
+msgstr ""
+
+#: functions.php:51
+msgid "Primary"
+msgstr ""
+
+#: functions.php:52
+msgid "Top Menu"
+msgstr ""
+
+#: functions.php:53
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:54
+msgid "Social Icons"
+msgstr ""
+
+#: functions.php:135
+msgid "Small"
+msgstr ""
+
+#: functions.php:136
+msgid "S"
+msgstr ""
+
+#: functions.php:141
+msgid "Medium"
+msgstr ""
+
+#: functions.php:142
+msgid "M"
+msgstr ""
+
+#: functions.php:147
+msgid "Large"
+msgstr ""
+
+#: functions.php:148
+msgid "L"
+msgstr ""
+
+#: functions.php:153
+msgid "Larger"
+msgstr ""
+
+#: functions.php:154
+msgid "XL"
+msgstr ""
+
+#: functions.php:209
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:211
+msgid "Add widgets here to appear in the main sidebar."
+msgstr ""
+
+#: functions.php:221
+msgid "Header Widget"
+msgstr ""
+
+#: functions.php:223
+msgid "Add a widget here to appear beside the site logo. An advert banner works well."
+msgstr ""
+
+#: functions.php:232
+msgid "Footer One"
+msgstr ""
+
+#: functions.php:233
+msgid "Footer Two"
+msgstr ""
+
+#: functions.php:234
+msgid "Footer Three"
+msgstr ""
+
+#: functions.php:235
+msgid "Footer Four"
+msgstr ""
+
+#: functions.php:243
+msgid "Add widgets here."
+msgstr ""
+
+#: header.php:31
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:43
+msgid "Breaking news"
+msgstr ""
+
+#: header.php:67
+msgid "Featured stories"
+msgstr ""
+
+#: header.php:82
+msgid "Editor picks"
+msgstr ""
+
+#: header.php:97
+msgid "Curated stories"
+msgstr ""
+
+#: patterns/call-to-action.php
+msgctxt "Pattern title"
+msgid "Newsletter Call to Action"
+msgstr ""
+
+#: patterns/call-to-action.php
+msgctxt "Pattern description"
+msgid "A rounded panel with a heading, a short line and a pill button."
+msgstr ""
+
+#: patterns/call-to-action.php:14
+msgid "Stay in the loop"
+msgstr ""
+
+#: patterns/call-to-action.php:16
+msgid "The stories that matter, delivered politely to your inbox."
+msgstr ""
+
+#: patterns/call-to-action.php:19
+msgid "Subscribe"
+msgstr ""
+
+#: patterns/category-column.php
+msgctxt "Pattern title"
+msgid "Category Column"
+msgstr ""
+
+#: patterns/category-column.php
+msgctxt "Pattern description"
+msgid "A section header with the latest posts underneath, like one category column. Duplicate it inside columns for a row."
+msgstr ""
+
+#: patterns/category-column.php:14
+msgid "Latest Stories"
+msgstr ""
+
+#: patterns/category-columns.php
+msgctxt "Pattern title"
+msgid "Category Columns Row"
+msgstr ""
+
+#: patterns/category-columns.php
+msgctxt "Pattern description"
+msgid "Three category columns side by side, each pulling its own posts live."
+msgstr ""
+
+#: patterns/category-columns.php:15
+#: patterns/curated-section.php:37
+#: patterns/hero-sidelist.php:17
+#: patterns/picks-cards.php:19
+#: patterns/picks-overlay.php:17
+msgid "Politics"
+msgstr ""
+
+#: patterns/category-columns.php:29
+#: patterns/hero-overlay.php:15
+#: patterns/hero-sidelist.php:30
+#: patterns/picks-cards.php:35
+#: patterns/picks-overlay.php:29
+msgid "Business"
+msgstr ""
+
+#: patterns/category-columns.php:43
+#: patterns/curated-section.php:59
+#: patterns/hero-sidelist.php:38
+#: patterns/picks-cards.php:51
+msgid "Culture"
+msgstr ""
+
+#: patterns/curated-card.php
+msgctxt "Pattern title"
+msgid "Curated Story Card"
+msgstr ""
+
+#: patterns/curated-card.php
+msgctxt "Pattern description"
+msgid "A horizontal story card on a soft rounded panel, like the curated posts row."
+msgstr ""
+
+#: patterns/curated-card.php:20
+msgid "Technology"
+msgstr ""
+
+#: patterns/curated-card.php:22
+msgid "A story headline beside its rounded image"
+msgstr ""
+
+#: patterns/curated-card.php:24
+#: patterns/hero-overlay.php:20
+#: patterns/hero-sidelist.php:22
+msgid "By The Editor — August 18, 2026"
+msgstr ""
+
+#: patterns/curated-section.php
+msgctxt "Pattern title"
+msgid "Curated Section"
+msgstr ""
+
+#: patterns/curated-section.php
+msgctxt "Pattern description"
+msgid "A complete curated block - kicker, heading, a View More link and two story cards."
+msgstr ""
+
+#: patterns/curated-section.php:16
+#: patterns/section-header.php:14
+#: templatesell/customizer.php:74
+msgid "Top Weekly"
+msgstr ""
+
+#: patterns/curated-section.php:18
+#: patterns/section-header.php:16
+#: templatesell/customizer.php:75
+msgid "Curated Posts"
+msgstr ""
+
+#: patterns/curated-section.php:21
+msgid "View More →"
+msgstr ""
+
+#: patterns/curated-section.php:39
+msgid "The first curated story headline"
+msgstr ""
+
+#: patterns/curated-section.php:61
+msgid "The second curated story headline"
+msgstr ""
+
+#: patterns/hero-magazine.php
+msgctxt "Pattern title"
+msgid "Magazine Split"
+msgstr ""
+
+#: patterns/hero-magazine.php
+msgctxt "Pattern description"
+msgid "A lead story on the left and a short headline list on the right, like the magazine hero."
+msgstr ""
+
+#: patterns/hero-magazine.php:16
+msgid "The lead story sits on a large rounded image"
+msgstr ""
+
+#: patterns/hero-magazine.php:21
+msgid "A second headline continues over here"
+msgstr ""
+
+#: patterns/hero-magazine.php:27
+msgid "A third headline rounds out the list"
+msgstr ""
+
+#: patterns/hero-overlay.php
+msgctxt "Pattern title"
+msgid "Hero Overlay Story"
+msgstr ""
+
+#: patterns/hero-overlay.php
+msgctxt "Pattern description"
+msgid "A rounded cover with a category pill, a large title and a meta line, like the featured post section."
+msgstr ""
+
+#: patterns/hero-overlay.php:18
+msgid "A big featured story headline goes right here"
+msgstr ""
+
+#: patterns/hero-sidelist.php
+msgctxt "Pattern title"
+msgid "Hero Side List"
+msgstr ""
+
+#: patterns/hero-sidelist.php
+msgctxt "Pattern description"
+msgid "Hero style three - a large lead story with a stacked list of smaller stories beside it."
+msgstr ""
+
+#: patterns/hero-sidelist.php:20
+msgid "The lead story of the day sits here"
+msgstr ""
+
+#: patterns/hero-sidelist.php:32
+msgid "A second story headline for the side column"
+msgstr ""
+
+#: patterns/hero-sidelist.php:40
+msgid "A third headline keeps the column balanced"
+msgstr ""
+
+#: patterns/hero-sidelist.php:46
+#: patterns/picks-overlay.php:41
+msgid "World"
+msgstr ""
+
+#: patterns/hero-sidelist.php:48
+msgid "And a fourth story closes the list"
+msgstr ""
+
+#: patterns/numbered-row.php
+msgctxt "Pattern title"
+msgid "Numbered Picks Row"
+msgstr ""
+
+#: patterns/numbered-row.php
+msgctxt "Pattern description"
+msgid "Three ranked cards with a soft number, like the numbered editor picks style."
+msgstr ""
+
+#: patterns/numbered-row.php:18
+msgid "The first ranked story title"
+msgstr ""
+
+#: patterns/numbered-row.php:26
+msgid "The second ranked story title"
+msgstr ""
+
+#: patterns/numbered-row.php:34
+msgid "The third ranked story title"
+msgstr ""
+
+#: patterns/picks-cards.php
+msgctxt "Pattern title"
+msgid "Editor Picks Cards"
+msgstr ""
+
+#: patterns/picks-cards.php
+msgctxt "Pattern description"
+msgid "Editor picks style one - three bordered cards with an image, a category pill and a headline."
+msgstr ""
+
+#: patterns/picks-cards.php:22
+msgid "First pick headline goes here"
+msgstr ""
+
+#: patterns/picks-cards.php:38
+msgid "Second pick headline goes here"
+msgstr ""
+
+#: patterns/picks-cards.php:54
+msgid "Third pick headline goes here"
+msgstr ""
+
+#: patterns/picks-overlay.php
+msgctxt "Pattern title"
+msgid "Editor Picks Overlay"
+msgstr ""
+
+#: patterns/picks-overlay.php
+msgctxt "Pattern description"
+msgid "Editor picks style two - three image cards with the headline laid over the picture."
+msgstr ""
+
+#: patterns/picks-overlay.php:20
+msgid "A headline sitting over the picture"
+msgstr ""
+
+#: patterns/picks-overlay.php:32
+msgid "The second overlay headline"
+msgstr ""
+
+#: patterns/picks-overlay.php:44
+msgid "And the third to close the row"
+msgstr ""
+
+#: patterns/posts-grid.php
+msgctxt "Pattern title"
+msgid "Post Grid"
+msgstr ""
+
+#: patterns/posts-grid.php
+msgctxt "Pattern description"
+msgid "Home style one - a two column grid of posts pulled live from the site."
+msgstr ""
+
+#: patterns/posts-large.php
+msgctxt "Pattern title"
+msgid "Post Large Thumbnail"
+msgstr ""
+
+#: patterns/posts-large.php
+msgctxt "Pattern description"
+msgid "Home style large - one post per row with a full width image above the headline."
+msgstr ""
+
+#: patterns/posts-list.php
+msgctxt "Pattern title"
+msgid "Post List"
+msgstr ""
+
+#: patterns/posts-list.php
+msgctxt "Pattern description"
+msgid "Home style two - posts in a row layout with the thumbnail beside the text."
+msgstr ""
+
+#: patterns/pull-quote-panel.php
+msgctxt "Pattern title"
+msgid "Highlighted Quote"
+msgstr ""
+
+#: patterns/pull-quote-panel.php
+msgctxt "Pattern description"
+msgid "A quote inside the theme highlight panel."
+msgstr ""
+
+#: patterns/pull-quote-panel.php:14
+msgid "Good journalism is expensive; bad journalism costs even more."
+msgstr ""
+
+#: patterns/pull-quote-panel.php:15
+msgid "Newsroom proverb"
+msgstr ""
+
+#: patterns/section-header.php
+msgctxt "Pattern title"
+msgid "Section Header"
+msgstr ""
+
+#: patterns/section-header.php
+msgctxt "Pattern description"
+msgid "A small uppercase label and a heading with the accent spine, like the curated sections."
+msgstr ""
+
+#: patterns/ticker-hairline.php
+msgctxt "Pattern title"
+msgid "Breaking Bar Hairline"
+msgstr ""
+
+#: patterns/ticker-hairline.php
+msgctxt "Pattern description"
+msgid "Ticker style three - a plain hairline bar with a live dot and an uppercase label."
+msgstr ""
+
+#: patterns/ticker-hairline.php:17
+msgid "Live"
+msgstr ""
+
+#: patterns/ticker-hairline.php:20
+msgid "A quieter bar for the running headline"
+msgstr ""
+
+#: patterns/ticker-soft.php
+msgctxt "Pattern title"
+msgid "Breaking Bar Soft"
+msgstr ""
+
+#: patterns/ticker-soft.php
+msgctxt "Pattern description"
+msgid "Ticker style one - a soft rounded bar with a solid label and one headline."
+msgstr ""
+
+#: patterns/ticker-soft.php:15
+#: patterns/ticker-solid.php:14
+#: templatesell/customizer.php:43
+msgid "Breaking"
+msgstr ""
+
+#: patterns/ticker-soft.php:18
+msgid "The latest headline scrolls along this bar"
+msgstr ""
+
+#: patterns/ticker-solid.php
+msgctxt "Pattern title"
+msgid "Breaking Bar Solid"
+msgstr ""
+
+#: patterns/ticker-solid.php
+msgctxt "Pattern description"
+msgid "Ticker style two - a solid indigo bar with a white label and headline."
+msgstr ""
+
+#: patterns/ticker-solid.php:16
+msgid "The latest headline runs across the solid bar"
+msgstr ""
+
+#. translators: %s: search query.
+#: search.php:24
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts/content/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content/content-none.php:24
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content/content-none.php:37
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: template-parts/content/content-none.php:44
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: template-parts/content/content-page.php:25
+#: template-parts/content/content-single.php:42
+#: template-parts/content/content.php:90
+msgid "Pages:"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers.
+#: template-parts/content/content-page.php:39
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: template-parts/header/parts/actions.php:28
+msgid "Switch colour mode"
+msgstr ""
+
+#: template-parts/header/parts/actions.php:35
+msgid "Toggle search"
+msgstr ""
+
+#: template-parts/header/parts/navigation.php:14
+msgid "Primary menu"
+msgstr ""
+
+#: template-parts/header/parts/navigation.php:17
+msgid "Menu"
+msgstr ""
+
+#: template-parts/header/parts/navigation.php:27
+msgid "Close menu"
+msgstr ""
+
+#: template-parts/sections/curated-section.php:49
+#: templatesell/enqueue.php:67
+#: templatesell/template-tags.php:186
+msgid "View More"
+msgstr ""
+
+#. translators: %s: author name.
+#: template-parts/sections/curated-section.php:75
+#: templatesell/widgets/ts-popular-posts-widget.php:108
+#, php-format
+msgid "By %s"
+msgstr ""
+
+#: template-parts/sections/header-section.php:47
+msgid "Top menu"
+msgstr ""
+
+#: template-parts/sections/header-section.php:63
+msgid "Social links"
+msgstr ""
+
+#: template-parts/slider/hero-one.php:63
+msgid "Previous slide"
+msgstr ""
+
+#: template-parts/slider/hero-one.php:67
+msgid "Next slide"
+msgstr ""
+
+#. translators: %d: slide number.
+#: template-parts/slider/hero-one.php:75
+#, php-format
+msgid "Go to slide %d"
+msgstr ""
+
+#: templatesell/about/about.php:16
+#: templatesell/about/about.php:17
+msgid "About Polite News"
+msgstr ""
+
+#: templatesell/about/about.php:36
+msgid "Active"
+msgstr ""
+
+#: templatesell/about/about.php:48
+msgid "Activate"
+msgstr ""
+
+#: templatesell/about/about.php:58
+msgid "Install"
+msgstr ""
+
+#. translators: %s: theme version number.
+#: templatesell/about/about.php:75
+#, php-format
+msgid "Welcome to Polite News %s"
+msgstr ""
+
+#: templatesell/about/about.php:78
+msgid "Polite News is a fast, clean and fully responsive news and magazine theme with a modern card based design and a built in dark mode. Thank you for choosing it."
+msgstr ""
+
+#: templatesell/about/about.php:79
+msgid "Start Customizing"
+msgstr ""
+
+#: templatesell/about/about.php:80
+msgid "Documentation"
+msgstr ""
+
+#: templatesell/about/about.php:86
+msgid "Getting Started"
+msgstr ""
+
+#: templatesell/about/about.php:88
+msgid "Set your logo and site identity in the customizer."
+msgstr ""
+
+#: templatesell/about/about.php:89
+msgid "Assign a Primary menu and a Social Icons menu."
+msgstr ""
+
+#: templatesell/about/about.php:90
+msgid "Pick the categories for the featured post, editor picks and breaking news sections."
+msgstr ""
+
+#: templatesell/about/about.php:91
+msgid "Add widgets to the sidebar and the four footer areas."
+msgstr ""
+
+#: templatesell/about/about.php:96
+msgid "Demo Import"
+msgstr ""
+
+#: templatesell/about/about.php:97
+msgid "Start from the demo site in one click. Install and activate the two recommended plugins, then head to Appearance > Import Demo Data."
+msgstr ""
+
+#: templatesell/about/about.php:98
+#: templatesell/plugin-notice/plugin-notice.php:26
+msgid "One Click Demo Import"
+msgstr ""
+
+#: templatesell/about/about.php:99
+msgid "The importer itself. It supplies the Import Demo Data screen."
+msgstr ""
+
+#: templatesell/about/about.php:100
+#: templatesell/plugin-notice/plugin-notice.php:31
+msgid "Template Sell Demo Importer"
+msgstr ""
+
+#: templatesell/about/about.php:101
+msgid "Adds the Polite News demo to that screen. It needs the plugin above and does nothing on its own."
+msgstr ""
+
+#: templatesell/about/about.php:105
+msgid "More From TemplateSell"
+msgstr ""
+
+#: templatesell/about/about.php:106
+msgid "Free plugins from the same team, hosted on WordPress.org. Neither is required by the theme."
+msgstr ""
+
+#: templatesell/about/about.php:107
+#: templatesell/plugin-notice/plugin-notice.php:36
+msgid "Gated Downloads"
+msgstr ""
+
+#: templatesell/about/about.php:108
+msgid "Trade a download for an email address, and lock any part of a post behind a form."
+msgstr ""
+
+#: templatesell/about/about.php:109
+#: templatesell/plugin-notice/plugin-notice.php:41
+msgid "CaptchaFlow"
+msgstr ""
+
+#: templatesell/about/about.php:110
+msgid "Adds a challenge to the comment form, the login and registration pages and any form plugin you run. No template editing."
+msgstr ""
+
+#: templatesell/about/about.php:114
+msgid "Support"
+msgstr ""
+
+#: templatesell/about/about.php:115
+msgid "Stuck with something? Our team is happy to help."
+msgstr ""
+
+#: templatesell/about/about.php:116
+#: templatesell/upgrade/class-customize.php:80
+msgid "Get Support"
+msgstr ""
+
+#: templatesell/about/about.php:120
+msgid "Polite News Pro"
+msgstr ""
+
+#: templatesell/about/about.php:122
+msgid "Multi slide featured carousel."
+msgstr ""
+
+#: templatesell/about/about.php:123
+msgid "More header, blog and single post layouts."
+msgstr ""
+
+#: templatesell/about/about.php:124
+msgid "Typography and full colour options."
+msgstr ""
+
+#: templatesell/about/about.php:125
+msgid "One click demo import and premium support."
+msgstr ""
+
+#: templatesell/about/about.php:127
+#: templatesell/pro-notice/pro-notice.php:46
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: templatesell/block-editor.php:23
+msgid "Pill"
+msgstr ""
+
+#: templatesell/block-editor.php:32
+msgid "Rounded Card"
+msgstr ""
+
+#: templatesell/block-editor.php:41
+msgid "Highlight"
+msgstr ""
+
+#: templatesell/breadcrumbs/breadcrumbs.php:18
+#: templatesell/hooks/breadcrumb.php:35
+msgid "Breadcrumb"
+msgstr ""
+
+#: templatesell/breadcrumbs/breadcrumbs.php:20
+msgid "Home"
+msgstr ""
+
+#. translators: %s: search query.
+#: templatesell/breadcrumbs/breadcrumbs.php:41
+#, php-format
+msgid "Search results for %s"
+msgstr ""
+
+#: templatesell/breadcrumbs/breadcrumbs.php:46
+msgid "Page not found"
+msgstr ""
+
+#: templatesell/customizer-category-control.php:39
+#: templatesell/customizer-category-control.php:87
+#: templatesell/widgets/ts-recent-posts-widget.php:118
+msgid "All Categories"
+msgstr ""
+
+#: templatesell/customizer-post-control.php:51
+msgid "&mdash; Select a post &mdash;"
+msgstr ""
+
+#: templatesell/customizer.php:79
+msgid "Do Not Miss"
+msgstr ""
+
+#: templatesell/customizer.php:80
+msgid "More Stories"
+msgstr ""
+
+#: templatesell/customizer.php:99
+msgid "Read More"
+msgstr ""
+
+#: templatesell/customizer.php:108
+#: templatesell/hooks/related-posts.php:51
+msgid "Related Posts"
+msgstr ""
+
+#: templatesell/customizer.php:121
+msgid "Copyright All Rights Reserved 2026"
+msgstr ""
+
+#: templatesell/customizer.php:235
+msgid "Reset to default"
+msgstr ""
+
+#: templatesell/enqueue.php:68
+msgid "Loading..."
+msgstr ""
+
+#: templatesell/enqueue.php:69
+msgid "No More Posts"
+msgstr ""
+
+#: templatesell/google-fonts.php:24
+msgid "Poppins (bundled)"
+msgstr ""
+
+#: templatesell/google-fonts.php:25
+msgid "Inter (bundled)"
+msgstr ""
+
+#: templatesell/google-fonts.php:26
+msgid "System Sans"
+msgstr ""
+
+#: templatesell/google-fonts.php:27
+msgid "Georgia (serif)"
+msgstr ""
+
+#: templatesell/hooks/footer.php:26
+msgid "Go to top"
+msgstr ""
+
+#: templatesell/hooks/posts-navigation.php:35
+msgid "Post navigation"
+msgstr ""
+
+#: templatesell/hooks/posts-navigation.php:39
+msgid "Previous Post"
+msgstr ""
+
+#: templatesell/hooks/posts-navigation.php:46
+msgid "Next Post"
+msgstr ""
+
+#: templatesell/hooks/social-sharing.php:27
+msgid "Share on Facebook"
+msgstr ""
+
+#: templatesell/hooks/social-sharing.php:32
+msgid "Share on X"
+msgstr ""
+
+#: templatesell/hooks/social-sharing.php:37
+msgid "Share on LinkedIn"
+msgstr ""
+
+#: templatesell/hooks/social-sharing.php:42
+msgid "Share on Pinterest"
+msgstr ""
+
+#: templatesell/hooks/social-sharing.php:47
+msgid "Share on WhatsApp"
+msgstr ""
+
+#: templatesell/hooks/social-sharing.php:54
+msgid "Share"
+msgstr ""
+
+#. translators: %s: comma separated list of plugin names.
+#: templatesell/plugin-notice/plugin-notice.php:105
+#, php-format
+msgid "Polite News recommends these free plugins: %s."
+msgstr ""
+
+#: templatesell/plugin-notice/plugin-notice.php:109
+msgid "None of them are required."
+msgstr ""
+
+#: templatesell/plugin-notice/plugin-notice.php:112
+msgid "Begin installing plugins"
+msgstr ""
+
+#: templatesell/plugin-notice/plugin-notice.php:114
+msgid "Dismiss this notice"
+msgstr ""
+
+#: templatesell/pro-notice/pro-notice.php:44
+msgid "Enjoying Polite News?"
+msgstr ""
+
+#: templatesell/pro-notice/pro-notice.php:45
+msgid "Unlock the featured carousel, extra layouts, typography options, demo import and premium support with Polite News Pro."
+msgstr ""
+
+#: templatesell/pro-notice/pro-notice.php:47
+msgid "Dismiss"
+msgstr ""
+
+#: templatesell/template-tags.php:196
+msgid "Previous page"
+msgstr ""
+
+#: templatesell/template-tags.php:197
+msgid "Next page"
+msgstr ""
+
+#: templatesell/template-tags.php:198
+msgid "Posts navigation"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:16
+msgid "Blog Settings"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:38
+msgid "Home Page Style"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:39
+msgid "Styles the latest posts on the home page: Classic, Grid, List, Magazine, Large Thumbnail and three Masonry arrangements. Archive pages use the layout options further down."
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:64
+msgid "Blog and Archive Sidebar"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:65
+msgid "This sidebar will work on the blog and archive pages."
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:88
+msgid "Enable Sticky Sidebar"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:89
+msgid "Hold the sidebar in view while the article scrolls. A sidebar taller than the screen scrolls first and settles once its last widget is visible."
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:113
+msgid "Blog and Archive Layout"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:114
+msgid "The arrangement used on the blog page, category, tag, author and date archives: List, Two or Three Column Grid, Classic, Large Thumbnail, Magazine and three Masonry styles."
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:137
+msgid "Full Width Image"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:138
+msgid "Image Beside Text"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:140
+msgid "Blog Image Position"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:141
+msgid "This will work only on the List layout option."
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:164
+msgid "Show from Excerpt"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:165
+msgid "Show from Content"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:167
+msgid "Select Content Display From"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:168
+msgid "You can enable excerpt from Screen Options inside the post section of the dashboard."
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:190
+msgid "Excerpt Length"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:191
+msgid "Enter the number of words to show in the blog page content."
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:218
+msgid "Exclude Categories in Blog Listing"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:219
+msgid "Enter category ids comma separated eg: 2,7,14,47."
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:242
+msgid "Numeric Pagination"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:243
+msgid "Ajax Load More"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:245
+msgid "Pagination Types"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:246
+msgid "Choose the required pagination type."
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:268
+msgid "Read More Text"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:269
+msgid "Read more text for the blog and archive pages. Leave empty to hide it."
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:280
+msgid "Show Category"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:281
+msgid "Option to show the category badge on the blog page."
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:285
+msgid "Show Date"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:286
+msgid "Option to show the date on the blog page."
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:290
+msgid "Show Author"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:291
+msgid "Option to show the author on the blog page."
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:295
+#: templatesell/theme-settings/single-page-options.php:55
+msgid "Show Social Share"
+msgstr ""
+
+#: templatesell/theme-settings/blog-page-options.php:296
+msgid "Option to enable social share on the blog and archive pages."
+msgstr ""
+
+#: templatesell/theme-settings/boxes-options.php:16
+msgid "Editor Picks Settings"
+msgstr ""
+
+#: templatesell/theme-settings/boxes-options.php:35
+msgid "Enable Editor Picks"
+msgstr ""
+
+#: templatesell/theme-settings/boxes-options.php:36
+msgid "Show the row of highlighted stories under the featured post."
+msgstr ""
+
+#: templatesell/theme-settings/boxes-options.php:61
+msgid "Editor Picks Style"
+msgstr ""
+
+#: templatesell/theme-settings/boxes-options.php:62
+msgid "Overlay lays the title over the image. Card shows the image above the title. Numbered lists the stories as a ranked row."
+msgstr ""
+
+#: templatesell/theme-settings/boxes-options.php:84
+msgid "Content Source"
+msgstr ""
+
+#: templatesell/theme-settings/boxes-options.php:85
+msgid "Pull the stories from a category or pick each post yourself."
+msgstr ""
+
+#: templatesell/theme-settings/boxes-options.php:90
+#: templatesell/theme-settings/curated-options.php:124
+msgid "Category"
+msgstr ""
+
+#: templatesell/theme-settings/boxes-options.php:91
+msgid "Individual Posts"
+msgstr ""
+
+#: templatesell/theme-settings/boxes-options.php:113
+msgid "Editor Picks Category"
+msgstr ""
+
+#: templatesell/theme-settings/boxes-options.php:114
+msgid "Pull the highlighted stories from this category."
+msgstr ""
+
+#: templatesell/theme-settings/boxes-options.php:137
+msgid "Number of Editor Picks"
+msgstr ""
+
+#: templatesell/theme-settings/boxes-options.php:138
+msgid "How many stories appear in the highlight row."
+msgstr ""
+
+#. translators: %d: pick number.
+#: templatesell/theme-settings/boxes-options.php:171
+#, php-format
+msgid "Pick Post %d"
+msgstr ""
+
+#: templatesell/theme-settings/breadcrumb-options.php:16
+msgid "Breadcrumb Settings"
+msgstr ""
+
+#: templatesell/theme-settings/breadcrumb-options.php:35
+msgid "Enable Breadcrumb"
+msgstr ""
+
+#: templatesell/theme-settings/breadcrumb-options.php:36
+msgid "Show the breadcrumb trail under the main menu."
+msgstr ""
+
+#: templatesell/theme-settings/breadcrumb-options.php:59
+msgid "Theme Breadcrumb"
+msgstr ""
+
+#: templatesell/theme-settings/breadcrumb-options.php:60
+msgid "Yoast SEO Breadcrumb"
+msgstr ""
+
+#: templatesell/theme-settings/breadcrumb-options.php:61
+msgid "Rank Math Breadcrumb"
+msgstr ""
+
+#: templatesell/theme-settings/breadcrumb-options.php:63
+msgid "Breadcrumb Source"
+msgstr ""
+
+#: templatesell/theme-settings/breadcrumb-options.php:64
+msgid "Choose which plugin generates the breadcrumb trail."
+msgstr ""
+
+#: templatesell/theme-settings/catcols-options.php:19
+msgid "Category Columns"
+msgstr ""
+
+#: templatesell/theme-settings/catcols-options.php:20
+msgid "Three category blocks under the latest posts, each with a lead story and a short list."
+msgstr ""
+
+#: templatesell/theme-settings/catcols-options.php:39
+msgid "Enable Category Columns"
+msgstr ""
+
+#. translators: %d: column number.
+#: templatesell/theme-settings/catcols-options.php:66
+#, php-format
+msgid "Column %d Category"
+msgstr ""
+
+#: templatesell/theme-settings/color-options.php:26
+msgid "Primary Color"
+msgstr ""
+
+#: templatesell/theme-settings/color-options.php:27
+msgid "Change the accent colour used across the whole site."
+msgstr ""
+
+#: templatesell/theme-settings/curated-options.php:16
+msgid "Curated Posts (Above Blog)"
+msgstr ""
+
+#: templatesell/theme-settings/curated-options.php:17
+msgid "Shows between the editor picks and the latest posts on the home page."
+msgstr ""
+
+#: templatesell/theme-settings/curated-options.php:21
+msgid "Curated Posts (Below Blog)"
+msgstr ""
+
+#: templatesell/theme-settings/curated-options.php:22
+msgid "Shows under the latest posts on the home page."
+msgstr ""
+
+#: templatesell/theme-settings/curated-options.php:55
+msgid "Enable Curated Posts"
+msgstr ""
+
+#: templatesell/theme-settings/curated-options.php:77
+msgid "Small Label"
+msgstr ""
+
+#: templatesell/theme-settings/curated-options.php:78
+msgid "The short uppercase line above the heading."
+msgstr ""
+
+#: templatesell/theme-settings/curated-options.php:100
+msgid "Heading"
+msgstr ""
+
+#: templatesell/theme-settings/curated-options.php:125
+msgid "Pull the stories from this category. The View More link opens it."
+msgstr ""
+
+#: templatesell/theme-settings/curated-options.php:147
+msgid "Number of Posts"
+msgstr ""
+
+#: templatesell/theme-settings/footer-options.php:16
+msgid "Footer Settings"
+msgstr ""
+
+#: templatesell/theme-settings/footer-options.php:38
+msgid "Footer Layout"
+msgstr ""
+
+#: templatesell/theme-settings/footer-options.php:39
+msgid "Classic keeps the copyright left and the menu right. Centered stacks everything in the middle. Dark paints the whole footer in the dark palette."
+msgstr ""
+
+#: templatesell/theme-settings/footer-options.php:61
+msgid "Copyright Text"
+msgstr ""
+
+#: templatesell/theme-settings/footer-options.php:62
+msgid "The text shown at the bottom of every page."
+msgstr ""
+
+#: templatesell/theme-settings/footer-options.php:84
+msgid "Enable Go To Top Button"
+msgstr ""
+
+#: templatesell/theme-settings/footer-options.php:85
+msgid "Show a scroll to top button in the bottom corner."
+msgstr ""
+
+#: templatesell/theme-settings/general-options.php:16
+msgid "General Settings"
+msgstr ""
+
+#: templatesell/theme-settings/general-options.php:35
+msgid "Page Layout"
+msgstr ""
+
+#: templatesell/theme-settings/general-options.php:36
+msgid "Full width fills the window. Boxed centres the site in a container, framed adds a gutter around it, and custom width lets you set the container yourself."
+msgstr ""
+
+#: templatesell/theme-settings/general-options.php:41
+msgid "Full Width"
+msgstr ""
+
+#: templatesell/theme-settings/general-options.php:42
+msgid "Boxed"
+msgstr ""
+
+#: templatesell/theme-settings/general-options.php:43
+msgid "Framed"
+msgstr ""
+
+#: templatesell/theme-settings/general-options.php:44
+msgid "Custom Width"
+msgstr ""
+
+#: templatesell/theme-settings/general-options.php:64
+msgid "Container Width (px)"
+msgstr ""
+
+#: templatesell/theme-settings/general-options.php:65
+msgid "The width the site is held to. Used by the Custom Width layout."
+msgstr ""
+
+#: templatesell/theme-settings/general-options.php:101
+msgid "Colors"
+msgstr ""
+
+#: templatesell/theme-settings/general-options.php:102
+msgid "The accent colour used across the whole site."
+msgstr ""
+
+#: templatesell/theme-settings/general-options.php:124
+msgid "Typography"
+msgstr ""
+
+#: templatesell/theme-settings/general-options.php:125
+msgid "Fonts and reading size."
+msgstr ""
+
+#: templatesell/theme-settings/header-options.php:16
+msgid "Header Settings"
+msgstr ""
+
+#: templatesell/theme-settings/header-options.php:38
+msgid "Header Layout"
+msgstr ""
+
+#: templatesell/theme-settings/header-options.php:39
+msgid "Classic keeps the branding row above the menu bar. Inline puts the logo, search and menu on one row. Centered stacks the logo above a centered menu."
+msgstr ""
+
+#: templatesell/theme-settings/header-options.php:61
+msgid "Enable Header Search"
+msgstr ""
+
+#: templatesell/theme-settings/header-options.php:62
+msgid "Show a search icon at the end of the main menu."
+msgstr ""
+
+#: templatesell/theme-settings/header-options.php:84
+msgid "Enable Dark Mode Switch"
+msgstr ""
+
+#: templatesell/theme-settings/header-options.php:85
+msgid "Show a light and dark mode switch in the main menu. Visitors who have not chosen yet see the mode their device prefers."
+msgstr ""
+
+#: templatesell/theme-settings/header-options.php:107
+msgid "Enable Sticky Menu"
+msgstr ""
+
+#: templatesell/theme-settings/header-options.php:108
+msgid "Keep the main navigation visible while the visitor scrolls."
+msgstr ""
+
+#: templatesell/theme-settings/header-options.php:130
+msgid "Enable Header Banner"
+msgstr ""
+
+#: templatesell/theme-settings/header-options.php:131
+msgid "Show an image beside the logo on the classic header. A wide banner around 728 by 90 pixels fits best."
+msgstr ""
+
+#: templatesell/theme-settings/header-options.php:155
+msgid "Header Banner Image"
+msgstr ""
+
+#: templatesell/theme-settings/header-options.php:156
+msgid "The banner shown beside the logo. Leave empty to use the Header Widget area instead."
+msgstr ""
+
+#: templatesell/theme-settings/header-options.php:179
+msgid "Header Banner Link"
+msgstr ""
+
+#: templatesell/theme-settings/header-options.php:180
+msgid "Optional. Where the banner sends the visitor."
+msgstr ""
+
+#: templatesell/theme-settings/header-options.php:202
+msgid "Open Banner Link In A New Tab"
+msgstr ""
+
+#: templatesell/theme-settings/logo-options.php:24
+msgid "Logo Width"
+msgstr ""
+
+#: templatesell/theme-settings/logo-options.php:25
+msgid "Set the maximum logo width in pixels."
+msgstr ""
+
+#: templatesell/theme-settings/logo-options.php:54
+msgid "Dark Mode Logo"
+msgstr ""
+
+#: templatesell/theme-settings/logo-options.php:55
+msgid "Optional. Shown while dark mode is on, where a dark logo would be hard to read. The main logo is used when this is empty."
+msgstr ""
+
+#: templatesell/theme-settings/single-page-options.php:16
+msgid "Single Post Settings"
+msgstr ""
+
+#: templatesell/theme-settings/single-page-options.php:38
+msgid "Single Post Sidebar"
+msgstr ""
+
+#: templatesell/theme-settings/single-page-options.php:39
+msgid "This sidebar will work on single posts and pages."
+msgstr ""
+
+#: templatesell/theme-settings/single-page-options.php:50
+msgid "Show Featured Image"
+msgstr ""
+
+#: templatesell/theme-settings/single-page-options.php:51
+msgid "Display the featured image at the top of a single post."
+msgstr ""
+
+#: templatesell/theme-settings/single-page-options.php:56
+msgid "Display the sharing buttons under the post content."
+msgstr ""
+
+#: templatesell/theme-settings/single-page-options.php:60
+msgid "Show Author Box"
+msgstr ""
+
+#: templatesell/theme-settings/single-page-options.php:61
+msgid "Display the author biography under the post content."
+msgstr ""
+
+#: templatesell/theme-settings/single-page-options.php:65
+msgid "Show Post Navigation"
+msgstr ""
+
+#: templatesell/theme-settings/single-page-options.php:66
+msgid "Display the previous and next post links."
+msgstr ""
+
+#: templatesell/theme-settings/single-page-options.php:70
+msgid "Show Related Posts"
+msgstr ""
+
+#: templatesell/theme-settings/single-page-options.php:71
+msgid "Display related posts from the same category."
+msgstr ""
+
+#: templatesell/theme-settings/single-page-options.php:115
+msgid "Related Posts Title"
+msgstr ""
+
+#: templatesell/theme-settings/single-page-options.php:116
+msgid "The heading shown above the related posts."
+msgstr ""
+
+#: templatesell/theme-settings/slider-options.php:16
+msgid "Featured Post Settings"
+msgstr ""
+
+#: templatesell/theme-settings/slider-options.php:35
+msgid "Enable Featured Post"
+msgstr ""
+
+#: templatesell/theme-settings/slider-options.php:36
+msgid "Show the large featured story on the front page."
+msgstr ""
+
+#: templatesell/theme-settings/slider-options.php:61
+msgid "Hero Layout"
+msgstr ""
+
+#: templatesell/theme-settings/slider-options.php:62
+msgid "Overlay shows one big story. Magazine pairs a lead story with three side stories. Panel floats the latest headlines over the image."
+msgstr ""
+
+#: templatesell/theme-settings/slider-options.php:86
+msgid "Featured Post Category"
+msgstr ""
+
+#: templatesell/theme-settings/slider-options.php:87
+msgid "Pull the featured story from this category."
+msgstr ""
+
+#: templatesell/theme-settings/slider-options.php:109
+msgid "Number of Featured Posts"
+msgstr ""
+
+#: templatesell/theme-settings/slider-options.php:110
+msgid "Show up to six stories in the featured slider. Works on the Overlay hero layout."
+msgstr ""
+
+#: templatesell/theme-settings/theme-settings.php:15
+msgid "Polite News Theme Options"
+msgstr ""
+
+#: templatesell/theme-settings/ticker-options.php:16
+msgid "Breaking News Settings"
+msgstr ""
+
+#: templatesell/theme-settings/ticker-options.php:35
+msgid "Enable Breaking News"
+msgstr ""
+
+#: templatesell/theme-settings/ticker-options.php:36
+msgid "Show the rotating headline bar under the main menu on the front page."
+msgstr ""
+
+#: templatesell/theme-settings/ticker-options.php:61
+msgid "Ticker Style"
+msgstr ""
+
+#: templatesell/theme-settings/ticker-options.php:62
+msgid "Pill keeps the rounded soft bar. Solid paints the bar in the primary colour. Minimal is a plain line with a live dot."
+msgstr ""
+
+#: templatesell/theme-settings/ticker-options.php:84
+msgid "Breaking News Label"
+msgstr ""
+
+#: templatesell/theme-settings/ticker-options.php:85
+msgid "The text shown inside the coloured badge."
+msgstr ""
+
+#: templatesell/theme-settings/ticker-options.php:109
+msgid "Breaking News Category"
+msgstr ""
+
+#: templatesell/theme-settings/ticker-options.php:110
+msgid "Pull the headlines from this category."
+msgstr ""
+
+#: templatesell/theme-settings/ticker-options.php:132
+msgid "Number of Headlines"
+msgstr ""
+
+#: templatesell/theme-settings/ticker-options.php:133
+msgid "How many posts rotate through the breaking news bar."
+msgstr ""
+
+#: templatesell/theme-settings/top-header-options.php:16
+msgid "Top Header Settings"
+msgstr ""
+
+#: templatesell/theme-settings/top-header-options.php:35
+msgid "Enable Top Header Bar"
+msgstr ""
+
+#: templatesell/theme-settings/top-header-options.php:36
+msgid "Show the dark bar above the site logo."
+msgstr ""
+
+#: templatesell/theme-settings/top-header-options.php:58
+msgid "Show Today Date"
+msgstr ""
+
+#: templatesell/theme-settings/top-header-options.php:59
+msgid "Display the current date on the left of the top bar."
+msgstr ""
+
+#: templatesell/theme-settings/top-header-options.php:81
+msgid "Show Top Menu"
+msgstr ""
+
+#: templatesell/theme-settings/top-header-options.php:82
+msgid "Display the menu assigned to the Top Menu location."
+msgstr ""
+
+#: templatesell/theme-settings/top-header-options.php:104
+msgid "Show Social Icons"
+msgstr ""
+
+#: templatesell/theme-settings/top-header-options.php:105
+msgid "Display the menu assigned to the Social Icons location."
+msgstr ""
+
+#: templatesell/theme-settings/typography-options.php:25
+msgid "Heading Font"
+msgstr ""
+
+#: templatesell/theme-settings/typography-options.php:26
+msgid "Font used for headings and post titles. Every choice loads from the theme or the device, nothing is fetched from outside."
+msgstr ""
+
+#: templatesell/theme-settings/typography-options.php:49
+msgid "Body Font"
+msgstr ""
+
+#: templatesell/theme-settings/typography-options.php:50
+msgid "Font used for paragraphs and interface text."
+msgstr ""
+
+#: templatesell/theme-settings/typography-options.php:72
+msgid "Paragraph Font Size"
+msgstr ""
+
+#: templatesell/theme-settings/typography-options.php:73
+msgid "Applies to paragraphs, not headings."
+msgstr ""
+
+#: templatesell/upgrade/class-customize.php:78
+msgid "Unlock More Features"
+msgstr ""
+
+#: templatesell/widgets/ts-author-widget.php:22
+msgid "Polite News: Author Info"
+msgstr ""
+
+#: templatesell/widgets/ts-author-widget.php:25
+msgid "Show a photo, name and short biography of the site author."
+msgstr ""
+
+#: templatesell/widgets/ts-author-widget.php:77
+#: templatesell/widgets/ts-banner-widget.php:100
+#: templatesell/widgets/ts-chips-widget.php:103
+#: templatesell/widgets/ts-contact-widget.php:102
+#: templatesell/widgets/ts-cta-widget.php:82
+#: templatesell/widgets/ts-popular-posts-widget.php:154
+#: templatesell/widgets/ts-recent-posts-widget.php:103
+#: templatesell/widgets/ts-social-widget.php:74
+msgid "Title:"
+msgstr ""
+
+#: templatesell/widgets/ts-author-widget.php:81
+msgid "Author Name:"
+msgstr ""
+
+#: templatesell/widgets/ts-author-widget.php:85
+msgid "Short Biography:"
+msgstr ""
+
+#: templatesell/widgets/ts-author-widget.php:89
+#: templatesell/widgets/ts-banner-widget.php:104
+msgid "Image ID:"
+msgstr ""
+
+#: templatesell/widgets/ts-author-widget.php:91
+msgid "Find the ID in the media library address bar."
+msgstr ""
+
+#: templatesell/widgets/ts-banner-widget.php:22
+msgid "Polite News: Banner"
+msgstr ""
+
+#: templatesell/widgets/ts-banner-widget.php:25
+msgid "Show an advert or promo image, with an optional link. A tall image suits the sidebar."
+msgstr ""
+
+#: templatesell/widgets/ts-banner-widget.php:106
+msgid "Open the image in Media Library and copy the number at the end of the address."
+msgstr ""
+
+#: templatesell/widgets/ts-banner-widget.php:112
+msgid "Link:"
+msgstr ""
+
+#: templatesell/widgets/ts-banner-widget.php:116
+msgid "Caption:"
+msgstr ""
+
+#: templatesell/widgets/ts-banner-widget.php:118
+msgid "Optional. A short line under the image, such as Advertisement."
+msgstr ""
+
+#: templatesell/widgets/ts-banner-widget.php:122
+#: templatesell/widgets/ts-cta-widget.php:99
+msgid "Open in a new tab"
+msgstr ""
+
+#: templatesell/widgets/ts-chips-widget.php:22
+msgid "Polite News: Tags & Categories"
+msgstr ""
+
+#: templatesell/widgets/ts-chips-widget.php:25
+msgid "Show the busiest tags or categories as chips, filled or outlined."
+msgstr ""
+
+#: templatesell/widgets/ts-chips-widget.php:38
+#: templatesell/widgets/ts-chips-widget.php:96
+msgid "Popular Tags"
+msgstr ""
+
+#: templatesell/widgets/ts-chips-widget.php:107
+msgid "Show:"
+msgstr ""
+
+#: templatesell/widgets/ts-chips-widget.php:109
+msgid "Tags"
+msgstr ""
+
+#: templatesell/widgets/ts-chips-widget.php:110
+msgid "Categories"
+msgstr ""
+
+#: templatesell/widgets/ts-chips-widget.php:114
+msgid "Chip Style:"
+msgstr ""
+
+#: templatesell/widgets/ts-chips-widget.php:116
+msgid "Outlined box"
+msgstr ""
+
+#: templatesell/widgets/ts-chips-widget.php:117
+msgid "Filled pill"
+msgstr ""
+
+#: templatesell/widgets/ts-chips-widget.php:121
+msgid "How Many:"
+msgstr ""
+
+#: templatesell/widgets/ts-chips-widget.php:126
+msgid "Show post counts"
+msgstr ""
+
+#: templatesell/widgets/ts-contact-widget.php:22
+msgid "Polite News: Contact Details"
+msgstr ""
+
+#: templatesell/widgets/ts-contact-widget.php:25
+msgid "Show an address, phone number, email address and opening hours."
+msgstr ""
+
+#: templatesell/widgets/ts-contact-widget.php:95
+msgid "Contact"
+msgstr ""
+
+#: templatesell/widgets/ts-contact-widget.php:106
+msgid "Address:"
+msgstr ""
+
+#: templatesell/widgets/ts-contact-widget.php:110
+msgid "Phone:"
+msgstr ""
+
+#: templatesell/widgets/ts-contact-widget.php:114
+msgid "Email:"
+msgstr ""
+
+#: templatesell/widgets/ts-contact-widget.php:118
+msgid "Opening Hours:"
+msgstr ""
+
+#: templatesell/widgets/ts-cta-widget.php:22
+msgid "Polite News: Call To Action"
+msgstr ""
+
+#: templatesell/widgets/ts-cta-widget.php:25
+msgid "A short pitch with a button. Point it at a newsletter, a contact page or anything else."
+msgstr ""
+
+#: templatesell/widgets/ts-cta-widget.php:86
+msgid "Text:"
+msgstr ""
+
+#: templatesell/widgets/ts-cta-widget.php:90
+msgid "Button Label:"
+msgstr ""
+
+#: templatesell/widgets/ts-cta-widget.php:94
+msgid "Button Link:"
+msgstr ""
+
+#: templatesell/widgets/ts-popular-posts-widget.php:22
+msgid "Polite News: Popular Posts"
+msgstr ""
+
+#: templatesell/widgets/ts-popular-posts-widget.php:25
+msgid "Show the most commented posts with a thumbnail, category and byline."
+msgstr ""
+
+#: templatesell/widgets/ts-popular-posts-widget.php:38
+#: templatesell/widgets/ts-popular-posts-widget.php:140
+msgid "Popular News"
+msgstr ""
+
+#: templatesell/widgets/ts-popular-posts-widget.php:147
+msgid "All time"
+msgstr ""
+
+#: templatesell/widgets/ts-popular-posts-widget.php:148
+msgid "Last 7 days"
+msgstr ""
+
+#: templatesell/widgets/ts-popular-posts-widget.php:149
+msgid "Last 30 days"
+msgstr ""
+
+#: templatesell/widgets/ts-popular-posts-widget.php:150
+msgid "Last year"
+msgstr ""
+
+#: templatesell/widgets/ts-popular-posts-widget.php:158
+#: templatesell/widgets/ts-recent-posts-widget.php:107
+msgid "Number of Posts:"
+msgstr ""
+
+#: templatesell/widgets/ts-popular-posts-widget.php:162
+msgid "Counted From:"
+msgstr ""
+
+#: templatesell/widgets/ts-popular-posts-widget.php:171
+msgid "Show the author and date"
+msgstr ""
+
+#: templatesell/widgets/ts-popular-posts-widget.php:175
+msgid "Number each story"
+msgstr ""
+
+#: templatesell/widgets/ts-recent-posts-widget.php:22
+msgid "Polite News: Recent Posts"
+msgstr ""
+
+#: templatesell/widgets/ts-recent-posts-widget.php:25
+msgid "Show recent posts with a thumbnail and the date."
+msgstr ""
+
+#: templatesell/widgets/ts-recent-posts-widget.php:38
+#: templatesell/widgets/ts-recent-posts-widget.php:98
+msgid "Recent Posts"
+msgstr ""
+
+#: templatesell/widgets/ts-recent-posts-widget.php:111
+msgid "Category:"
+msgstr ""
+
+#: templatesell/widgets/ts-social-widget.php:22
+msgid "Polite News: Social Icons"
+msgstr ""
+
+#: templatesell/widgets/ts-social-widget.php:25
+msgid "Show the menu assigned to the Social Icons location as round icon buttons."
+msgstr ""
+
+#: templatesell/widgets/ts-social-widget.php:78
+msgid "Assign a menu to the Social Icons location, the icons come from each link address."
+msgstr ""
