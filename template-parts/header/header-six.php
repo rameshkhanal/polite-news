@@ -2,13 +2,7 @@
 /**
  * Header style six
  *
- * One compact row: the menu button and the logo on the left, the actions on
- * the right. The primary menu never appears inline here; it lives in the
- * slide-in panel at every screen width, which is what the ts-header-drawer
- * class on the row tells the stylesheet.
- *
- * Useful for a site with a long menu, or one that would rather give the width
- * to the story than to a row of section names.
+ * One compact row: the menu button and the logo on the left, the actions on the right.
  *
  * @package Polite_News
  */

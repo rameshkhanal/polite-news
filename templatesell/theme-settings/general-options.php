@@ -79,10 +79,6 @@ $wp_customize->add_control(
 
 /**
  * Group headings.
- *
- * The customizer cannot nest one section inside another, so the colour and
- * typography controls live here and these headings keep the three groups
- * apart. Their priorities sit just above the controls they introduce.
  */
 $wp_customize->add_setting(
 	'polite_news_colour_heading',

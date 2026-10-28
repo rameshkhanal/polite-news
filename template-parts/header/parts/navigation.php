@@ -2,10 +2,7 @@
 /**
  * The primary navigation
  *
- * Every header layout prints the same navigation: a toggle, and a panel that
- * slides in on small screens carrying the brand, a close button and the menu.
- * It lived in each layout file until there were six of them, at which point a
- * fix had to be made six times and eventually would not be.
+ * Navigation shared by every header layout.
  *
  * @package Polite_News
  */

@@ -2,8 +2,7 @@
 /**
  * Hero style one
  *
- * Overlay slider. One story renders without the controls, more become an
- * autoplaying carousel with arrows and dots.
+ * Overlay slider.
  *
  * @package Polite_News
  */
@@ -28,12 +27,7 @@ $polite_news_slide_index = 0;
 						if ( 0 === $polite_news_slide_index ) {
 							the_post_thumbnail( 'polite-news-slider', array( 'loading' => 'eager', 'fetchpriority' => 'high' ) );
 						} else {
-							/*
-							 * Every other slide is display:none until its turn, so the
-							 * browser can hold the fetch back. Left to itself it pulls
-							 * all of them during the first paint, which on a phone is
-							 * several full width photographs nobody has asked to see.
-							 */
+							/* Every other slide is display:none until its turn, so the browser can hold the fetch back. */
 							the_post_thumbnail( 'polite-news-slider', array( 'loading' => 'lazy' ) );
 						}
 					}

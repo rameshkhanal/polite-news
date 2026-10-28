@@ -42,9 +42,7 @@ $polite_news_banner_tab    = absint( $polite_news_theme_options['polite_news_hea
 
 			<?php
 			/**
-			 * The banner set in the customizer wins. With none chosen the
-			 * widget area beside the branding is used instead, so the space
-			 * is never simply left blank.
+			 * The banner set in the customizer wins.
 			 */
 			if ( 1 === $polite_news_banner && $polite_news_banner_id ) :
 				$polite_news_banner_image = wp_get_attachment_image(

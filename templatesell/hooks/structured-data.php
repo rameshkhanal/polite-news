@@ -2,12 +2,10 @@
 /**
  * Structured data
  *
- * Prints the JSON-LD used by search engines and answer engines: the site
- * with its search action on the front page and a NewsArticle on single
- * posts. Left out when a dedicated SEO plugin already prints its own.
+ * Prints JSON-LD: the site and its search action on the front page, a NewsArticle on single posts.
  *
  * @package Polite_News
- *
+ * 
  * @since 1.0.0
  */
 

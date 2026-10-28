@@ -10,9 +10,6 @@
 /**
  * Add the sidebar layout class to the body.
  *
- * The option values are stored unprefixed, the class that reaches the markup
- * carries the ts brand prefix so it cannot clash with a plugin.
- *
  * @param array $classes Body classes.
  * @return array
  */
@@ -68,11 +65,6 @@ add_filter( 'body_class', 'polite_news_layout_body_class' );
 /**
  * Add the page layout classes to the body.
  *
- * Boxed, framed and custom width all hold the site to a container, so they all
- * carry ts-boxed and then add whatever makes them different. That way the one
- * set of container rules is written once and the variants only say how they
- * depart from it.
- *
  * @param array $classes Body classes.
  * @return array
  */
@@ -95,9 +87,6 @@ add_filter( 'body_class', 'polite_news_page_layout_body_class' );
 
 /**
  * Flag a sticky sidebar on the body.
- *
- * The class only says the option is on. Whether the column can actually hold
- * still is decided in the browser, where the sidebar height is known.
  *
  * @param array $classes Body classes.
  * @return array

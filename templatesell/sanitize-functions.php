@@ -10,9 +10,6 @@
 /**
  * Checkbox sanitization callback.
  *
- * Sanitization callback for 'checkbox' type controls. This callback sanitizes `$checked`
- * as a boolean value, either TRUE or FALSE.
- *
  * @param bool $checked Whether the checkbox is checked.
  * @return bool Whether the checkbox is checked.
  */
@@ -55,9 +52,6 @@ function polite_news_sanitize_select( $input, $setting ) {
 
 /**
  * Font family sanitization callback.
- *
- * Font family names carry capitals and spaces, so they cannot go through
- * sanitize_key. The value is checked against the font list instead.
  *
  * @param string               $input   Chosen font family.
  * @param WP_Customize_Setting $setting Setting instance.

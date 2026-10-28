@@ -13,7 +13,7 @@ Polite News is a fast, clean and fully responsive news and magazine WordPress th
 
 == Description ==
 
-Polite News is a fast, clean and fully responsive news and magazine WordPress theme with a modern card based layout. It ships with a built in dark mode, a breaking news ticker, a featured post section, editor pick cards, rounded card grids, multiple blog layouts, header and footer options, sidebar options and a one click primary colour option. Besides that, it comes with custom widgets for popular posts, tags and categories, contact details, a call to action, a banner, author information, recent posts and social icons, plus breadcrumbs, social sharing, related posts, a sticky sidebar and ajax load more. Perfect for newspaper, magazine, editorial, blog and personal news websites. Upgrade to Polite News Pro for the featured carousel, extra layouts, typography options, demo import and premium support.
+Polite News is a fast, clean and fully responsive news and magazine WordPress theme with a modern card based layout. It ships with a built in dark mode, a breaking news ticker, a featured post section, editor pick cards, rounded card grids, multiple blog layouts, header and footer options, sidebar options and a one click primary colour option. Besides that, it comes with custom widgets for popular posts, tags and categories, contact details, a call to action, a banner, author information, recent posts and social icons, plus breadcrumbs, social sharing, related posts, a sticky sidebar and ajax load more. Suitable for newspaper, magazine, editorial, blog and personal news websites. Upgrade to Polite News Pro for the featured carousel, extra layouts, typography options, demo import and premium support.
 
 Polite News loads every font and icon from inside the theme folder. It makes no requests to Google Fonts or to any other external service, so it works offline and keeps visitor data on your own server.
 
@@ -44,8 +44,8 @@ No. Inter, Poppins and Font Awesome are bundled with the theme and served from y
 == Changelog ==
 
 = 1.0.1 =
-* Fixed: Theme URI updated to a working page.
-* Fixed: All text strings in the patterns folder are now translation ready.
+* Fixed: broken Theme URI.
+* Fixed: pattern strings are now translation ready.
 
 = 1.0.0 =
 * Initial release

@@ -171,11 +171,6 @@ if ( ! function_exists( 'polite_news_archive_style_array' ) ) :
 	/**
 	 * Layout choices for the blog and archive listings.
 	 *
-	 * The same arrangements the home page offers, so a site does not have to
-	 * look like two different publications either side of a category link. The
-	 * first three keys are the ones this option shipped with and are kept so a
-	 * saved setting still means what it used to.
-	 *
 	 * @return array
 	 */
 	function polite_news_archive_style_array() {

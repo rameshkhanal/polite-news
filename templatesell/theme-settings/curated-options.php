@@ -2,12 +2,10 @@
 /**
  * Curated Posts Options
  *
- * Two curated post sections on the home page: one above the latest posts
- * and one below them. Each pulls from its own category with its own
- * heading.
+ * Two curated post sections on the home page: one above the latest posts and one below them.
  *
  * @package Polite_News
- *
+ * 
  * @since 1.0.0
  */
 

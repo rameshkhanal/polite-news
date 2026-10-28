@@ -102,11 +102,7 @@ if ( ! function_exists( 'polite_news_dynamic_css' ) ) :
 		$custom_css .= '--ts-primary-soft:rgba(' . polite_news_hex_to_rgb( $primary ) . ', 0.18);';
 		$custom_css .= '}';
 
-		/*
-		 * Custom container width. The stylesheet holds every contained layout to
-		 * 1320px, so only a different number needs writing, and the fixed sticky
-		 * bar has to be told separately because it is out of the flow.
-		 */
+		/* Custom container width. */
 		$page_layout = isset( $polite_news_theme_options['polite-news-page-layout'] ) ? $polite_news_theme_options['polite-news-page-layout'] : 'full';
 		$page_width  = isset( $polite_news_theme_options['polite-news-page-width'] ) ? absint( $polite_news_theme_options['polite-news-page-width'] ) : 0;
 

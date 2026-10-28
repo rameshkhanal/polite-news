@@ -2,8 +2,7 @@
 /**
  * The header action buttons
  *
- * The colour switch and the search toggle, in the order every layout wants
- * them. Shared for the same reason the navigation is.
+ * The colour switch and the search toggle, in the order every layout wants them.
  *
  * @package Polite_News
  */
@@ -13,11 +12,7 @@ global $polite_news_theme_options;
 $polite_news_enable_search = absint( $polite_news_theme_options['polite_news_enable_search'] );
 $polite_news_enable_dark   = absint( $polite_news_theme_options['polite_news_enable_dark_mode'] );
 
-/*
- * The wrapper is printed even when both buttons are off: it is a flex child
- * that balances the row, and dropping it would slide the centred menu off
- * centre on the layouts that rely on it.
- */
+/* The wrapper is printed even when both buttons are off: it is a flex child that balances the row. */
 ?>
 <div class="ts-nav-actions">
 

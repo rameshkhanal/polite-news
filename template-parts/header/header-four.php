@@ -2,12 +2,7 @@
 /**
  * Header style four
  *
- * The editorial band: logo on the left, a live search field in the middle of
- * the branding row rather than hidden behind an icon, and the navigation bar
- * below with the menu pushed left and the actions right.
- *
- * A newsroom whose readers arrive looking for a story wants the search box in
- * front of them, so this layout spends the width on it instead of on a banner.
+ * The editorial band: logo on the left, a live search field in the branding row.
  *
  * @package Polite_News
  */

@@ -2,17 +2,10 @@
 /**
  * Document meta tags
  *
- * WordPress prints a canonical link on singular views only, and never prints a
- * meta description or a sharing card at all. That leaves a news site with a
- * bare snippet in search results and a blank preview when a story is posted to
- * a chat or a timeline. The gap is filled here.
- *
- * A dedicated SEO plugin does all of this better and, more to the point, would
- * print a second set of the same tags. Whenever one is active every function in
- * this file stands down, exactly as the JSON-LD in structured-data.php does.
+ * Canonical link, meta description and sharing card tags.
  *
  * @package Polite_News
- *
+ * 
  * @since 1.0.0
  */
 
@@ -31,11 +24,8 @@ if ( ! function_exists( 'polite_news_document_meta_enabled' ) ) :
 		/**
 		 * Filters whether the theme prints its own document meta tags.
 		 *
-		 * Returning false is the single switch for the whole file, for a site
-		 * that handles these tags some other way.
-		 *
 		 * @since 1.0.0
-		 *
+		 * 
 		 * @param bool $enabled Whether to print the tags.
 		 */
 		return (bool) apply_filters( 'polite_news_document_meta', true );
@@ -45,9 +35,6 @@ endif;
 if ( ! function_exists( 'polite_news_document_description' ) ) :
 	/**
 	 * Build the description for the current view.
-	 *
-	 * Returns an empty string rather than inventing text: one made up sentence
-	 * repeated across every archive is worse than no description at all.
 	 *
 	 * @return string
 	 */
@@ -119,9 +106,6 @@ endif;
 if ( ! function_exists( 'polite_news_document_canonical' ) ) :
 	/**
 	 * The canonical URL for the current view.
-	 *
-	 * Singular views are left alone: core's own rel_canonical() already covers
-	 * them, and it knows about paged posts and preview states that this does not.
 	 *
 	 * @return string
 	 */

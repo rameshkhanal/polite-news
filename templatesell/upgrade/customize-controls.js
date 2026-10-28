@@ -7,8 +7,7 @@
 
 	wp.customize.bind( 'ready', function() {
 
-		// Detect when the pro section is expanded, or closed, so we can adjust
-		// the actions accordingly. It is a link, not a section.
+		// Detect when the pro section is expanded, or closed, so we can adjust the actions accordingly.
 		wp.customize.section( 'polite_news_pro', function( section ) {
 
 			section.expanded.bind( function( isExpanding ) {

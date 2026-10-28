@@ -61,14 +61,7 @@ body.ts-single-middle-column .ts-content-wrap {
 	}
 }
 
-/**
- * Sticky sidebar.
- *
- * The column is moved by assets/js/custom.js, which offsets it inside this
- * grid so it settles against the top or the bottom of the screen depending on
- * which way the reader is going. Only the paint hint lives here; with no
- * script the sidebar stays exactly where the grid put it.
- */
+/* Sticky sidebar. */
 @media only screen and (min-width: 992px) {
 
 	body.ts-sticky-sidebar #secondary {

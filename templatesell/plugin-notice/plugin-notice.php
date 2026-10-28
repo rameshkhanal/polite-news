@@ -2,12 +2,8 @@
 /**
  * Dismissible recommended plugins notice.
  *
- * Everything listed here is hosted on WordPress.org and optional. The theme
- * works without any of it, which is why this only ever recommends and never
- * installs anything on the visitor's behalf.
- *
  * @package Polite_News
- *
+ * 
  * @since 1.0.0
  */
 

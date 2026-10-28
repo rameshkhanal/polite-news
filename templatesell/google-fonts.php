@@ -2,13 +2,10 @@
 /**
  * Theme fonts
  *
- * The font family choices for the typography settings. Every choice is
- * either bundled with the theme or already on the reader's device, so no
- * request ever leaves the site. The pro theme swaps this list for the full
- * Google Fonts catalogue.
+ * The font family choices for the typography settings.
  *
  * @package Polite_News
- *
+ * 
  * @since 1.0.0
  */
 

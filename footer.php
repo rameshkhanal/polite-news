@@ -59,10 +59,7 @@ if ( ! array_key_exists( $polite_news_footer_layout, polite_news_footer_layout_a
 				<?php if ( 'footer-two' === $polite_news_footer_layout ) : ?>
 					<?php
 					/**
-					 * The centred layout opens with a masthead instead of centring the
-					 * widget columns. Centred text reads badly beside a thumbnail or a
-					 * row of chips, so only this band is centred and the columns below
-					 * keep their normal alignment.
+					 * The centred layout opens with a masthead instead of centring the widget columns.
 					 */
 					$polite_news_footer_tagline = get_bloginfo( 'description', 'display' );
 					?>
@@ -107,9 +104,7 @@ if ( ! array_key_exists( $polite_news_footer_layout, polite_news_footer_layout_a
 
 					<?php
 					/**
-					 * The branding column. It is a grid item like any widget
-					 * column, so the widths stay in the stylesheet with the
-					 * rest of the grid rather than being computed here.
+					 * The branding column.
 					 */
 					if ( 'footer-four' === $polite_news_footer_layout ) :
 						?>

@@ -589,12 +589,7 @@ input[type="submit"]:hover,
 	background-color: var(--ts-primary-soft);
 }
 
-/*
- * The icon carries the meaning visually and is aria-hidden, so this label is
- * the link's only accessible name. display:none would take it out of the
- * accessibility tree as well and leave the social links nameless; clip it out
- * of sight instead, exactly as .screen-reader-text does.
- */
+/* The icon carries the meaning visually and is aria-hidden. */
 .ts-social-icons a span {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
@@ -953,12 +948,7 @@ body.ts-dark-mode .ts-dark-toggle .ts-icon-moon {
 	color: #ffffff;
 }
 
-/*
- * The slide overlay sits on a photograph, so its text is always white. The
- * :not() carries no meaning here beyond weight: the generic meta colours later
- * in this file score the same as a plain descendant selector and would
- * otherwise win on order, painting the byline dark ink on a dark picture.
- */
+/* The slide overlay sits on a photograph, so its text is always white. */
 .ts-slide-content .ts-post-title a,
 .ts-slide-content .entry-meta,
 .ts-slide-content .entry-meta a:not(.ts-cat-badge) {
@@ -1122,12 +1112,7 @@ article.hentry {
 	color: var(--ts-muted);
 }
 
-/**
- * Meta links, but never the category badge. The badge paints its own
- * background, and these selectors are more specific than .ts-cat-badge, so
- * without the guard the badge text takes the meta colour and lands on top of
- * its own indigo background on hover.
- */
+/* Meta links, but never the category badge. */
 .entry-meta a:not(.ts-cat-badge) {
 	color: var(--ts-muted);
 }
@@ -1450,11 +1435,7 @@ article.hentry {
 	font-weight: 400;
 }
 
-/*
- * The browser default is 13px, a poor target on a phone. It sits alone in
- * its own paragraph, so the spacing exception to the 24px minimum applies
- * and it does not have to be full size to be comfortably reachable.
- */
+/* The browser default is 13px, a poor target on a phone. */
 .comment-form-cookies-consent input {
 	width: 18px;
 	height: 18px;
@@ -1588,12 +1569,7 @@ article.hentry {
 	border: 0;
 }
 
-/**
- * The widget class is repeated on purpose. A social link is still a link in a
- * widget list, and .widget ul li a:hover is the more specific selector, so
- * without it the icon takes the plain link colour and disappears into the
- * circle it just painted underneath itself.
- */
+/* The widget class is repeated on purpose. */
 .widget.ts-social-widget a {
 	display: inline-flex;
 	align-items: center;
@@ -2018,12 +1994,7 @@ body.ts-dark-mode .entry-meta i {
 	color: var(--ts-muted);
 }
 
-/**
- * 21.0 - Header layouts
- * -------------------------------------------------------------
- *
- * ts-header-one is the default classic layout and needs no extra rules.
- */
+/* 21.0 - Header layouts */
 
 /* Header two: logo left, centered menu, dark switch and search right. */
 .ts-header-inline {
@@ -2056,12 +2027,7 @@ body.ts-dark-mode .entry-meta i {
 	min-width: 0;
 }
 
-/*
- * Below this the navigation is only the toggle, and a box that can shrink
- * collapses under its own button: at 320px the 44px toggle hung 8px over the
- * actions beside it. The shrink above is for the width where the menu is in
- * the row; here the toggle sets the width.
- */
+/* Below this the navigation is only the toggle. */
 @media only screen and (max-width: 767px) {
 
 	.ts-header-two .main-navigation {
@@ -2178,14 +2144,7 @@ body.ts-dark-mode .entry-meta i {
 	transform: translateY(-50%);
 }
 
-/*
- * Header three and header five lift the actions out of the flow so the menu
- * centres on the whole bar rather than on the space beside them. Nothing then
- * stops a long menu reaching them: at 768px the last item sat 26px underneath
- * the dark mode button, close enough to steal its taps. Reserving the actions'
- * width on both sides keeps the centring exact and puts the menu out of range
- * at every width and every menu length.
- */
+/* Header three and header five lift the actions out of the flow so the menu centres on the whole bar rather than on the space beside them. */
 @media only screen and (min-width: 768px) {
 
 	.ts-header-three .ts-nav-inner,
@@ -2205,12 +2164,7 @@ body.ts-dark-mode .entry-meta i {
 	}
 }
 
-/*
- * The bar is a solid block of brand colour, so everything on it is white.
- * These selectors match the shape of the generic nav rules rather than merely
- * their weight: the plain colour and the current item rule further up the file
- * would otherwise be a tie or a win on document order.
- */
+/* The bar is a solid block of brand colour, so everything on it is white. */
 .ts-nav-filled .main-navigation a {
 	color: #ffffff;
 }
@@ -2244,19 +2198,7 @@ body.ts-dark-mode .entry-meta i {
 	opacity: 1;
 }
 
-/**
- * Header five paints the navigation bar in the brand colour and turns
- * everything on it white. On a phone the menu is not on the bar any more: the
- * bar keeps a toggle, and the menu itself is a panel below it painted in the
- * page's own background. The white text followed the links into that panel and
- * the whole menu disappeared — white on white, dividers and carets and nothing
- * else.
- *
- * These selectors have the shape of the ones they overrule rather than merely
- * their weight. The current item's rule counts four elements, so a shorter
- * selector with the same number of classes loses to it however specific it
- * looks.
- */
+/* Header five paints the navigation bar in the brand colour and turns everything on it white. */
 @media only screen and (max-width: 767px) {
 
 	.ts-nav-filled .main-navigation .menu-wrapper a {
@@ -2343,12 +2285,7 @@ body.ts-dark-mode .entry-meta i {
 	border-bottom: 0;
 }
 
-/*
- * No hover to open a submenu in a drawer, so the accordion buttons show. The
- * positioning below repeats the small screen rules rather than sharing them:
- * those live inside a max-width media query and this layout needs them at every
- * width, and a caret drawn for a hover dropdown would sit beside the button.
- */
+/* No hover to open a submenu in a drawer, so the accordion buttons show. */
 .ts-header-drawer .main-navigation .menu-item-has-children {
 	position: relative;
 }
@@ -2581,13 +2518,7 @@ body.ts-dark-mode .entry-meta i {
 	z-index: 5;
 	display: flex;
 	flex-direction: column;
-	/**
-	 * Centred rather than spread. The panel is a fixed height box, and
-	 * space-between dumped all the slack between the stories, so a one line
-	 * headline left a hole above it and every rule sat tight under the text
-	 * it belonged to instead of halfway between two. Centring keeps the
-	 * spacing even and leaves equal air top and bottom.
-	 */
+	/* Centred rather than spread. */
 	justify-content: center;
 	gap: 18px;
 	width: 380px;
@@ -2750,11 +2681,7 @@ body.ts-dark-mode .ts-hero-panel-item {
 	gap: 0;
 }
 
-/*
- * A dot is a small thing to look at and a large thing to press. The border is
- * transparent and the background stops at the content box, so the target is
- * 24px square while the dot stays the size it should be.
- */
+/* Enlarge the tap target of the dots. */
 .ts-carousel-dot {
 	width: 24px;
 	height: 24px;
@@ -2774,12 +2701,7 @@ body.ts-dark-mode .ts-hero-panel-item {
  * 24.0 - Editor picks styles
  * -------------------------------------------------------------
  */
-/*
- * White here was for a card style that put the date on a picture, and that
- * style stopped using this class. The two card styles below set their own
- * colour and looked right; the category columns, which also use it, had nine
- * dates a page the colour of the page.
- */
+/* Date colour for the box cards. */
 .ts-box-date {
 	display: block;
 	margin-top: 8px;
@@ -2787,14 +2709,7 @@ body.ts-dark-mode .ts-hero-panel-item {
 	color: var(--ts-muted);
 }
 
-/**
- * Style two: clean cards, content below the image.
- *
- * The cards sit in one grid row, so the column stretches every card to
- * the tallest. Laying the card out as a flex column and pushing the date
- * down with an auto margin puts every date on the same line, however
- * many lines the headline above it runs to.
- */
+/* Style two: clean cards, content below the image. */
 .ts-boxes-two .ts-box {
 	display: flex;
 	flex-direction: column;
@@ -3089,11 +3004,7 @@ body.ts-dark-mode .ts-hero-panel-item {
 	color: var(--ts-primary);
 }
 
-/*
- * Classic: one big story per row. The separator between stories belongs to
- * .ts-posts-wrap.ts-one-column article.hentry, which this style also carries;
- * repeating it on the inner wrapper drew two rules a padding gap apart.
- */
+/* Classic: one big story per row. */
 .ts-home-classic .ts-post-title {
 	font-size: 28px;
 }
@@ -3153,11 +3064,7 @@ body.ts-dark-mode .ts-hero-panel-item {
 	justify-content: center;
 }
 
-/**
- * Centred layout. Only the masthead is centred; the widget columns keep
- * their normal alignment, because centred text beside a thumbnail or a row
- * of chips reads as ragged rather than as deliberate.
- */
+/* Centred layout. */
 .ts-footer-masthead {
 	display: flex;
 	flex-direction: column;
@@ -3198,22 +3105,12 @@ body.ts-dark-mode .ts-hero-panel-item {
 	gap: 40px;
 }
 
-/*
- * Footer four: the branding takes the first column and the widgets share what
- * is left. The brand column is wider than a widget column because a logo and a
- * sentence of description need the room; the numbers below are the widget
- * count plus that one extra track.
- */
+/* Footer four: the branding takes the first column and the widgets share what is left. */
 .ts-footer-widgets.ts-footer-four .ts-footer-columns {
 	gap: 40px;
 }
 
-/*
- * With all four widget areas filled there is no width left to give the brand a
- * track of its own: five columns squeezes every headline down to one word per
- * line. It takes the whole first row instead and the widgets keep their four
- * equal columns underneath.
- */
+/* Four filled widget areas leave no room for a separate brand column. */
 .ts-footer-widgets.ts-footer-four .ts-footer-brand {
 	grid-column: 1 / -1;
 	padding-bottom: 30px;
@@ -3269,15 +3166,7 @@ body.ts-dark-mode .ts-hero-panel-item {
 .ts-footer-brand-social ul {
 	margin-left: -6px;
 }
-/**
- * Footer three: the dark palette, in either colour mode.
- *
- * The palette is swapped by REDEFINING THE TOKENS rather than by recolouring
- * each element. Patching colours one by one leaves anything that paints its
- * own surface behind - a chip keeps its pale pill, a call to action keeps its
- * near white panel, and a widget title stays ink on ink. Remapping the tokens
- * fixes every component at once, including any added later.
- */
+/* Footer three: the dark palette, in either colour mode. */
 .ts-footer-widgets.ts-footer-three,
 .site-footer.ts-footer-three {
 	--ts-bg: var(--ts-neutral-900);
@@ -3372,11 +3261,7 @@ body.ts-boxed .ts-sticky-nav.is-stuck {
 	max-width: 1320px;
 }
 
-/*
- * Framed is boxed with air around it: the container lifts off the window edge
- * on all four sides and rounds its corners, so the page reads as a card laid
- * on the background rather than a column butted against the top of the screen.
- */
+/* Framed: the container lifts off the window edge and rounds its corners. */
 body.ts-layout-framed #page {
 	margin: 28px auto;
 	border-radius: var(--ts-radius-lg);
@@ -3952,12 +3837,7 @@ body.ts-dark-mode .custom-logo-link .ts-dark-logo {
 37.0 Focus visibility
 --------------------------------------------------------------*/
 
-/**
- * A two-tone focus ring. The halo sits in the outline offset gap, so the
- * indicator stays visible whatever the element sits on: the page, a filled
- * pill, or a photo. A single-colour ring in the brand indigo disappeared
- * entirely on indigo badges.
- */
+/* A two-tone focus ring. */
 :root {
 	--ts-focus-ring: var(--ts-heading);
 	--ts-focus-halo: var(--ts-bg);
@@ -4001,11 +3881,7 @@ body.ts-dark-mode .ts-cat-badge-solid:focus-visible {
 
 @media only screen and (max-width: 767px) {
 
-	/**
-	 * The centred desktop nav leaves the toggle and the actions huddled in
-	 * the middle of the bar on a phone. Push them to the edges instead, the
-	 * arrangement people expect from a mobile header.
-	 */
+	/* The centred desktop nav leaves the toggle and the actions huddled in the middle of the bar on a phone. */
 	.ts-header-three .ts-nav-inner,
 	.ts-nav-inner {
 		justify-content: space-between;
@@ -4100,11 +3976,7 @@ body.ts-dark-mode .ts-cat-badge-solid:focus-visible {
 
 @media only screen and (max-width: 767px) {
 
-	/**
-	 * Full width pushes the number and the thumbnail to opposite edges and
-	 * leaves an empty band across the card. Read it as one row instead:
-	 * number, story, thumbnail.
-	 */
+	/* Full width pushes the number and the thumbnail to opposite edges and leaves an empty band across the card. */
 	.ts-box-numbered {
 		align-items: center;
 		gap: 10px 12px;
@@ -4138,11 +4010,7 @@ body.ts-dark-mode .ts-cat-badge-solid:focus-visible {
 
 @media only screen and (max-width: 767px) {
 
-	/**
-	 * The open menu sits inside a sticky bar, so it has to paint its own
-	 * solid background: without one the page showed straight through the
-	 * links. It also scrolls, so a long menu can never run off the screen.
-	 */
+	/* The open menu sits inside a sticky bar. */
 	.main-navigation.toggled .menu-wrapper {
 		background-color: var(--ts-bg);
 		border-top: 1px solid var(--ts-border);
@@ -4176,12 +4044,7 @@ body.ts-dark-mode .ts-cat-badge-solid:focus-visible {
 		content: none;
 	}
 
-	/*
-	 * A second level parent gets a right pointing caret from the flyout rules,
-	 * which carry one class more than the rule above and so are not covered by
-	 * it. Left alone it sits beside the accordion button pointing sideways at
-	 * a flyout that never opens on a phone.
-	 */
+	/* A second level parent gets a right pointing caret from the flyout rules. */
 	.main-navigation ul ul .menu-item-has-children > a::after,
 	.main-navigation ul ul .page_item_has_children > a::after {
 		content: none;
@@ -4345,13 +4208,7 @@ body.ts-dark-mode .ts-cat-badge-solid:focus-visible {
 41.0 Mobile menu over the sticky bar
 --------------------------------------------------------------*/
 
-/**
- * The stuck bar uses backdrop-filter for its frosted look, and any
- * backdrop-filter ancestor becomes the containing block for position:fixed
- * children. That collapsed the open menu panel to the height of the bar.
- * While the menu is open the bar is covered anyway, so drop the effect and
- * let the panel measure against the viewport again.
- */
+/* The stuck bar uses backdrop-filter for its frosted look. */
 body.ts-menu-open .ts-sticky-nav.is-stuck {
 	-webkit-backdrop-filter: none;
 	backdrop-filter: none;
@@ -4363,11 +4220,7 @@ body.ts-menu-open .ts-sticky-nav.is-stuck {
 42.0 Spacing rhythm
 --------------------------------------------------------------*/
 
-/**
- * Home sections were opening with 20px, 28px and 34px of space and the card
- * grids used 24px, 26px and 34px gaps. One token each keeps the vertical
- * rhythm even as sections are turned on and off.
- */
+/* Shared section spacing and grid gaps. */
 :root {
 	--ts-section-space: 34px;
 	--ts-grid-gap: 26px;
@@ -4490,12 +4343,7 @@ body.ts-dark-mode ::-webkit-scrollbar-thumb {
 
 @media only screen and (max-width: 767px) {
 
-	/**
-	 * The slide frame is a fixed 16:9 box with the caption absolutely placed
-	 * inside it. On a phone that box is short enough that the headline
-	 * overflowed the top and was clipped, so give it a taller frame and a
-	 * caption sized to match.
-	 */
+	/* The slide frame is a fixed 16:9 box with the caption absolutely placed inside it. */
 	.ts-slide-media {
 		padding-top: 82%;
 	}
@@ -4532,11 +4380,7 @@ body.ts-dark-mode ::-webkit-scrollbar-thumb {
 
 @media only screen and (max-width: 600px) {
 
-	/**
-	 * The heading and the More link were both wrapping to two lines and
-	 * fighting for the same row. Keep the link on one line and let the
-	 * heading take whatever width is left.
-	 */
+	/* The heading and the More link were both wrapping to two lines and fighting for the same row. */
 	.ts-curated-head {
 		gap: 12px;
 		align-items: center;
@@ -4568,11 +4412,7 @@ body.ts-dark-mode ::-webkit-scrollbar-thumb {
 47.0 Header banner
 --------------------------------------------------------------*/
 
-/**
- * The classic header keeps a widget area beside the logo. Left empty it
- * reads as dead space, so give whatever sits there room to breathe and
- * style the shipped promo banner.
- */
+/* The classic header keeps a widget area beside the logo. */
 .ts-header-widget {
 	max-width: 728px;
 }
@@ -4588,11 +4428,7 @@ body.ts-dark-mode ::-webkit-scrollbar-thumb {
 	display: none;
 }
 
-/**
- * Advert plates are the usual occupant here. Keep one flush to its box,
- * let it shrink with the header and never let a tall upload push the
- * branding row out of shape.
- */
+/* Advert plates are the usual occupant here. */
 .ts-header-widget img {
 	display: block;
 	width: auto;
@@ -4658,11 +4494,7 @@ body.ts-dark-mode ::-webkit-scrollbar-thumb {
 
 @media only screen and (min-width: 992px) {
 
-	/**
-	 * A full width advert plate plus the branding overruns the container by
-	 * a few pixels and drops to its own line. Hold both on one row and let
-	 * the plate give up the difference instead.
-	 */
+	/* A full width advert plate plus the branding overruns the container by a few pixels and drops to its own line. */
 	.ts-header-classic {
 		flex-wrap: nowrap;
 	}
@@ -4706,13 +4538,7 @@ body.ts-dark-mode ::-webkit-scrollbar-thumb {
 48.0 Dropdown edge fit
 --------------------------------------------------------------*/
 
-/**
- * The dropdown belonging to the last menu item runs past the right edge of
- * the viewport on narrow desktops, and the flyout it opens runs further
- * still. Both stay hidden, but a hidden absolute box still widens the
- * document, so the page gains a horizontal scrollbar. Anchor them to the
- * right edge and send the flyout back inwards.
- */
+/* The dropdown belonging to the last menu item runs past the right edge of the viewport on narrow desktops. */
 @media only screen and (min-width: 768px) {
 
 	.main-navigation > div > ul > li:last-child > ul {
@@ -4735,14 +4561,7 @@ body.ts-dark-mode ::-webkit-scrollbar-thumb {
 49.0 Footer boundary
 --------------------------------------------------------------*/
 
-/**
- * The footer opens with a hairline rule. The home page sections end in a 6px
- * tail, which left that rule almost touching the last thumbnail while 64px of
- * padding sat below it, so the divider read as part of the section above
- * rather than as the join between the two. Give whichever section runs into
- * the footer the same air the rest of the page uses. Templates that end in
- * .site-content already carry 60px of their own, so they are left alone.
- */
+/* The footer opens with a hairline rule. */
 .ts-slider-wrap:has(+ .ts-footer-widgets),
 .ts-boxes-wrap:has(+ .ts-footer-widgets),
 .ts-curated-wrap:has(+ .ts-footer-widgets),
@@ -4835,11 +4654,7 @@ body.ts-dark-mode ::-webkit-scrollbar-thumb {
 	list-style: none;
 }
 
-/**
- * The widget class is repeated because .widget ul li carries a padding and a
- * bottom rule, and it is the more specific selector. Without it every chip
- * and every contact line inherits a divider it was never meant to have.
- */
+/* The widget class is repeated because .widget ul li carries a padding and a bottom rule, and it is the more specific selector. */
 .widget .ts-chip-list li {
 	margin: 0;
 	padding: 0;

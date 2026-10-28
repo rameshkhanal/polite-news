@@ -125,9 +125,6 @@ if ( ! function_exists( 'polite_news_post_thumbnail' ) ) :
 	/**
 	 * Displays an optional post thumbnail.
 	 *
-	 * Wraps the post thumbnail in an anchor element on index views, or a div
-	 * element when on single views.
-	 *
 	 * @param string $size Image size to render.
 	 */
 	function polite_news_post_thumbnail( $size = 'polite-news-grid' ) {
@@ -295,12 +292,7 @@ if ( ! function_exists( 'polite_news_grid_class' ) ) :
 
 		$layout = isset( $polite_news_theme_options['polite-news-column-blog-page'] ) ? esc_attr( $polite_news_theme_options['polite-news-column-blog-page'] ) : 'grid-two';
 
-		/*
-		 * The archives draw on the same set of arrangements as the home page, so
-		 * they share its classes. The ts-home- names are the style's name, not a
-		 * statement about which page is being looked at, and reusing them keeps
-		 * one copy of each layout's CSS instead of two that drift apart.
-		 */
+		/* The archives draw on the same set of arrangements as the home page, so they share its classes. */
 		$archive_layouts = array(
 			'one-column'    => 'ts-posts-wrap ts-one-column',
 			'grid-two'      => 'ts-posts-wrap ts-grid ts-grid-2',
@@ -324,12 +316,6 @@ endif;
 if ( ! function_exists( 'polite_news_site_title' ) ) :
 	/**
 	 * Print the site name as the branding heading.
-	 *
-	 * A logo stands in for the wordmark visually, but the page still needs the
-	 * name as a heading: with "Display Site Title and Tagline" switched off the
-	 * front page was left with no h1 anywhere in the document. Hiding the text
-	 * now means clipping it out of sight rather than dropping it, so the
-	 * heading survives for screen readers and for anything reading the outline.
 	 */
 	function polite_news_site_title() {
 

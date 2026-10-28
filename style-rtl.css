@@ -111,11 +111,7 @@ blockquote {
 	}
 }
 
-/*
- * Submenu carets and the accordion button. Both are placed against a physical
- * edge, and the nesting indent is a physical padding, so none of the three
- * mirror on their own.
- */
+/* Submenu carets and the accordion button. */
 @media only screen and (min-width: 768px) {
 
 	/* The flyout caret belongs on the trailing edge, pointing the way out. */
@@ -180,12 +176,7 @@ blockquote {
 	padding-right: 2px;
 }
 
-/*
- * The hero panel is pinned to one edge and the slide content fills whatever is
- * left over, so mirrored they both claimed the right hand side and the
- * headline vanished behind the panel. Below 992px the panel stacks and stops
- * being positioned at all, which is why this only applies above it.
- */
+/* The hero panel is pinned to one edge and the slide content fills whatever is left over. */
 @media only screen and (min-width: 992px) {
 
 	.ts-hero-panel {

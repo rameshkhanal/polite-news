@@ -12,9 +12,6 @@
 	/**
 	 * Compare a live value against its stored default.
 	 *
-	 * Settings are saved as strings often enough that a loose string
-	 * comparison is the only reliable test here.
-	 *
 	 * @param {*} value   Current value.
 	 * @param {*} initial Default value.
 	 * @return {boolean} True when the value still matches the default.

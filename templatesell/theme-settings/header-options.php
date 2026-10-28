@@ -212,9 +212,6 @@ if ( ! function_exists( 'polite_news_is_classic_header' ) ) :
 	/**
 	 * Whether the classic header layout is in use.
 	 *
-	 * Only that layout has room beside the branding, so the banner controls
-	 * stay out of the way on the other two.
-	 *
 	 * @param WP_Customize_Control $control The control asking.
 	 * @return bool
 	 */

@@ -3,8 +3,6 @@
  * Header style five
  *
  * Centred branding above a navigation bar filled with the primary colour.
- * The bar is the strongest horizontal line on the page, which is the point:
- * it separates the masthead from the news the way a printed title page does.
  *
  * @package Polite_News
  */

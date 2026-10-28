@@ -31,11 +31,7 @@ if ( 'home-two' === $polite_news_home_style ) {
 	$polite_news_wrap_class = 'ts-post-wrap';
 }
 
-/*
- * The style that decides the image size is the home style on the home page and
- * the archive layout everywhere else. The two vocabularies match apart from the
- * home- prefix, so drop it and ask the question once.
- */
+/* The style that decides the image size is the home style on the home page and the archive layout everywhere else. */
 $polite_news_style = ( '' !== $polite_news_home_style ) ? substr( $polite_news_home_style, 5 ) : $polite_news_layout;
 
 if ( 'classic' === $polite_news_style || 'large' === $polite_news_style ) {

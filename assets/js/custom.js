@@ -12,9 +12,6 @@
 
 	/**
 	 * Dark mode.
-	 *
-	 * The stored choice wins. With no stored choice the operating system
-	 * preference decides, so the page matches the rest of the desktop.
 	 */
 	function politeNewsDarkMode() {
 
@@ -277,11 +274,6 @@
 
 	/**
 	 * Collapsible submenus for the mobile menu.
-	 *
-	 * Adds a real button beside every parent link so a submenu can be opened
-	 * without following its parent link, and so screen readers are told what
-	 * the control does. The buttons stay in the markup at every width and CSS
-	 * hides them on desktop, where hover already opens the dropdowns.
 	 */
 	function politeNewsMobileSubmenus() {
 
@@ -321,10 +313,6 @@
 	}
 	/**
 	 * Full screen mobile menu.
-	 *
-	 * The panel covers the page, so it has to behave like a dialog: focus
-	 * moves into it on open, stays inside while it is open, and returns to
-	 * the button that opened it on close.
 	 */
 	function politeNewsMobileMenu() {
 
@@ -423,19 +411,6 @@
 
 	/**
 	 * Hold the sidebar in view as the article scrolls.
-	 *
-	 * The column keeps its own offset inside the content grid. Scrolling does
-	 * not change that offset, so the sidebar drifts with the page exactly as a
-	 * static block would; it is only ever pulled back when it would cross one
-	 * of two lines - the top of the screen, below whatever fixed furniture is
-	 * up there, and the bottom of the screen. Clamping against both lines is
-	 * what makes it settle in either direction: read down and it holds once its
-	 * last widget arrives, turn back and it holds again once its first widget
-	 * does. Because the offset is remembered rather than recomputed from the
-	 * scroll position, reversing direction never snaps the column.
-	 *
-	 * A sidebar shorter than the screen has both lines in the same place, so it
-	 * simply parks below the header.
 	 */
 	function politeNewsStickySidebar() {
 

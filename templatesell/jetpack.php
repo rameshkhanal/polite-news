@@ -11,10 +11,6 @@
 
 /**
  * Jetpack setup function.
- *
- * See: https://jetpack.com/support/infinite-scroll/
- * See: https://jetpack.com/support/responsive-videos/
- * See: https://jetpack.com/support/content-options/
  */
 function polite_news_jetpack_setup() {
 

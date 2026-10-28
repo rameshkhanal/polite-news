@@ -47,9 +47,6 @@ add_action( 'init', 'polite_news_register_block_styles' );
 
 /**
  * Register the pattern category used by the files in /patterns.
- *
- * WordPress auto registers the patterns themselves from that folder; only
- * the category has to be declared here.
  */
 function polite_news_register_block_patterns() {
 

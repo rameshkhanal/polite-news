@@ -2,12 +2,10 @@
 /**
  * Custom logo filter
  *
- * Adds the optional dark mode logo alongside the main one so the pair can be
- * swapped with CSS the moment dark mode is toggled, with no second request
- * and no flash while a script runs.
+ * Adds the optional dark mode logo next to the main logo.
  *
  * @package Polite_News
- *
+ * 
  * @since 1.0.0
  */
 
@@ -39,11 +37,7 @@ if ( ! function_exists( 'polite_news_dark_logo_markup' ) ) :
 			array(
 				'class'    => 'ts-dark-logo',
 				'alt'      => get_bloginfo( 'name', 'display' ),
-				/*
-				 * Hidden with display:none until dark mode is on, so the fetch can
-				 * wait: loading it eagerly spent a second logo download on every
-				 * light mode visit, which is nearly all of them.
-				 */
+				/* Hidden with display:none until dark mode is on. */
 				'loading'  => 'lazy',
 				'decoding' => 'async',
 			)
